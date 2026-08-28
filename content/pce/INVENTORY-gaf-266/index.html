@@ -1,0 +1,72 @@
+<h1>INVENTORY — GAF-266 koch-blend-redo: enrich 32 skipped existing PCE nodes</h1>
+<p>M5.1 change inventory. Every commit on <code>clawford/gaf-266-chunk1</code> shipped to <code>main</code> in this cycle,
+cross-checked against PLAN.md (T1-T14) and STATUS.md bookkeeping. Zero unrecorded commits.</p><h2 id="source-%2B-gates-(loop-dir%2C-not-in-repo)" tabindex="-1">Source + gates (loop dir, not in repo) <a class="header-anchor" href="#source-%2B-gates-(loop-dir%2C-not-in-repo)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<ul>
+<li><p>T1 koch.txt (108,594 lines) copied into loop dir — verified <code>wc -l == 108594</code>.</p></li>
+<li><p>T2 manifest/chunk266.json — 32 rows (blend 29 / verify 3), 0 MISSING_JSON.</p></li>
+<li><p>T3 check_gates.py — mechanized 5-gate checker (json/okr/noun/koch_src/verbatim6/protected).</p></li>
+</ul>
+<h2 id="commits-(7-feature-commits-%2B-1-inventory%2Fship)" tabindex="-1">Commits (7 feature commits + 1 INVENTORY/ship) <a class="header-anchor" href="#commits-(7-feature-commits-%2B-1-inventory%2Fship)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Commit</th>
+<th>Task</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5a52669</td>
+<td>T4 blend batch A (6)</td>
+<td>banshee, Rhonabwy, Cai, Coligny, Eire, fairies <code>.entries</code> JSON</td>
+</tr>
+<tr>
+<td>cc2c303</td>
+<td>T5 blend batch B (6)</td>
+<td>Fianna, Gereint, Luchtar, Lughnasa, Mabinogion, Melor <code>.entries</code> JSON</td>
+</tr>
+<tr>
+<td>370affd</td>
+<td>T6 blend batch C (5)</td>
+<td>Midsummer, Nudd, Oengus, Patrick, reincarnation <code>.entries</code> JSON</td>
+</tr>
+<tr>
+<td>a927868</td>
+<td>T7 blend batch D (5)</td>
+<td>Celtic_religion, Sovereignty, Suibhne, Sul, tattoo <code>.entries</code> JSON</td>
+</tr>
+<tr>
+<td>1929a46</td>
+<td>T8 blend batch E (4)</td>
+<td>Tara, Da_Derga, Diarmait_Ua_Duibne, Triads <code>.entries</code> JSON</td>
+</tr>
+<tr>
+<td>395cac9</td>
+<td>T9 blend batch F (3)</td>
+<td>Tristan, Hill_of_Uisneach, Vitiris <code>.entries</code> JSON</td>
+</tr>
+<tr>
+<td>029713b</td>
+<td>T11 regenerate .md</td>
+<td>markdown.py regen for 29 blend letter-dirs (24 updated, 5 new pages: Celtic_religion, Mabinogion, Sovereignty, Suibhne, Triads). Verify-only .md untouched</td>
+</tr>
+</tbody>
+</table>
+<p>Note: verify-only 3 (Bóand, Caradawg, Cerne_Abbas_Giant) — no content commit (already-Koch from GAF-258, gates 3/3 PASS at T10).</p><h2 id="ship-commit" tabindex="-1">Ship commit <a class="header-anchor" href="#ship-commit" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<ul>
+<li><p>INVENTORY.md + full-gate re-run evidence appended, committed to <code>clawford/gaf-266-chunk1</code>, pushed.</p></li>
+<li><p>PR → main (openordu/pce), self-approved, merged. origin/main now == merged hash.</p></li>
+</ul>
+<h2 id="gates-at-ship-(re-measured-at-report-time%2C-report-audit-rule)" tabindex="-1">Gates at ship (re-measured at report time, report-audit rule) <a class="header-anchor" href="#gates-at-ship-(re-measured-at-report-time%2C-report-audit-rule)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<ul>
+<li><p>check_gates.py over all 32: TOTAL 32 FAILED 0.</p></li>
+<li><p>Verbatim-6 across all 32 (full koch.txt corpus): 0 runs.</p></li>
+<li><p>Protected fields (name/image/cyphertext/salt) on every blend: byte-identical vs origin/main.</p></li>
+<li><p>Manifest 32/32, zero out_of_scope / dup / cancelled.</p></li>
+</ul>
+<script src="/js/quiz.js"></script>

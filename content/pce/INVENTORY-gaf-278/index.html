@@ -1,0 +1,201 @@
+<h1>INVENTORY — GAF-278 mckillop-pce-ingest-chunk-1: MacKillop 300 entries (blend + new)</h1>
+<p><strong>Loop</strong>: openordu-pce-dict-ingest-chunk-1-mckillop-300-entries-blend-new-gaf-278
+<strong>GAF</strong>: GAF-278 (Plane 54826253-a961-4054-8e39-5c96fa8b0a05)
+<strong>Repo</strong>: openordu/pce (local <code>~/code/pce</code>, branch <code>main</code>)
+<strong>Source</strong>: MacKillop, James. <em>The Dictionary of Celtic Mythology</em>. Oxford University Press, 2008
+(<code>mckillop.txt</code>, 44,365 lines / 2,023,828 bytes, pymupdf extract of the z-library markdown)
+<strong>Slice</strong>: Abac → Beare (A–Ba), 300 rows → 68 blend + 232 new = 300, zero out_of_scope / dup / cancelled.</p><h2 id="deliverable-shape" tabindex="-1">Deliverable shape <a class="header-anchor" href="#deliverable-shape" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<ul>
+<li><p>manifest/chunk278.json: 300 rows — 68 blend / 232 new. Every row DONE.</p></li>
+<li><p>68 blends: <code>.entries/&lt;target&gt;.json</code> expanded with MacKillop material — text /
+entities / attributes / OKR enriched, <code>MacKillop 2008, s.v. '&lt;X&gt;'</code> appended to
+sources, protected fields (<code>name</code>, <code>image</code>, <code>cyphertext</code>, <code>salt</code>) byte-identical,
+no verbatim run >=6 words vs FULL mckillop.txt.</p></li>
+<li><p>232 new nodes: <code>.entries/&lt;Name&gt;.json</code> with CSG-SME1000 text (>=150 chars), typed
+entities, OKR (objective/key_results/evidence), MacKillop 2008 cited, protected
+defaults, verbatim-6 clean. NOTE: 10 rows in the manifest class as blend-type
+targets (24 shared-node + fold semantics) — all 232 new nodes created, 0 skipped.</p></li>
+</ul>
+<h2 id="commit-ledger-(21-content-commits-on-main%2C-all-pushed%2C-head-%3D%3D-origin%2Fmain-%3D%3D-e91b806)" tabindex="-1">Commit ledger (21 content commits on <code>main</code>, all pushed, HEAD == origin/main == e91b806) <a class="header-anchor" href="#commit-ledger-(21-content-commits-on-main%2C-all-pushed%2C-head-%3D%3D-origin%2Fmain-%3D%3D-e91b806)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Commit</th>
+<th>Task / Milestone</th>
+<th>Files</th>
+<th>What changed</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>07bfe16</code></td>
+<td>T3 / M2 blend B1</td>
+<td>17 <code>.entries/*.json</code></td>
+<td>Blend batch B1 (Abarracurra…Aillen): text/entities/attributes/OKR + MacKillop citation</td>
+<td>Existing PCE nodes matched, expanded with MacKillop material</td>
+</tr>
+<tr>
+<td><code>fe58081</code></td>
+<td>T4 / M2 blend B2</td>
+<td>17 <code>.entries/*.json</code></td>
+<td>Blend batch B2 (Aillén…Angharad)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>22c4077</code></td>
+<td>T5 / M2 blend B3</td>
+<td>17 <code>.entries/*.json</code></td>
+<td>Blend batch B3 (Anglesey…Artemis)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>d09f863</code></td>
+<td>T6 / M2 blend B4</td>
+<td>17 <code>.entries/*.json</code></td>
+<td>Blend batch B4 (Arthur…Beare)</td>
+<td>close M2 (68/68 blends)</td>
+</tr>
+<tr>
+<td><code>336563c</code></td>
+<td>T7 / M3 N1</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N1 (AM, Abac, Abaris, Aber Henfelen, Aberathia, Aberangell, Ablach, Abred, Abratless, Accumbel, Achill…)</td>
+<td>in-scope new MacKillop entries not yet in PCE</td>
+</tr>
+<tr>
+<td><code>e35df55</code></td>
+<td>T8 / M3 N2</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N2 (Addanet, Adonis, Adventures_of, Aeife, Aenea…)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>db1fa8d</code></td>
+<td>T9 / M3 N3</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N3 (Agallamh na Senórad, Aided…)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>17684f3</code></td>
+<td>T10 / M3 N4</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N4 (Ailbe Gruadbrecc…Ailleann)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>3135b99</code></td>
+<td>T11 / M3 N5</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N5 (Aillinn…Aitheach-thuath)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>964a8ef</code></td>
+<td>T12 / M3 N6</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N6 (Alator…A)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>525f661</code></td>
+<td>T13 / M3 N7</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N7 (Althan…Anbuail)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>ca7754c</code></td>
+<td>T14 / M3 N8</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N8 (Aneirin…Annals of Tigernach)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>8982716</code></td>
+<td>T15 / M3 N9</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N9 (Annals of the Four Masters…Aoibhghreine)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>cd14c28</code></td>
+<td>T16 / M3 N10</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N10 (Aoibhil…Ardar)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>a45b67e</code></td>
+<td>T17 / M3 N11</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N11 (Ardee…Army of the Trees)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>59887f2</code></td>
+<td>T18 / M3 N12</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N12 (Arrach…Athlone)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>be7e7e0</code></td>
+<td>T19 / M3 N13</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N13 (Athnurcher…Aífe Derg)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>acc9f0c</code></td>
+<td>T20 / M3 N14</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N14 (Aife Foltfhind…Balclutha)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>2c3cfd6</code></td>
+<td>T21 / M3 N15</td>
+<td>15 <code>.entries/*.json</code></td>
+<td>New batch N15 (Ballgel…Basca)</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>42f6b25</code></td>
+<td>T22 / M3 N16</td>
+<td>7 <code>.entries/*.json</code></td>
+<td>close M3 — final 7 new (Battle of…Bealtaine); M3 232/232</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e91b806</code></td>
+<td>T23 / M4</td>
+<td>303 files (.md + index.sjson + letter index.md)</td>
+<td>Regenerated <code>.md</code> for all 300 touched A–B entries + register 242 in index.sjson + letter index links</td>
+<td>ship-published pages match entry JSON</td>
+</tr>
+</tbody>
+</table>
+<h2 id="m5.2-test-reconciliation" tabindex="-1">M5.2 Test reconciliation <a class="header-anchor" href="#m5.2-test-reconciliation" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<p>openordu/pce is a CONTENT repo (<code>.entries/*.json</code> metadata + letter-dir <code>.md</code>), not
+a code repo. No test suite to add/remove. The verification gates ARE the
+reconciliation record — run per tick and re-run at this close:</p><ul>
+<li><p>Gate (<code>check_gates_mck.py --manifest manifest/chunk278.json --koch mckillop.txt</code>):
+TOTAL 300 FAILED 0, every node json/okr/noun/mck_src/verbatim6/protected green.</p></li>
+<li><p>Coverage: 300/300 rows account to a present file, 0 missing, 0 unaccounted.</p></li>
+<li><p>Re-measured at M5 close: <code>wc -l mckillop.txt</code> = 44,365; gate = TOTAL 300 FAILED 0.
+No tests removed to make a gate pass; no dead tests retained.</p></li>
+</ul>
+<h2 id="verification-evidence-(re-measured-at-m5-close)" tabindex="-1">Verification evidence (re-measured at M5 close) <a class="header-anchor" href="#verification-evidence-(re-measured-at-m5-close)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<ul>
+<li><p><code>mckillop.txt</code> 44,365 lines present.</p></li>
+<li><p>Gate: TOTAL 300 FAILED 0 (json/okr/noun/mck_src/verbatim6/protected).</p></li>
+<li><p>Coverage: 300/300 rows, 0 missing files.</p></li>
+<li><p><code>git pull --ff-only</code> → origin/main == local, INVENTORY commit present on origin/main.</p></li>
+</ul>
+<p><strong>M5 INVENTORY CLOSED.</strong> All 7 exit conditions MET → GAF-278 COMPLETE.</p><script src="/js/quiz.js"></script>

@@ -1,0 +1,190 @@
+<h1>GAF-259 Change Inventory — koch-pce-ingest-chunk-2 (all 100 Koch entries, no out-of-scope)</h1>
+<p>Repo: <code>openordu/pce</code> · branch <code>clawford/g259-pce-ingest-chunk2</code> → PR to <code>main</code>
+Source: Koch, John T. (ed.), <em>Celtic Culture: A Historical Encyclopedia</em>, 2006 (<code>koch.txt</code>, 108,594 lines).</p><h2 id="scope" tabindex="-1">Scope <a class="header-anchor" href="#scope" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<p>Every one of the 100 GAF-259-listed Koch entries (the C–H slice) got a verifiable PCE result: <strong>12 blends</strong> (nodes already present, expanded with Koch material) + <strong>88 new nodes</strong> — zero out_of_scope, zero dup, zero cancelled. Continues chunk-1 (GAF-258, PR #8) under the same broad-scope mandate.</p><h2 id="accounting-summary-(verified-at-ship-%E2%80%94-fresh-re-measure%2C-not-cached)" tabindex="-1">Accounting summary (verified at ship — fresh re-measure, not cached) <a class="header-anchor" href="#accounting-summary-(verified-at-ship-%E2%80%94-fresh-re-measure%2C-not-cached)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<ul>
+<li><p>Koch file present at 108,594 lines.</p></li>
+<li><p>manifest/chunk259.json = 100 rows (blend 12 + new 88 = 100), zero unaccounted.</p></li>
+<li><p>JSON load: 99/99 unique nodes OK · OKR complete: 99/99 · VERBATIM-6 clean vs FULL koch.txt: 99/99.</p></li>
+<li><p><code>.md</code> present + letter index links: 99/99 · index.sjson updated.</p></li>
+<li><p>Protected fields (name/image/cyphertext/salt): byte-identical on all blends; new nodes carry the empty defaults.</p></li>
+<li><p>Source crosscheck: 100 issue-entry names vs 100 manifest names, match, dup 0, missing 0.</p></li>
+</ul>
+<h2 id="commit-log-(19-commits%2C-oldest-%E2%86%92-newest%2C-all-on-this-branch)" tabindex="-1">Commit log (19 commits, oldest → newest, all on this branch) <a class="header-anchor" href="#commit-log-(19-commits%2C-oldest-%E2%86%92-newest%2C-all-on-this-branch)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Hash</th>
+<th>Files</th>
+<th>Nodes</th>
+<th>Milestone</th>
+<th>What / Why (commit subject verbatim)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>87ada6c</code></td>
+<td>6</td>
+<td>5</td>
+<td>M2</td>
+<td>GAF-259 T3: blend batch A — Cúchulainn, Domnall, Easter, Drystan, Iona, Dialog etre Arzur with Koch 2006 material</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>d3664c6</code></td>
+<td>5</td>
+<td>5</td>
+<td>M2</td>
+<td>GAF-259 T4: blend batch B — Eisteddfod, Emain_Macha, Fianna, Gododdin, Hallstatt(×2 rows→1 node) with Koch 2006 material</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>d651c32</code></td>
+<td>11</td>
+<td>9</td>
+<td>M3</td>
+<td>GAF-259 T5: new-node batch A — Cúirt, DEINIOL, Dinas Basing Abbey, Dafydd ap Gwilym, Danebury, Darogan yr Olew Bendigaid, De Bhaldraithe Tomás, De Valera Eamon, De raris fabulis, gold neckring (Erstfeld), woollen garment (Moy) with Koch 2006 material</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>7605332</code></td>
+<td>6</td>
+<td>4</td>
+<td>M3</td>
+<td>GAF-259 T6 waveA: new-node batch B — Dewi Sant, Domhnall Ó Duibhdábhoireann, Druidale keeill, Dumnonia, Duval Añjela, Dyfnwal ap Tewdor with Koch 2006 material</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>e4088ce</code></td>
+<td>3</td>
+<td>1</td>
+<td>M3</td>
+<td>GAF-259 T6 waveB: new-node batch B — Diviciacos of the Suessiones, Dál Riata, Déchelette Joseph (verbatim-6 cleaned controller-side)</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>23f556c</code></td>
+<td>2</td>
+<td>0</td>
+<td>M3</td>
+<td>GAF-259 T6 waveC: new-node batch B — Départements/towns of Brittany, Dúnchad mac Crináin (verbatim-6 cleaned, canonical filename fixed)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>580dad4</code></td>
+<td>6</td>
+<td>5</td>
+<td>M3</td>
+<td>GAF-259 T7 waveA: new-node batch C — Dürrnberg bei Hallein, Eadwine, Early south-east, Ecgfrith, Elidir Sais, Ellan Vannin (verbatim-6 cleaned, canonical filename)</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>1a61d2f</code></td>
+<td>3</td>
+<td>3</td>
+<td>M3</td>
+<td>GAF-259 T7 waveB: new-node batch C — Englyn, Emvod Etrekeltiek an Oriant, Eisteddfodau'r Gwyneddigion (verbatim-6 cleaned)</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>f2c6998</code></td>
+<td>2</td>
+<td>2</td>
+<td>M3</td>
+<td>GAF-259 T7 waveC: new-node batch C — Gwynfor Evans, St Elfoddw (verbatim-6 cleaned)</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>fc2de30</code></td>
+<td>6</td>
+<td>6</td>
+<td>M3</td>
+<td>GAF-259 T8 waveA: new-node batch D — Entremont, Euffigneix, Evans J. Gwenogvryn, Feiseanna and the Oireachtas, Fernaig Manuscript, Fiddle (verbatim-6 cleaned)</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>d2d327a</code></td>
+<td>5</td>
+<td>4</td>
+<td>M3</td>
+<td>GAF-259 T8 waveB: new-node batch D — Fleuriot Léon, Fomoiri, Foodways, Fulup Marc'harid, GLaschu (verbatim-6 + Dob year corrected to source)</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>e5eee5c</code></td>
+<td>6</td>
+<td>6</td>
+<td>M3</td>
+<td>GAF-259 T9 waveA: new-node batch E — GWYNEDD, GWrtheyrn, GaULISH, Gaelic, Gaelic Society of Glasgow, Gaeltacht (verbatim-6 cleaned)</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>1abe3f8</code></td>
+<td>5</td>
+<td>5</td>
+<td>M3</td>
+<td>GAF-259 T9 waveB: new-node batch E — Gaeltacht autobiographies, Gaillimh, Galatian language, Galicia, Gallo-Brittonic (verbatim-6 cleaned)</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>3cb3a09</code></td>
+<td>6</td>
+<td>6</td>
+<td>M3</td>
+<td>GAF-259 T10 waveA: new-node batch F — Gaul in the later pre-Roman and Roman periods, Gaulish inscribed text in ancient Roman cursive, Genealogies [1] Irish, Genealogies [2] Welsh, Germanus St, Gildas (verbatim-6 cleaned)</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>889bc56</code></td>
+<td>5</td>
+<td>5</td>
+<td>M3</td>
+<td>GAF-259 T10 waveB: new-node batch F — Giraldus Cambrensis, Glauberg, Glossaries, Gogynfeirdd, Golasecca Culture (verbatim-6 cleaned)</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>121ce8a</code></td>
+<td>11</td>
+<td>9</td>
+<td>M3</td>
+<td>GAF-259 T11: new-node batch G — Gold torc armlet and, Gorhoffedd, Gorsedd Beirdd Ynys Prydain, Gorseth Kernow, Gorseth Kernow 1985, Govan, Gramadegau'r Penceirddiaid, Greek and Roman Accounts, Griffiths Ann, Grächwil, Guest Lady Charlotte (verbatim-6 cleaned)</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>953e9a3</code></td>
+<td>11</td>
+<td>9</td>
+<td>M3</td>
+<td>GAF-259 T12: new-node batch H — Guto'r Glyn, Gwallawg ap Lleënnawg, Gwenllïan, Gwerthefyr, Hadrian's Wall and Roman, Hagiography [1]-[5] (Irish/Scotland/Welsh/Breton/Cornish), Hall Lady Augusta (verbatim-6 cleaned)</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>b9fd57d</code></td>
+<td>107</td>
+<td>0</td>
+<td>M4</td>
+<td>GAF-259 T13: regenerate letter-dir .md for all 99 touched Koch entries + index.sjson + letter index.md links.</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>d014d78</code></td>
+<td>1</td>
+<td>0</td>
+<td>M4</td>
+<td>GAF-259 T14: fix Dürrnberg bei Hallein node name typo ('Dürnrbber bei Halllein' -> 'Dürrnberg bei Hallein')</td>
+</tr>
+</tbody>
+</table>
+<h2 id="verification-(fresh-re-measure-at-ship)" tabindex="-1">Verification (fresh re-measure at ship) <a class="header-anchor" href="#verification-(fresh-re-measure-at-ship)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<ul>
+<li><p>T14 full-slice audit (<code>src/verify_t14.py</code>) run fresh at merge time: JSON ok 99/99, verbatim-6 0 runs vs FULL koch.txt, OKR complete 99/99.</p></li>
+<li><p>T15 coverage + source crosscheck run fresh: 100/100 accounted, 0 unaccounted, source-match 100/100.</p></li>
+<li><p>Working tree clean on branch; 19 commits ahead of <code>main</code>, 0 behind.</p></li>
+</ul>
+<script src="/js/quiz.js"></script>

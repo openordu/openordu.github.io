@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/letter-mission/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2021-12-31T00:00:00Z</news:publication_date>
+          <news:title>An Open Letter to Celtic Pagans</news:title>
+        </news:news>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/vision/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2022-01-07T00:00:00Z</news:publication_date>
+          <news:title>Vision</news:title>
+        </news:news>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/roadmap/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2022-01-14T00:00:00Z</news:publication_date>
+          <news:title>Roadmap</news:title>
+        </news:news>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/naming-the-project/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2022-04-23T00:00:00Z</news:publication_date>
+          <news:title>Naming the project</news:title>
+        </news:news>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/volume-and-elements/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2022-04-23T00:00:00Z</news:publication_date>
+          <news:title>Site url volume and static site generators</news:title>
+        </news:news>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/what-is-open-source-and-why-is-it-better/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2022-05-16T00:00:00Z</news:publication_date>
+          <news:title>What is OpenSource? Why is it Good or Needed</news:title>
+        </news:news>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/approach/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2022-05-30T00:00:00Z</news:publication_date>
+          <news:title>My Approach</news:title>
+        </news:news>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/attitudes/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2022-06-06T00:00:00Z</news:publication_date>
+          <news:title>Noble Attitudes Toward Celtic Paganism</news:title>
+        </news:news>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/11ty/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2023-05-25T00:00:00Z</news:publication_date>
+          <news:title>11ty(Eleventy)</news:title>
+        </news:news>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/roycroftian-paganism/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2023-06-12T00:00:00Z</news:publication_date>
+          <news:title>Roycroftian Paganism I: The Deliberate Craft</news:title>
+        </news:news>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://openordu.github.io/posts/roycrotian-paganism-part-deux/</loc>
+        <news:news>
+          <news:publication>
+            <news:name>OpenOrdú</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:publication_date>2023-06-12T00:00:00Z</news:publication_date>
+          <news:title>Roycroftian Paganism II: The Deliberate Craft</news:title>
+        </news:news>
+      </url>
+    
+  
+</urlset>

@@ -1,0 +1,59 @@
+<h1>TEST-RECONCILIATION — GAF-243 koch-encyclopedia-ingest (M5.2)</h1>
+<p>This is a <strong>content repository</strong> (openordu/pce): <code>.entries/&lt;Name&gt;.json</code> +
+generated letter-dir <code>.md</code> + <code>index.sjson</code>. It has <strong>no unit/integration test
+suite</strong> and no <code>.github/workflows</code> — correctness gates are data-integrity audits
+run on the content, not code tests. Reconciliation below records those audit
+gates and the touched-set counts. No tests were removed; none needed adding for
+code behavior (no code changed).</p><h2 id="audit-gates-applied-to-the-touched-set-(the-de-facto-test-suite)" tabindex="-1">Audit gates applied to the touched set (the de-facto test suite) <a class="header-anchor" href="#audit-gates-applied-to-the-touched-set-(the-de-facto-test-suite)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Scope</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>json.load</code> validity</td>
+<td>every touched <code>.entries/*.json</code></td>
+<td>0 invalid (140/140, T34 re-measure)</td>
+</tr>
+<tr>
+<td>Verbatim-6 anti-plagiarism (no ≥6-word runs from koch.txt)</td>
+<td>every touched <code>text</code> vs FULL koch.txt</td>
+<td>CLEAN (all batches; controller re-fixed runs at merge where leaf gate missed)</td>
+</tr>
+<tr>
+<td>OKR completeness (objective str / key_results list / evidence str)</td>
+<td>every touched entry</td>
+<td>140/140 complete, 0 missing (T34)</td>
+</tr>
+<tr>
+<td>text length (≥150 chars for NEW nodes)</td>
+<td>all M3 nodes</td>
+<td>all PASS (498–1874 chars)</td>
+</tr>
+<tr>
+<td>Protected fields intact (name/sources/image/cyphertext/salt)</td>
+<td>all blends + new</td>
+<td>byte-identical on blends; defaults on new</td>
+</tr>
+<tr>
+<td><code>.md</code> regenerated for every touched entry</td>
+<td>all M2/M3</td>
+<td>present for all (markdown.py)</td>
+</tr>
+<tr>
+<td>Coverage reconciliation</td>
+<td>manifest (806 rows)</td>
+<td>141 blend / 33 dup / 631 oos / 1 new = 806, 0 unaccounted</td>
+</tr>
+</tbody>
+</table>
+<h2 id="commits-in-this-ship" tabindex="-1">Commits in this ship <a class="header-anchor" href="#commits-in-this-ship" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<p>16 commits (T11..T34) — see INVENTORY.md for the per-commit file tally.</p><h2 id="no-code-tests-added%2Fremoved" tabindex="-1">No code tests added/removed <a class="header-anchor" href="#no-code-tests-added%2Fremoved" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<p>This ship changes content only. The audit gates above ARE the reconciliation;</p><script src="/js/quiz.js"></script>

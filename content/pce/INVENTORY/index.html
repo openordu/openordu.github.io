@@ -1,0 +1,139 @@
+<h1>INVENTORY — GAF-261 koch-pce-ingest-chunk-4 (M5.1 change inventory)</h1>
+<p><strong>Loop</strong>: koch-pce-ingest-chunk-4-ingest-all-100-koch-entries-no-out-of-scope
+<strong>GAF</strong>: GAF-261 (Plane e78351cd-6827-441d-acb0-7e37458ca231)
+<strong>Repo</strong>: openordu/pce (local <code>~/code/pce</code>, branch <code>main</code>)
+<strong>Source</strong>: Koch, John T. (ed.), <em>Celtic Culture: A Historical Encyclopedia</em>, ABC-CLIO 2006
+(<code>koch.txt</code>, 108,594 lines / 12,013,946 bytes)
+<strong>Slice</strong>: M–R (Mac an t-Saoir → Rawlinson B 502), 100 rows → 93 unique nodes.</p><h2 id="deliverable-shape" tabindex="-1">Deliverable shape <a class="header-anchor" href="#deliverable-shape" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<ul>
+<li><p>manifest/chunk261.json: 100 rows — 9 blend / 81 new + 10 fold, 93 unique nodes.</p></li>
+<li><p>9 blends: Melor, Midsummer, Mona, Nudd, Oengus (Mac ind Oc), Oppida, pa_gur,
+Patrick, Pict — expanded with Koch material, protected fields (cyphertext/salt/
+name) byte-identical, every sentence <=20 words, no verbatim run >=6 words.</p></li>
+<li><p>84 new/fold nodes: <code>.entries/&lt;Name&gt;.json</code> with CSG-SME1000 text (>=150 chars),
+typed entities, nested OKR (objective/key_results/evidence), Koch 2006 cited,
+verbatim-6 clean. 10 fold rows map onto Manx_Language / Manx_Literature /
+Medical_Manuscripts / mass-media-by-region / nationalism-by-region shared nodes.</p></li>
+</ul>
+<h2 id="commit-ledger-(11-content-commits-on-main%2C-all-pushed%2C-head-%3D%3D-origin%2Fmain)" tabindex="-1">Commit ledger (11 content commits on <code>main</code>, all pushed, HEAD == origin/main) <a class="header-anchor" href="#commit-ledger-(11-content-commits-on-main%2C-all-pushed%2C-head-%3D%3D-origin%2Fmain)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Commit</th>
+<th>Task / Milestone</th>
+<th>Files</th>
+<th>What changed</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>4a36360</code></td>
+<td>T3 / M2 blend</td>
+<td>8 <code>.entries/*.json</code> (blend batch)</td>
+<td>Expanded 9 blend targets (Melor, Midsummer, Mona, Nudd, Oengus, Oppida, pa_gur, Patrick, Pict) — text/attributes/entities/OKR + Koch citation</td>
+<td>Blend matched existing PCE nodes with Koch material</td>
+</tr>
+<tr>
+<td><code>5ddf3f7</code></td>
+<td>T4 / M3</td>
+<td>10 <code>.entries/*.json</code> (Mac an t-Saoir…Mael Coluim)</td>
+<td>New-node batch A — CSG-SME1000 text, typed entities, OKR, Koch-cited</td>
+<td>In-scope Koch people/places not yet in PCE</td>
+</tr>
+<tr>
+<td><code>de7365c</code></td>
+<td>T5 / M3</td>
+<td>10 <code>.entries/*.json</code> (Mairi MacInnes…Mass media BY)</td>
+<td>New-node batch B (incl. mass-media-by-region splits, Manx surnames, Maredudd ab Owain, Marwnad Cunedda)</td>
+<td>No out-of-scope — captions/fragments become real nodes</td>
+</tr>
+<tr>
+<td><code>591870f</code></td>
+<td>T6 / M3</td>
+<td>10 <code>.entries/*.json</code> (Massalia…Monasteries)</td>
+<td>New-node batch C (Meddygon Myddfai, Meifod, Menez-Dol, Mererid Hopwood, Merfyn Frych, metrics, Meyer, monasteries)</td>
+<td>…</td>
+</tr>
+<tr>
+<td><code>46d1837</code></td>
+<td>T7 / M3</td>
+<td>10 <code>.entries/*.json</code> (Monasticism…Mairi nighean)</td>
+<td>New-node batch D</td>
+<td>…</td>
+</tr>
+<tr>
+<td><code>8b54aba</code></td>
+<td>T8 / M3</td>
+<td>10 <code>.entries/*.json</code> (Msecke…Northern Ireland)</td>
+<td>New-node batch E (nationalism-by-region, Nechton, Niederzier, Noricum, Ireland early med)</td>
+<td>…</td>
+</tr>
+<tr>
+<td><code>6b65ee2</code></td>
+<td>T9 / M3</td>
+<td>10 <code>.entries/*.json</code> (Novo Mesto…Owen Huw Roberts)</td>
+<td>New-node batch F</td>
+<td>…</td>
+</tr>
+<tr>
+<td><code>2949e5a</code></td>
+<td>T10 / M3</td>
+<td>10 <code>.entries/*.json</code> (Gerallt Owen…Petrie)</td>
+<td>New-node batch G (Pan-Celticism, Pannonia, Paoul, Parnell, Parry, trackway, Patagonia, Pedersen, Petrie)</td>
+<td>…</td>
+</tr>
+<tr>
+<td><code>d061504</code></td>
+<td>T11 / M3</td>
+<td>14 <code>.entries/*.json</code> (Pokorny…Rawlinson B 502 + Manx_Language/Literature/Medical + Printing/Proto-Celtic/weapons)</td>
+<td>close M3 — final new/fold nodes; M3 84/84</td>
+<td>…</td>
+</tr>
+<tr>
+<td><code>b5f7542</code></td>
+<td>T12 / M4</td>
+<td>99 files: letter-dir <code>.md</code> + letter <code>index.md</code> + <code>index.sjson</code></td>
+<td>Regenerated <code>.md</code> for every touched letter dir</td>
+<td>Ship-published encyclopedia text must match entry JSON</td>
+</tr>
+<tr>
+<td><code>8f0780a</code></td>
+<td>T14 / M4</td>
+<td>45 <code>.entries/*.json</code> (remediation)</td>
+<td>M4 audit + CSG-SME1000 remediation pass on all 93 touched nodes — repaired ~45 fragments, all sentences <=20 words, no hedge/contraction/semicolon, no verbatim run</td>
+<td>audit surfaced real SME violations from automated splitter</td>
+</tr>
+<tr>
+<td><code>T16 commit</code></td>
+<td>M5 ship</td>
+<td><code>INVENTORY.md</code></td>
+<td>This change inventory</td>
+<td>M5.1 closeout record</td>
+</tr>
+</tbody>
+</table>
+<h2 id="m5.2-test-reconciliation" tabindex="-1">M5.2 Test reconciliation <a class="header-anchor" href="#m5.2-test-reconciliation" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<p>Openordu/pce is a CONTENT repo (<code>.entries/*.json</code> metadata + letter-dir <code>.md</code>), not a
+code repo. There is no test suite to add/remove. The verification gates ARE the
+reconciliation record — run in prior ticks and re-run at this close:</p><ul>
+<li><p>T3,6,7 gates: blend protected byte-identical; JSON valid; OKR complete.</p></li>
+<li><p>T14 gate (<code>audit14.py</code>): 93/93 nodes checked, FAILED 0 (json/okr/noun/koch_src/
+verbatim6/protected + keys + CSG-SME1000 probe).</p></li>
+<li><p>T15 gate (<code>t15_coverage.py</code>): 100/100 rows resolve to a present file; 93 unique
+nodes; zero unaccounted.
+No tests removed to make a gate green; no dead tests retained.</p></li>
+</ul>
+<h2 id="verification-evidence-(re-measured-at-m5-close)" tabindex="-1">Verification evidence (re-measured at M5 close) <a class="header-anchor" href="#verification-evidence-(re-measured-at-m5-close)" class="md-align-link"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<ul>
+<li><p><code>wc -l koch.txt</code> = 108,594 (source uncorrupted end-to-end).</p></li>
+<li><p><code>t15_coverage.py</code> = PASS 100/100, zero unaccounted.</p></li>
+<li><p><code>audit14.py</code> = 93/93 FAILED 0 on origin/main.</p></li>
+<li><p>PR to <code>main</code> merged, <code>git pull --ff-only</code> confirmed origin/main == local, INVENTORY
+commit present on origin/main, working tree clean.</p></li>
+</ul>
+<p><strong>M5 INVENTORY CLOSED.</strong> All 7 exit conditions MET → GAF-261 COMPLETE.</p><script src="/js/quiz.js"></script>

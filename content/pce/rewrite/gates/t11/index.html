@@ -1,0 +1,8 @@
+<h1>Gates: T11 rewrite batch (10 B entries)</h1>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> CHECK:  python3 -c "import json;[json.load(open('.entries/'+f+'.json')) for f in ['barrow','bean_nighe','bean_tighe','bear','beating_the_bounds','bee','beech_tree','bilberry','bile__bele__pl___bili_','birch_tree']];print('JSONVALID')" EXPECT: JSONVALID  # live: JSONVALID</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> CHECK:  python3 -c "import json;F=['barrow','bean_nighe','bean_tighe','bear','beating_the_bounds','bee','beech_tree','bilberry','bile__bele__pl___bili_','birch_tree'];ok=all(json.load(open('.entries/'+f+'.json')).get('okr',{}).get('objective') for f in F);print('OKR_ALL',ok)" EXPECT: OKR_ALL True  # live: OKR_ALL True</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> CHECK:  python3 -c "import json;F=['barrow','bean_nighe','bean_tighe','bear','beating_the_bounds','bee','beech_tree','bilberry','bile__bele__pl___bili_','birch_tree'];B=[f for f in F if any(' '+w+' ' in (' '+json.load(open('.entries/'+f+'.json'))['text'].lower()+' ') for w in ['very','really','truly','extremely','incredibly','stunning','breathtaking','amazing','incredible','magnificent'])];print('FLOATERS_CLEAN' if not B else B)" EXPECT: FLOATERS_CLEAN  # live: FLOATERS_CLEAN</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> CHECK:  git diff --name-only .entries/ | grep -cE '.entries/[^/]+.json' EXPECT: 10  # live: 10</p></li>
+</ul>
+<script src="/js/quiz.js"></script>
