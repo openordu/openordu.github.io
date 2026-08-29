@@ -1,0 +1,176 @@
+<h1>T11 — 5-Variant Judge (deslop Phase 1b: two-axis rubric)</h1>
+<p>GAF-276 Bootstrap→Tailwind re-skin · deslop-web-design 5→3→1 · Measure + narrow
+Author: Herman · tick 10 · 2026-08-26
+Method: <code>measure-variants.py</code> (objective pixels) + gemini-vision two-axis
+rubric (distinctiveness × credibility) for a polytheist/researcher audience.
+Variant 5 captured at a scrolled position — its hero is a <code>position:sticky; height:100vh</code> pinned-atlas rail behind IntersectionObserver reveal, so a bare
+hero-viewport shot reads as a near-black slab (the known "blank full-page
+screenshot" artifact, deslop pitfall) and must NOT be penalized for it.</p><h2 id="objective-metrics-(measure-variants.py%2C-staged-distinct-basenames)" tabindex="-1">Objective metrics (measure-variants.py, staged distinct basenames) <a class="header-anchor" href="#objective-metrics-(measure-variants.py%2C-staged-distinct-basenames)"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>ink%</th>
+<th>bands</th>
+<th>bigWS</th>
+<th>lefts</th>
+<th>stdL</th>
+<th>motion%</th>
+<th>scroll</th>
+<th>ovf</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1 Reading Room</td>
+<td>3.06</td>
+<td>11</td>
+<td>3</td>
+<td>14</td>
+<td>238.4</td>
+<td>0.00</td>
+<td>4.5</td>
+<td>d0/m1</td>
+</tr>
+<tr>
+<td>V2 Museum Catalogue</td>
+<td>3.02</td>
+<td>6</td>
+<td>2</td>
+<td>15</td>
+<td>460.8</td>
+<td>0.00</td>
+<td>5.0</td>
+<td>d0/m1</td>
+</tr>
+<tr>
+<td>V3 Printed Archive</td>
+<td>3.26</td>
+<td>17</td>
+<td>2</td>
+<td>17</td>
+<td>240.4</td>
+<td>0.00</td>
+<td>4.2</td>
+<td>d0/m1</td>
+</tr>
+<tr>
+<td>V4 Folk Craft</td>
+<td>4.06</td>
+<td>11</td>
+<td>2</td>
+<td>16</td>
+<td>260.3</td>
+<td>0.68*</td>
+<td>4.5</td>
+<td>none</td>
+</tr>
+<tr>
+<td>V5 Animated Atlas</td>
+<td>(hero dark slab)</td>
+<td>0@hero</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>0.53`</td>
+<td>10.4</td>
+<td>d0/m1</td>
+</tr>
+</tbody>
+</table>
+<p>*V4 motion 0.68% from the staged pass is the marquee edge; source confirms
+<code>@keyframes stitch-scroll</code> (44s marquee) + scroll parallax on <code>[data-parallax]</code>
+motifs + kinetic-type reveal on one word — real motion, wired in source.
+`V5 source confirms scroll-driven pinned atlas (sticky rail + JS index on
+scroll progress) + IntersectionObserver reveal; 0.53% motion measured mid-scroll.
+V1/V3 are the DELIBERATE static/print extremes (corpus register) — motion 0 is
+correct for them, not a defect.</p><p>Banned-purple audit: zero hits of #6366f1/#818cf8/#4f46e5/#7c3aed/#8b5cf6/#a855f7 across all 5.
+JS errors: 0/5. Overlap: V5 reports 3 collisions (DIV.atlas-panel × H3.display) —
+this is the pinned-atlas grid stack at capture; structural, verify at T21.</p><h2 id="two-axis-rubric-(gemini-vision%2C-cultural-heritage-reference-register)" tabindex="-1">Two-axis rubric (gemini vision, cultural-heritage reference register) <a class="header-anchor" href="#two-axis-rubric-(gemini-vision%2C-cultural-heritage-reference-register)"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Distinctiveness</th>
+<th>Credibility</th>
+<th>Read</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1 Reading Room</td>
+<td>9</td>
+<td>9</td>
+<td>illuminated-manuscript parchment/serif, artisan, calm</td>
+<td>STRONG</td>
+</tr>
+<tr>
+<td>V2 Museum Catalogue</td>
+<td>7</td>
+<td>9</td>
+<td>clean minimalist; "Object of the Day" gradient box reads sterile</td>
+<td>WEAKEST (D=7)</td>
+</tr>
+<tr>
+<td>V3 Printed Archive</td>
+<td>9</td>
+<td>9.5</td>
+<td>sterile academic print, CC/ISSN/provenance, maximal trust</td>
+<td>STRONG</td>
+</tr>
+<tr>
+<td>V4 Folk Craft</td>
+<td>9</td>
+<td>10</td>
+<td>refined scholarly, muted academic, .org mission, real motion</td>
+<td>STRONG</td>
+</tr>
+<tr>
+<td>V5 Animated Atlas</td>
+<td>9</td>
+<td>10</td>
+<td>manuscript-meets-modern-library, shelfmark/MS-000, learned motion</td>
+<td>STRONG</td>
+</tr>
+</tbody>
+</table>
+<p>V1 "CelticPaganism.or" cut-off from gemini was a capture artifact — verified at
+1440px the h1 renders full "CelticPaganism.org", no overflow (rectW 771, overflowX
+false). Not a defect.
+V4/V5 "fragmented title" reads = the INTENDED kinetic-type / two-tone reveal,
+not slop.</p><h2 id="5-%E2%86%92-3-narrowing-(highest-floor-across-both-axes-%E2%80%94-deslop-rule)" tabindex="-1">5 → 3 narrowing (highest floor across BOTH axes — deslop rule) <a class="header-anchor" href="#5-%E2%86%92-3-narrowing-(highest-floor-across-both-axes-%E2%80%94-deslop-rule)"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<p>Winner is the highest FLOOR, not the highest peak; 9/4 loses to 9/9. Every
+variant here is high (9-10), so narrow on distinctiveness floor + register
+spread + keeping the motion axis:</p><ol>
+<li><p><strong>V5 Animated Atlas (9/10)</strong> — KEEP. Learned motion extreme (pinned atlas,
+scroll-progress), most distinct energy; the site-only motion-heavy voice.</p></li>
+<li><p><strong>V4 Folk Craft (9/10)</strong> — KEEP. Warm folk extreme, real marquee/parallax/
+kinetic motion, 10 credibility. Best of the motion pair for cultural warmth.</p></li>
+<li><p><strong>V3 Printed Archive (9/9.5)</strong> — KEEP. The static/print extreme, highest
+structure (17 bands) + top credibility (9.5); the "trust the record" anchor
+of the register and the required calm/static corner.</p></li>
+</ol>
+<p>DROP V1 (9/9) — strong but redundant: it is a SECOND static/print read that
+under-differentiates from V3 in the same register, and V3 does "quiet reference
+trust" better (17 vs 11 bands, 9.5 vs 9 credibility).
+DROP V2 (7/9, in it 2) — distinctiveness floor 7 is the clear loser; the
+minimalist museum reads closest to generic, and its candidate exotic feature
+("Object of the Day" gradient placeholder) reads sterile.</p><h2 id="%E2%86%921-recommendation-(provisional-%E2%80%94-t12-confirms-with-christopher%2C-a-hard-gate)" tabindex="-1">→1 recommendation (provisional — T12 confirms with Christopher, a HARD GATE) <a class="header-anchor" href="#%E2%86%921-recommendation-(provisional-%E2%80%94-t12-confirms-with-christopher%2C-a-hard-gate)"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<p>If forced, recommend <strong>V5 Animated Atlas</strong> as the headline (highest
+distinctiveness ceiling, learned-motion voice that best separates OpenOrdú from
+the old generic Bootstrap shell) with <strong>V4 Folk Craft</strong> as the warmth fallback
+and <strong>V3 Printed Archive</strong> as the calm/static alternative. BUT the plank gate is
+explicit: Christopher picks from REAL rendered URLs (T12) — this is documented
+evidence, not a decision. Present V3/V4/V5 URLs to Christopher at T12.</p><h2 id="evidence-saved" tabindex="-1">Evidence saved <a class="header-anchor" href="#evidence-saved"><span class="visually-hidden">Jump to heading</span>
+<span aria-hidden="true">¶</span></a></h2>
+<ul>
+<li><p>Objective: /tmp/t11-real/*.png (hero/mid/deep/m0/m1 per variant)</p></li>
+<li><p>This file: src/preview/t11-judge.md</p></li>
+<li><p>Staged distinct-basename measurement: gates/stage_measure.py (prints MEASURED_5)</p></li>
+</ul>
+<script src="/js/quiz.js"></script>

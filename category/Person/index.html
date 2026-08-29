@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="h-100" lang="en">
+<html class="h-full" lang="en">
 
   <head>
       <meta charset="utf-8">
@@ -29,54 +29,54 @@
   <!-- feed consumer (renders latest posts, GAF-277 T19) -->
   <script src="/js/feed-consumer.js" async></script>
   <!-- build:css -->
-  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/theme.min.css">
   <!-- endbuild -->
   <script src="https://kit.fontawesome.com/88f31a8dcd.js" crossorigin="anonymous"></script>
   </head>
 
-  <body class="h-100">
+  <body class="h-full">
     <div id="splash-screen">
       <img id="splashlogo" src="/assets/green_logo.png" />
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light pt-0">
-  <div class="container d-flex justify-content-between">
+    <nav class="border-b border-mist p-0">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4">
     <!-- Hamburger Menu -->
-    <div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="lg:hidden">
+        <button class="inline-flex items-center border rounded p-2 text-bone" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fas fa-caret-down"></i></span>
         </button>
-        <button class="navbar-toggler bg-primary text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-            <span class="text-primary bg-white"><i class="fas fa-bars"></i></span>
+        <button class="inline-flex items-center border rounded p-2 bg-moss text-bone" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <span class="text-moss bg-bone"><i class="fas fa-bars"></i></span>
         </button>
     </div>
 
     <!-- Logo -->
-    <a class="navbar-brand mb-0 py-2 px-2 pt-2 pe-3 text-center text-white bg-primary" href="/">
-        <svg class="me-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
-        <span class="logotitle d-none d-sm-block">CelticPaganism.org</span>
+    <a class="mb-0 inline-flex items-center gap-2 rounded bg-moss px-2 py-2 pt-2 pr-3 text-center text-bone" href="/">
+        <svg class="mr-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
+        <span class="logotitle hidden sm:block">CelticPaganism.org</span>
     </a>
 
     <!-- Navigation Links and Search Bar -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-house pt-2"></i><a class="nav-link" aria-current="page" href="/">Home</a>
+    <div class="hidden lg:block" id="navbarSupportedContent">
+        <ul class="flex flex-wrap items-center gap-1 ml-2 mb-2 lg:mb-0">
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-house pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-book pt-2"></i><a class="nav-link" href="/pce">PCE</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-book pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/pce">PCE</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="nav-link" href="/about">About</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/about">About</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-blog pt-2"></i><a class="nav-link" href="/blog">Blog</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-blog pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/blog">Blog</a>
             </li>    
             <!-- Search Form -->
-            <li class="nav-item d-flex">
-                <form class="search-container d-flex">
-                    <input type="search" id="search-input" class="form-control" autocomplete="off" placeholder="Search">
-                    <ul class="dropdown-menu d-none" id="search-suggestions"></ul>
+            <li class="flex items-center">
+                <form class="search-container flex">
+                    <input type="search" id="search-input" class="rounded border border-mist bg-peat-2 px-3 py-1 text-bone placeholder:text-mist/60 focus:border-gold focus:outline-none" autocomplete="off" placeholder="Search">
+                    <ul id="search-suggestions" class="hidden absolute"></ul>
                 </form>
             </li>
         </ul>
@@ -85,38 +85,38 @@
 </nav>
 
 
-    <main class="container">
-      <div class="row d-flex align-items-start">
-        <div class="row d-flex justify-content-center">
-            <div class="aside col col-12 col-sm-3 flex-shrink-0 p-2 bg-white">
+    <main class="mx-auto w-full max-w-6xl px-4">
+      <div>
+        <div class="grid grid-cols-12 justify-center">
+            <div class="aside col-span-12 sm:col-span-3 shrink-0 p-2 bg-peat-2">
               
 
 
 
-<div class="offcanvas offcanvas-start flex-shrink-0" id="sidebar" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1">
-    <div class="offcanvas-header d-lg-none">
-      <h5 class="offcanvas-title">Navigation</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div class="offcanvas" data-offcanvas id="sidebar" tabindex="-1">
+    <div class="flex items-center justify-between lg:hidden">
+      <h5 class="font-semibold">Navigation</h5>
+      <button type="button" class="inline-flex items-center justify-center rounded text-bone hover:bg-peat-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-      <ul class="navbar-nav justify-content-end flex-grow-1">
+    <div class="py-3">
+      <ul class="flex flex-col justify-end grow">
           
     
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-house ">
-            </i><a href="/" class="text-decoration-none">
+            </i><a href="/" class="no-underline">
             Home
             </a>
           </button>
@@ -127,9 +127,9 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <a href="/pce/" class="dropdown-item overflow-hidden text-start mb-0 ps-1 w-100 py-2 top  parentsubject rounded text-decoration-none">
+        <a href="/pce/" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1 top  parentsubject no-underline">
           <i class="fa-solid fa-book "></i>
           PCE
         </a>
@@ -140,18 +140,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/merch/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/merch/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-dollar-sign ">
-            </i><a href="/merch/" class="text-decoration-none">
+            </i><a href="/merch/" class="no-underline">
             Merch
             </a>
           </button>
@@ -162,9 +162,9 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <a href="/docs/" class="dropdown-item overflow-hidden text-start mb-0 ps-1 w-100 py-2 top  parentsubject rounded text-decoration-none">
+        <a href="/docs/" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1 top  parentsubject no-underline">
           <i class="fa-solid fa-book "></i>
           Documentation Home
         </a>
@@ -178,18 +178,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/support/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/support/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-life-ring ">
-            </i><a href="/support/" class="text-decoration-none">
+            </i><a href="/support/" class="no-underline">
             Support Us
             </a>
           </button>
@@ -200,18 +200,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/FAQs/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/FAQs/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-file ">
-            </i><a href="/FAQs/" class="text-decoration-none">
+            </i><a href="/FAQs/" class="no-underline">
             Project FAQs
             </a>
           </button>
@@ -222,18 +222,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/about/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/about/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-circle-info ">
-            </i><a href="/about/" class="text-decoration-none">
+            </i><a href="/about/" class="no-underline">
             About
             </a>
           </button>
@@ -243,14 +243,12 @@
           </ul>
     </div>
   </div>
-
             </div>
-            <div id="main" class="main col col-12 col-sm-9 pb-5">
+            <div id="main" class="main col-span-12 sm:col-span-9 pb-5">
               
-  
   <div>
   
-  <i class="fa-solid fa-home"></i><a href="/" class="text-decoration-none"> Home</a>
+  <i class="fa-solid fa-home"></i><a href="/" class="no-underline"> Home</a>
     
     
       
@@ -367,17 +365,13 @@
     
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-sitemap"></i><a href="/category/" class="text-decoration-none">Category List</a>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-sitemap"></i><a href="/category/" class="no-underline">Category List</a>
       
           
       
       
-        
-          
-      
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-file"></i><span class="font-bold text-mist">Person</span>
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-file"></i><span class="fw-bold text-muted">Person</span>
-      
           
       
       
@@ -398,11 +392,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -426,11 +420,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -554,11 +548,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -574,11 +568,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -594,11 +588,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -642,11 +636,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -666,10 +660,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -1382,10 +1376,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -1794,10 +1788,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -2006,10 +2000,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -2850,10 +2844,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -3102,6 +3096,10 @@
           
       
       
+          
+      
+      
+        
         
           
       
@@ -7540,7 +7538,7 @@
 </div>
 <script src="/js/tags.js"></script>
 
-<hr class="border border-primary border-1 opacity-75">
+<hr class="border border-moss opacity-75">
 
 
 
@@ -7562,8 +7560,8 @@
         <li><a href="/content/pce/A/Aodh_n/">Aodhán</a></li>
         <li><a href="/content/pce/A/Aberffraw/">Aberffraw</a></li>
         <li><a href="/content/pce/A/Aetern/">Aetem</a></li>
-        <li><a href="/content/pce/A/Ablach/">Ablach</a></li>
         <li><a href="/content/pce/A/Acallam_na_Sen_rach/">Acallam na Senórach</a></li>
+        <li><a href="/content/pce/A/Ablach/">Ablach</a></li>
         <li><a href="/content/pce/A/Alban_St/">Alban, St</a></li>
         <li><a href="/content/pce/A/Adene/">Adene</a></li>
         <li><a href="/content/pce/A/Achill/">Achill</a></li>
@@ -7582,9 +7580,9 @@
         <li><a href="/content/pce/A/Agnoman/">Agnoman</a></li>
         <li><a href="/content/pce/A/Andraste/">Andraste</a></li>
         <li><a href="/content/pce/A/Aet/">Aeté</a></li>
+        <li><a href="/content/pce/A/Athena/">Athena</a></li>
         <li><a href="/content/pce/A/Agrona/">Agrona</a></li>
         <li><a href="/content/pce/A/Annwn/">Annwn</a></li>
-        <li><a href="/content/pce/A/Athena/">Athena</a></li>
         <li><a href="/content/pce/A/Ardfert/">Ardfert</a></li>
         <li><a href="/content/pce/A/Arlan/">Arlan</a></li>
         <li><a href="/content/pce/A/Aíbgréne/">Aíbgréne</a></li>
@@ -7594,27 +7592,27 @@
         <li><a href="/content/pce/A/Angharad/">Angharad</a></li>
         <li><a href="/content/pce/A/Aeneas/">Aeneas</a></li>
         <li><a href="/content/pce/A/Abcán/">Abcán</a></li>
-        <li><a href="/content/pce/A/Annals_of_the_Four_Masters/">Annals of the Four Masters</a></li>
         <li><a href="/content/pce/A/Aislinge_enguso/">Aislinge Óenguso</a></li>
+        <li><a href="/content/pce/A/Annals_of_the_Four_Masters/">Annals of the Four Masters</a></li>
         <li><a href="/content/pce/A/Adonis/">Adonis</a></li>
         <li><a href="/content/pce/A/Ailean_nan_Sop/">Ailean nan Sop</a></li>
-        <li><a href="/content/pce/A/Ardar/">Ardar</a></li>
         <li><a href="/content/pce/A/Artio/">Artio</a></li>
+        <li><a href="/content/pce/A/Ardar/">Ardar</a></li>
         <li><a href="/content/pce/A/Aoibhil/">Aoibhil</a></li>
         <li><a href="/content/pce/A/Anglo_Welsh_Literature/">Anglo-Welsh literature</a></li>
         <li><a href="/content/pce/A/afanc__avanc_/">afanc (avanc)</a></li>
         <li><a href="/content/pce/A/Anglesey/">Anglesey</a></li>
-        <li><a href="/content/pce/A/Adn/">Adná</a></li>
         <li><a href="/content/pce/A/Ailill/">Ailill</a></li>
         <li><a href="/content/pce/A/Albiorix/">Albiorix</a></li>
+        <li><a href="/content/pce/A/Adn/">Adná</a></li>
         <li><a href="/content/pce/A/Aidan/">Aidan</a></li>
         <li><a href="/content/pce/A/Amaethon/">Amaethon</a></li>
         <li><a href="/content/pce/A/Arthfael/">Arthfael</a></li>
         <li><a href="/content/pce/A/Afagddu/">Afagddu</a></li>
         <li><a href="/content/pce/A/Airioch_Feabhruadh/">Airioch Feabhruadh</a></li>
+        <li><a href="/content/pce/A/Ana_Life/">Ana Life</a></li>
         <li><a href="/content/pce/A/Aonghus/">Aonghus</a></li>
         <li><a href="/content/pce/A/Aithirne/">Aithirne</a></li>
-        <li><a href="/content/pce/A/Ana_Life/">Ana Life</a></li>
         <li><a href="/content/pce/A/Alain/">Alain</a></li>
         <li><a href="/content/pce/A/Amairgin/">Amairgin</a></li>
         <li><a href="/content/pce/A/Aimend/">Aimend</a></li>
@@ -7628,8 +7626,8 @@
         <li><a href="/content/pce/A/Anocitius/">Anocitius</a></li>
         <li><a href="/content/pce/A/Anu/">Anu</a></li>
         <li><a href="/content/pce/A/Achall/">Achall</a></li>
-        <li><a href="/content/pce/A/Abred/">Abred</a></li>
         <li><a href="/content/pce/A/Ambrosius_Aurelianus/">Ambrosius Aurelianus</a></li>
+        <li><a href="/content/pce/A/Abred/">Abred</a></li>
         <li><a href="/content/pce/A/Aed_Slaine_Mac_Diarmato/">Aed Slán mac Diarmato</a></li>
         <li><a href="/content/pce/A/Agricola/">Agricola</a></li>
         <li><a href="/content/pce/A/Adhnúall/">Adhnúall</a></li>
@@ -7640,8 +7638,8 @@
         <li><a href="/content/pce/A/Aonbárr/">Aonbárr</a></li>
         <li><a href="/content/pce/A/Abaris_the_Hyperborean/">Abaris the Hyperborean</a></li>
         <li><a href="/content/pce/A/Artemis/">Artemis</a></li>
-        <li><a href="/content/pce/A/Apollo/">Apollo</a></li>
         <li><a href="/content/pce/A/Adriatic_Region/">Adriatic region</a></li>
+        <li><a href="/content/pce/A/Apollo/">Apollo</a></li>
         <li><a href="/content/pce/A/Abrat/">Abrat</a></li>
         <li><a href="/content/pce/A/Aoibhinn/">Aoibhinn</a></li>
         <li><a href="/content/pce/A/Aige/">Aige</a></li>
@@ -7658,21 +7656,21 @@
         <li><a href="/content/pce/A/AM/">AM</a></li>
         <li><a href="/content/pce/A/Aillén_mac_Midgna/">Aillén mac Midgna</a></li>
         <li><a href="/content/pce/A/Airmid/">Airmid</a></li>
-        <li><a href="/content/pce/A/Annion/">Annion</a></li>
         <li><a href="/content/pce/A/Alchfrith/">Alchfrith</a></li>
+        <li><a href="/content/pce/A/Annion/">Annion</a></li>
         <li><a href="/content/pce/A/Aphrodite/">Aphrodite</a></li>
         <li><a href="/content/pce/A/Aillén_Trechenn/">Aillén Trechenn</a></li>
         <li><a href="/content/pce/A/Ainge/">Ainge</a></li>
         <li><a href="/content/pce/A/Antenociticus/">Antenociticus</a></li>
-        <li><a href="/content/pce/A/Art_Celtic_1_Pre_Roman/">Art, Celtic [1] Pre-Roman</a></li>
         <li><a href="/content/pce/A/Airenn_n/">Airennán</a></li>
+        <li><a href="/content/pce/A/Art_Celtic_1_Pre_Roman/">Art, Celtic [1] Pre-Roman</a></li>
         <li><a href="/content/pce/A/Ailinn__Aillinn__Aillin_/">Ailinn (Aillinn, Aillin)</a></li>
         <li><a href="/content/pce/A/Ard_Macha/">Ard Macha</a></li>
         <li><a href="/content/pce/A/Aífe/">Aífe</a></li>
         <li><a href="/content/pce/A/Arianrhod_ferch_Dôn/">Arianrhod ferch Dôn</a></li>
+        <li><a href="/content/pce/A/Acunn/">Acunn</a></li>
         <li><a href="/content/pce/A/Arawn/">Arawn</a></li>
         <li><a href="/content/pce/A/Arianrhod/">Arianrhod</a></li>
-        <li><a href="/content/pce/A/Acunn/">Acunn</a></li>
         <li><a href="/content/pce/A/Airem/">Airem</a></li>
         <li><a href="/content/pce/A/Aislinge_Meic_Con_Glinne/">Aislinge Meic Con Glinne</a></li>
         <li><a href="/content/pce/H/Hagiography_4_Breton/">Hagiography: Breton</a></li>
@@ -7680,8 +7678,8 @@
         <li><a href="/content/pce/H/harp/">harp</a></li>
         <li><a href="/content/pce/H/Hagiography_3_Welsh/">Hagiography: Welsh</a></li>
         <li><a href="/content/pce/H/Hamel_G/">A. G. van Hamel</a></li>
-        <li><a href="/content/pce/H/Hagiography_1_Irish/">Hagiography: Irish</a></li>
         <li><a href="/content/pce/H/Hagiography_5_Cornish/">Hagiography: Cornish</a></li>
+        <li><a href="/content/pce/H/Hagiography_1_Irish/">Hagiography: Irish</a></li>
         <li><a href="/content/pce/H/Hywel_Dda/">Hywel Dda</a></li>
         <li><a href="/content/pce/H/Heroic_Ethos/">Heroic Ethos</a></li>
         <li><a href="/content/pce/H/Hill_of_Uisneach/">Hill of Uisneach</a></li>
@@ -7693,21 +7691,21 @@
         <li><a href="/content/pce/H/Hallstatt/">Hallstatt</a></li>
         <li><a href="/content/pce/H/Hemon_Roparz/">Roparz Hemon</a></li>
         <li><a href="/content/pce/H/Herzeloyde/">Herzeloyde</a></li>
-        <li><a href="/content/pce/H/hoard/">hoard</a></li>
         <li><a href="/content/pce/H/horse/">horse</a></li>
+        <li><a href="/content/pce/H/hoard/">hoard</a></li>
         <li><a href="/content/pce/H/Historical_Cycle/">Historical Cycle</a></li>
         <li><a href="/content/pce/H/Hadrians_Wall_and_Roman/">Hadrian&#39;s Wall and Roman</a></li>
         <li><a href="/content/pce/H/Hughes_John_Ceiriog/">John Ceiriog Hughes</a></li>
-        <li><a href="/content/pce/H/Hammer_Throwing/">Hammer throwing</a></li>
         <li><a href="/content/pce/H/hazel_tree/">hazel tree</a></li>
         <li><a href="/content/pce/H/Hall_Lady_Augusta/">Hall, Lady Augusta</a></li>
+        <li><a href="/content/pce/H/Hammer_Throwing/">Hammer throwing</a></li>
         <li><a href="/content/pce/H/Hymns_Welsh/">Welsh Hymns</a></li>
         <li><a href="/content/pce/N/Nationalism_4_Wales/">Nationalism [4] Wales</a></li>
         <li><a href="/content/pce/N/Numantia/">Numantia</a></li>
         <li><a href="/content/pce/N/Ni_Mhic_Cailein_Iseabail/">Iseabail Ní Mhic Cailéin</a></li>
         <li><a href="/content/pce/N/Niall/">Niall</a></li>
-        <li><a href="/content/pce/N/Ni_Dhomhnaill_Nuala/">Nuala Ní Dhomhnaill</a></li>
         <li><a href="/content/pce/N/Nuada/">Nuada</a></li>
+        <li><a href="/content/pce/N/Ni_Dhomhnaill_Nuala/">Nuala Ní Dhomhnaill</a></li>
         <li><a href="/content/pce/N/Nevyn/">Nevyn</a></li>
         <li><a href="/content/pce/N/name/">name</a></li>
         <li><a href="/content/pce/N/Nationalism_1_Ireland/">Nationalism [1] Ireland</a></li>
@@ -7732,10 +7730,10 @@
         <li><a href="/content/pce/C/Cummine_Fota_St/">Cummine Fota, St</a></li>
         <li><a href="/content/pce/C/Caerfyrddin_Carmarthen/">Caerfyrddin (Carmarthen)</a></li>
         <li><a href="/content/pce/C/Creidne/">Creidne</a></li>
-        <li><a href="/content/pce/C/Cymmrodorion/">Cymmrodorion</a></li>
         <li><a href="/content/pce/C/Christianity_In_The_Celtic_Countries/">Christianity in the Celtic Countries</a></li>
-        <li><a href="/content/pce/C/Cheshaght_Ghailckagh_Yn/">Cheshaght Ghailckagh, Yn</a></li>
+        <li><a href="/content/pce/C/Cymmrodorion/">Cymmrodorion</a></li>
         <li><a href="/content/pce/C/CornwallKernow/">Cornwall/Kernow</a></li>
+        <li><a href="/content/pce/C/Cheshaght_Ghailckagh_Yn/">Cheshaght Ghailckagh, Yn</a></li>
         <li><a href="/content/pce/C/Cumbria/">Cumbria</a></li>
         <li><a href="/content/pce/C/Constantine_St_Of_Govan/">Constantine, St (of Govan)</a></li>
         <li><a href="/content/pce/C/clipping_the_church/">clipping the church</a></li>
@@ -7773,13 +7771,13 @@
         <li><a href="/content/pce/C/changeling/">changeling</a></li>
         <li><a href="/content/pce/C/Créd/">Créd</a></li>
         <li><a href="/content/pce/C/Cynddelw_Brydydd_Mawr/">Cynddelw Brydydd Mawr</a></li>
-        <li><a href="/content/pce/C/creation/">creation</a></li>
         <li><a href="/content/pce/C/Cilydd/">Cilydd</a></li>
+        <li><a href="/content/pce/C/creation/">creation</a></li>
         <li><a href="/content/pce/C/Cumann_Na_Scribheann_NGaedhilge/">Cumann na Scríbheann nGaedhilge (Irish Texts Society)</a></li>
         <li><a href="/content/pce/C/Camelot/">Camelot</a></li>
+        <li><a href="/content/pce/C/champion_s_portion/">champion’s portion</a></li>
         <li><a href="/content/pce/C/Crimthann_of_Tara/">Crimthann of Tara</a></li>
         <li><a href="/content/pce/C/Cynwydion/">Cynwydion</a></li>
-        <li><a href="/content/pce/C/champion_s_portion/">champion’s portion</a></li>
         <li><a href="/content/pce/C/Caoineadh/">Caoineadh</a></li>
         <li><a href="/content/pce/K/Knockshegowna/">Knockshegowna</a></li>
         <li><a href="/content/pce/K/killeen/">killeen</a></li>
@@ -7789,8 +7787,8 @@
         <li><a href="/content/pce/K/Kerhanagh/">Kerhanagh</a></li>
         <li><a href="/content/pce/K/Kentigern/">Kentigern</a></li>
         <li><a href="/content/pce/K/Kingdom_Isles/">Kingdom of Man and the Isles</a></li>
-        <li><a href="/content/pce/K/Kevredigez_Broadus_Breiz/">Kevredigez Broadus Breiz</a></li>
         <li><a href="/content/pce/K/keening/">keening</a></li>
+        <li><a href="/content/pce/K/Kevredigez_Broadus_Breiz/">Kevredigez Broadus Breiz</a></li>
         <li><a href="/content/pce/M/Mag_Roth/">Mag Roth</a></li>
         <li><a href="/content/pce/M/Minerva/">Minerva</a></li>
         <li><a href="/content/pce/M/Morris_Jones_Sir_John/">Morris-Jones, Sir John</a></li>
@@ -7838,22 +7836,22 @@
         <li><a href="/content/pce/M/Myrddin/">Myrddin</a></li>
         <li><a href="/content/pce/M/Maedoc/">Maedoc</a></li>
         <li><a href="/content/pce/M/mythology/">mythology</a></li>
-        <li><a href="/content/pce/M/Melor/">Melor</a></li>
         <li><a href="/content/pce/M/Mairi_nighean_Alasdair_Ruaidh/">Mairi nighean Alasdair Ruaidh</a></li>
+        <li><a href="/content/pce/M/Melor/">Melor</a></li>
         <li><a href="/content/pce/M/Miach/">Miach</a></li>
         <li><a href="/content/pce/M/Matronae/">Matronae</a></li>
         <li><a href="/content/pce/M/Maine/">Maine</a></li>
         <li><a href="/content/pce/M/Meddygon_Myddfai/">Meddygon Myddfai</a></li>
-        <li><a href="/content/pce/M/Manx_Language/">Manx language</a></li>
         <li><a href="/content/pce/M/Mererid_Hopwood_winning/">Mererid Hopwood</a></li>
+        <li><a href="/content/pce/M/Manx_Language/">Manx language</a></li>
         <li><a href="/content/pce/M/Mabinogion/">Mabinogion</a></li>
         <li><a href="/content/pce/M/Mythological_Cycle/">Mythological Cycle</a></li>
         <li><a href="/content/pce/M/Mac_Piarais_Padraig/">Mac Piarais</a></li>
         <li><a href="/content/pce/M/Maredudd_ab_Owain/">Maredudd ab Owain</a></li>
         <li><a href="/content/pce/M/Mael_Rubai/">Mael Rubai</a></li>
         <li><a href="/content/pce/M/Mairi_MacInnes_presenting_the/">Mairi MacInnes</a></li>
-        <li><a href="/content/pce/M/Magog/">Magog</a></li>
         <li><a href="/content/pce/M/MacLeod_Norman/">MacLeod, Norman</a></li>
+        <li><a href="/content/pce/M/Magog/">Magog</a></li>
         <li><a href="/content/pce/M/Munster/">Munster</a></li>
         <li><a href="/content/pce/L/Labhraigh/">Labhraigh</a></li>
         <li><a href="/content/pce/L/Luchorpan/">Luchorpán</a></li>
@@ -7871,19 +7869,19 @@
         <li><a href="/content/pce/L/Lady_of_the_Fountain/">Lady of the Fountain</a></li>
         <li><a href="/content/pce/L/Lir/">Lir</a></li>
         <li><a href="/content/pce/L/Lady_of_the_Lake/">Lady of the Lake</a></li>
-        <li><a href="/content/pce/L/Lleu_Llaw_Gyffes/">Lleu Llaw Gyffes</a></li>
         <li><a href="/content/pce/L/Llyfr_Du_Caerfyrddin/">Llyfr Du Caerfyrddin</a></li>
         <li><a href="/content/pce/L/Lughnasa/">Lughnasa</a></li>
+        <li><a href="/content/pce/L/Lleu_Llaw_Gyffes/">Lleu Llaw Gyffes</a></li>
         <li><a href="/content/pce/L/Lugaidh_mac_Conn/">Lugaidh mac Conn</a></li>
         <li><a href="/content/pce/L/Loathy_Lady/">Loathy Lady</a></li>
         <li><a href="/content/pce/L/Llyfr_Ancr_Llanddewibrefi/">Llyfr Ancr Llanddewibrefi</a></li>
         <li><a href="/content/pce/L/Lugaidh_Laíghde/">Lugaidh Laíghde</a></li>
         <li><a href="/content/pce/L/Lewis_John/">Lewis, John</a></li>
-        <li><a href="/content/pce/L/Low_Countries/">Low Countries</a></li>
         <li><a href="/content/pce/L/Leucetius/">Leucetius</a></li>
+        <li><a href="/content/pce/L/Low_Countries/">Low Countries</a></li>
         <li><a href="/content/pce/L/Loth_Joseph/">Loth, Joseph</a></li>
-        <li><a href="/content/pce/L/Lugaidh_Riab_nDerg/">Lugaidh Riab nDerg</a></li>
         <li><a href="/content/pce/L/Llyfr_Aneirin_Page_34_Hand/">Llyfr Aneirin, page 34</a></li>
+        <li><a href="/content/pce/L/Lugaidh_Riab_nDerg/">Lugaidh Riab nDerg</a></li>
         <li><a href="/content/pce/L/Llyfr_Du_O_R_Waun/">Llyfr Du O&#39;r Waun</a></li>
         <li><a href="/content/pce/L/Llyfr_Du_Caerfyrddin_Nlw_Ms/">Llyfr Du Caerfyrddin</a></li>
         <li><a href="/content/pce/L/Lia_Fáil/">Lia Fáil</a></li>
@@ -7898,10 +7896,10 @@
         <li><a href="/content/pce/L/Lichfield_Gospels/">Lichfield Gospels</a></li>
         <li><a href="/content/pce/L/Llywarch_Ap_Llywelyn/">Llywarch ap Llywelyn</a></li>
         <li><a href="/content/pce/L/Lugus/">Lugus</a></li>
-        <li><a href="/content/pce/L/Landevenneg/">Landevenneg</a></li>
         <li><a href="/content/pce/L/Lewys_Glyn_Cothi/">Lewys Glyn Cothi</a></li>
-        <li><a href="/content/pce/L/Len/">Len</a></li>
+        <li><a href="/content/pce/L/Landevenneg/">Landevenneg</a></li>
         <li><a href="/content/pce/L/Lífe/">Lífe</a></li>
+        <li><a href="/content/pce/L/Len/">Len</a></li>
         <li><a href="/content/pce/L/Liber_Virtutibus_Sancti_Columbae/">Liber de virtutibus sancti Columbae</a></li>
         <li><a href="/content/pce/J/John_Cornwall/">John of Cornwall</a></li>
         <li><a href="/content/pce/J/Jocelin_Furness/">Jocelin of Furness</a></li>
@@ -7911,8 +7909,8 @@
         <li><a href="/content/pce/J/Joyce_James/">Joyce, James</a></li>
         <li><a href="/content/pce/B/brandubh/">brandubh</a></li>
         <li><a href="/content/pce/B/Bard_Baile/">Bàrd baile</a></li>
-        <li><a href="/content/pce/B/Badb/">Badb</a></li>
         <li><a href="/content/pce/B/banshenchas/">banshenchas</a></li>
+        <li><a href="/content/pce/B/Badb/">Badb</a></li>
         <li><a href="/content/pce/B/Bleddyn_Fardd/">Bleddyn Fardd</a></li>
         <li><a href="/content/pce/B/Breton_Delegates_Fanch_Jaffrennou_Marquis/">Breton delegates Fañch Jaffrennou and others</a></li>
         <li><a href="/content/pce/B/Beuno/">Beuno</a></li>
@@ -7930,8 +7928,8 @@
         <li><a href="/content/pce/B/Black_Dog/">Black Dog</a></li>
         <li><a href="/content/pce/B/bog_people/">bog people</a></li>
         <li><a href="/content/pce/B/Brycheiniog_The_Early/">Brycheiniog: the early</a></li>
-        <li><a href="/content/pce/B/BELGAE/">Belgae</a></li>
         <li><a href="/content/pce/B/Bononiabologna/">Bononia/Bologna</a></li>
+        <li><a href="/content/pce/B/BELGAE/">Belgae</a></li>
         <li><a href="/content/pce/B/Becfhola/">Becfhola</a></li>
         <li><a href="/content/pce/B/Boudicca/">Boudicca</a></li>
         <li><a href="/content/pce/B/Bladud/">Bladud</a></li>
@@ -7944,10 +7942,10 @@
         <li><a href="/content/pce/B/Balor/">Balor</a></li>
         <li><a href="/content/pce/B/Brigit/">Brigit</a></li>
         <li><a href="/content/pce/B/Bangor_Gwynedd/">Bangor (Gwynedd)</a></li>
-        <li><a href="/content/pce/B/Bé_Chuma/">Bé Chuma</a></li>
         <li><a href="/content/pce/B/Bóand/">Bóand</a></li>
-        <li><a href="/content/pce/B/Beltany/">Beltany</a></li>
+        <li><a href="/content/pce/B/Bé_Chuma/">Bé Chuma</a></li>
         <li><a href="/content/pce/B/black_cat_and_broomstick/">black cat and broomstick</a></li>
+        <li><a href="/content/pce/B/Beltany/">Beltany</a></li>
         <li><a href="/content/pce/E/Eithne__wife_of_Elcmar/">Eithne, wife of Elcmar</a></li>
         <li><a href="/content/pce/E/Eochaid_Fedlech/">Eochaid Fedlech</a></li>
         <li><a href="/content/pce/E/Elidir_Sais/">Elidir Sais</a></li>
@@ -7971,8 +7969,8 @@
         <li><a href="/content/pce/E/Eógan_mac_Durthacht/">Eógan mac Durthacht</a></li>
         <li><a href="/content/pce/E/Eógan__son_of_Ailill_Olom/">Eógan, son of Ailill Olom</a></li>
         <li><a href="/content/pce/E/Erc/">Erc</a></li>
-        <li><a href="/content/pce/P/Prichard_Caradog/">Caradog Prichard</a></li>
         <li><a href="/content/pce/P/pattern/">pattern</a></li>
+        <li><a href="/content/pce/P/Prichard_Caradog/">Caradog Prichard</a></li>
         <li><a href="/content/pce/P/Pelagianism/">Pelagianism</a></li>
         <li><a href="/content/pce/P/Petrie_Sir_George/">George Petrie</a></li>
         <li><a href="/content/pce/P/Pryderi/">Pryderi</a></li>
@@ -7983,17 +7981,17 @@
         <li><a href="/content/pce/P/Pwyll_Pendefig_Dyfed/">Pwyll Pendefig Dyfed</a></li>
         <li><a href="/content/pce/P/Patagonia/">Patagonia</a></li>
         <li><a href="/content/pce/P/Partholón/">Partholón</a></li>
-        <li><a href="/content/pce/P/Pan_Celticism/">Pan-Celticism</a></li>
         <li><a href="/content/pce/P/Patrick/">Patrick</a></li>
+        <li><a href="/content/pce/P/Pan_Celticism/">Pan-Celticism</a></li>
         <li><a href="/content/pce/P/Printing_early_history/">Early history of printing</a></li>
         <li><a href="/content/pce/P/Peg_O_Nell/">Peg O’Nell</a></li>
         <li><a href="/content/pce/P/Parry_Sir_Thomas/">Thomas Parry</a></li>
         <li><a href="/content/pce/P/Pryderi_fab_Pwyll/">Pryderi fab Pwyll</a></li>
         <li><a href="/content/pce/P/poet_s_circuit/">poet’s circuit</a></li>
         <li><a href="/content/pce/P/Pokorny_Julius/">Julius Pokorny</a></li>
-        <li><a href="/content/pce/I/Iona/">Iona</a></li>
         <li><a href="/content/pce/I/Irish_Literature_Since_1922/">Irish Literature: since 1922</a></li>
         <li><a href="/content/pce/I/Iberian_Peninsula/">Iberian Peninsula</a></li>
+        <li><a href="/content/pce/I/Iona/">Iona</a></li>
         <li><a href="/content/pce/I/Irish_Literature_Early_Poetry/">Irish Literature: early poetry</a></li>
         <li><a href="/content/pce/I/Ida/">Ida</a></li>
         <li><a href="/content/pce/I/Irish_Drama/">Irish Drama</a></li>
@@ -8004,17 +8002,17 @@
         <li><a href="/content/pce/I/Isidore_Seville/">Isidore of Seville</a></li>
         <li><a href="/content/pce/I/Irish_Independence_Movement/">Irish Independence Movement</a></li>
         <li><a href="/content/pce/I/Irish_Music/">Irish Music</a></li>
-        <li><a href="/content/pce/I/Iseult/">Iseult</a></li>
         <li><a href="/content/pce/I/imp/">imp</a></li>
+        <li><a href="/content/pce/I/Iseult/">Iseult</a></li>
+        <li><a href="/content/pce/I/Iudic_Hael/">Iudic-Hael</a></li>
         <li><a href="/content/pce/I/Irish_Literature_19th_Century/">Irish Literature: 19th century</a></li>
         <li><a href="/content/pce/I/Italy/">Italy</a></li>
-        <li><a href="/content/pce/I/Iudic_Hael/">Iudic-Hael</a></li>
         <li><a href="/content/pce/I/Inchiquin/">Inchiquin</a></li>
         <li><a href="/content/pce/I/Inscriptions_Ancient/">Ancient inscriptions</a></li>
         <li><a href="/content/pce/I/Irish_Literature_Post_Classical/">Irish Literature: Post-Classical</a></li>
         <li><a href="/content/pce/I/inauguration_stones/">inauguration stones</a></li>
-        <li><a href="/content/pce/R/Red_Etin/">Red Etin</a></li>
         <li><a href="/content/pce/R/Rhydderch_Hael/">Rhydderch Hael</a></li>
+        <li><a href="/content/pce/R/Red_Etin/">Red Etin</a></li>
         <li><a href="/content/pce/R/Robin_Goodfellow/">Robin Goodfellow</a></li>
         <li><a href="/content/pce/R/Ronán/">Ronán</a></li>
         <li><a href="/content/pce/R/Rifath_Scot/">Rifath Scot</a></li>
@@ -8031,8 +8029,8 @@
         <li><a href="/content/pce/G/Gobnat/">Gobnat</a></li>
         <li><a href="/content/pce/G/Gwynfor_Evans/">Evans, Gwynfor</a></li>
         <li><a href="/content/pce/G/Gorlois/">Gorlois</a></li>
-        <li><a href="/content/pce/G/Gwenllïan/">Gwenllïan</a></li>
         <li><a href="/content/pce/G/GWrtheyrn/">GWrtheyrn</a></li>
+        <li><a href="/content/pce/G/Gwenllïan/">Gwenllïan</a></li>
         <li><a href="/content/pce/G/Goibniu/">Goibniu</a></li>
         <li><a href="/content/pce/G/Gutor_Glyn/">Guto&#39;r Glyn</a></li>
         <li><a href="/content/pce/G/Gwerthefyr/">Gwerthefyr</a></li>
@@ -8043,8 +8041,8 @@
         <li><a href="/content/pce/G/Glastonbury/">Glastonbury</a></li>
         <li><a href="/content/pce/G/Green_Children/">Green Children</a></li>
         <li><a href="/content/pce/G/Gwydion/">Gwydion</a></li>
-        <li><a href="/content/pce/G/GWYNEDD/">GWYNEDD</a></li>
         <li><a href="/content/pce/G/Gaul/">Gaul</a></li>
+        <li><a href="/content/pce/G/GWYNEDD/">GWYNEDD</a></li>
         <li><a href="/content/pce/G/Guest_Lady_Charlotte/">Guest, Lady Charlotte</a></li>
         <li><a href="/content/pce/G/Gogynfeirdd/">Gogynfeirdd</a></li>
         <li><a href="/content/pce/G/Genealogies_2_Welsh/">Genealogies [2] Welsh</a></li>
@@ -8053,18 +8051,18 @@
         <li><a href="/content/pce/G/Glen_Lyon/">Glen Lyon</a></li>
         <li><a href="/content/pce/G/Gorsedd_Beirdd_Ynys_Prydain/">Gorsedd Beirdd Ynys Prydain</a></li>
         <li><a href="/content/pce/G/Gorseth_Kernow/">Gorseth Kernow</a></li>
-        <li><a href="/content/pce/G/ganconer/">ganconer</a></li>
         <li><a href="/content/pce/G/Gwern/">Gwern</a></li>
+        <li><a href="/content/pce/G/ganconer/">ganconer</a></li>
         <li><a href="/content/pce/G/Gereint/">Gereint</a></li>
         <li><a href="/content/pce/G/Guy_Fawkes/">Guy Fawkes</a></li>
+        <li><a href="/content/pce/G/Gwallawg_ap_Lleënnawg/">Gwallawg ap Lleënnawg</a></li>
         <li><a href="/content/pce/G/Garb_Mac_Stairn/">Garb Mac Stairn</a></li>
         <li><a href="/content/pce/G/Goll_mac_Morna/">Goll mac Morna</a></li>
-        <li><a href="/content/pce/G/Gwallawg_ap_Lleënnawg/">Gwallawg ap Lleënnawg</a></li>
         <li><a href="/content/pce/G/Glewlwyd_Gafaelwar/">Glewlwyd Gafaelwar</a></li>
         <li><a href="/content/pce/G/Genealogies_1_Irish/">Genealogies [1] Irish</a></li>
         <li><a href="/content/pce/O/Oswald_St/">Oswald, St</a></li>
-        <li><a href="/content/pce/O/Owain_Gwynedd/">Owain Gwynedd</a></li>
         <li><a href="/content/pce/O/Owen_Gerallt_Lloyd/">Gerallt Lloyd Owen</a></li>
+        <li><a href="/content/pce/O/Owain_Gwynedd/">Owain Gwynedd</a></li>
         <li><a href="/content/pce/O/Owen_Huw_Roberts_dancing_to_the/">Owen Huw Roberts</a></li>
         <li><a href="/content/pce/O/o_dalaigh_cearbhall/">o dalaigh cearbhall</a></li>
         <li><a href="/content/pce/O/Oscar/">Oscar</a></li>
@@ -8074,19 +8072,19 @@
         <li><a href="/content/pce/O/Oisín/">Oisín</a></li>
         <li><a href="/content/pce/O/Octriallach/">Octriallach</a></li>
         <li><a href="/content/pce/O/o_riain_eamonn_an_chnoic/">o riain eamonn an chnoic</a></li>
-        <li><a href="/content/pce/O/Owein/">Owein</a></li>
         <li><a href="/content/pce/O/o_suilleabhain_bearra_donnall_cam/">o suilleabhain bearra donnall cam</a></li>
+        <li><a href="/content/pce/O/Owein/">Owein</a></li>
         <li><a href="/content/pce/T/Tephi/">Tephi</a></li>
         <li><a href="/content/pce/T/Telgesinus/">Telgesinus</a></li>
         <li><a href="/content/pce/T/Teyrnon/">Teyrnon</a></li>
         <li><a href="/content/pce/T/Titania/">Titania</a></li>
         <li><a href="/content/pce/T/Triads/">Triads</a></li>
         <li><a href="/content/pce/T/Tara/">Tara</a></li>
-        <li><a href="/content/pce/T/Tor/">Tor</a></li>
         <li><a href="/content/pce/T/threefold_death/">threefold death</a></li>
+        <li><a href="/content/pce/T/Tor/">Tor</a></li>
         <li><a href="/content/pce/T/Tene_Archaeological_Site/">La Tène</a></li>
-        <li><a href="/content/pce/T/Tristan/">Tristan</a></li>
         <li><a href="/content/pce/T/Tuath_Dé/">Tuath Dé</a></li>
+        <li><a href="/content/pce/T/Tristan/">Tristan</a></li>
         <li><a href="/content/pce/T/Tuan_mac_Cairill/">Tuan mac Cairill</a></li>
         <li><a href="/content/pce/T/tighearnmhas/">tighearnmhas</a></li>
         <li><a href="/content/pce/T/Tintagel/">Tintagel</a></li>
@@ -8095,8 +8093,8 @@
         <li><a href="/content/pce/T/the_cricket_s_song/">the cricket&#39;s song</a></li>
         <li><a href="/content/pce/T/Tegau_Eurfron/">Tegau Eurfron</a></li>
         <li><a href="/content/pce/T/Trojan_legends/">Trojan legends</a></li>
-        <li><a href="/content/pce/T/Teutates/">Teutates</a></li>
         <li><a href="/content/pce/T/Tene_Period/">La Tène</a></li>
+        <li><a href="/content/pce/T/Teutates/">Teutates</a></li>
         <li><a href="/content/pce/T/Taliesin/">Taliesin</a></li>
         <li><a href="/content/pce/T/Taise/">Taise</a></li>
         <li><a href="/content/pce/D/Donn_Cuailnge/">Donn Cuailnge</a></li>
@@ -8115,23 +8113,23 @@
         <li><a href="/content/pce/D/dearg/">dearg</a></li>
         <li><a href="/content/pce/D/Duval_Añjela/">Duval, Añjela</a></li>
         <li><a href="/content/pce/D/Diarmait_mac_Murchada/">Diarmait mac Murchada</a></li>
-        <li><a href="/content/pce/D/Dyfed/">Dyfed</a></li>
         <li><a href="/content/pce/D/dog/">dog</a></li>
+        <li><a href="/content/pce/D/Dyfed/">Dyfed</a></li>
         <li><a href="/content/pce/D/Dun_Cow/">Dun Cow</a></li>
         <li><a href="/content/pce/D/Dáire/">Dáire</a></li>
         <li><a href="/content/pce/D/Danebury/">Danebury</a></li>
         <li><a href="/content/pce/D/dreams/">dreams</a></li>
         <li><a href="/content/pce/D/Dér_Gréine/">Dér Gréine</a></li>
         <li><a href="/content/pce/D/Dúnchad_mac_Crináin/">Dúnchad mac Crináin</a></li>
-        <li><a href="/content/pce/D/Davy_Jones/">Davy Jones</a></li>
         <li><a href="/content/pce/D/dwyer_michael/">dwyer michael</a></li>
+        <li><a href="/content/pce/D/Davy_Jones/">Davy Jones</a></li>
         <li><a href="/content/pce/D/Dubthach/">Dubthach</a></li>
         <li><a href="/content/pce/D/Derbforgaill/">Derbforgaill</a></li>
-        <li><a href="/content/pce/D/Drystan/">Drystan</a></li>
         <li><a href="/content/pce/D/DINAS_BASING_ABATY/">DINAS BASING, ABATY</a></li>
+        <li><a href="/content/pce/D/Drystan/">Drystan</a></li>
         <li><a href="/content/pce/D/Dyfnwal_ap_Tewdor/">Dyfnwal ap Tewdor</a></li>
-        <li><a href="/content/pce/D/druids_classical_accounts/">druids [1] classical accounts</a></li>
         <li><a href="/content/pce/D/Duvici_cos_of_the_Suessiones/">Diviciacos of the Suessiones</a></li>
+        <li><a href="/content/pce/D/druids_classical_accounts/">druids [1] classical accounts</a></li>
         <li><a href="/content/pce/D/druid_s_fog/">druid’s fog</a></li>
         <li><a href="/content/pce/D/Delbacháem/">Delbacháem</a></li>
         <li><a href="/content/pce/D/díchetal_do_chennaib/">díchetal do chennaib</a></li>
@@ -8161,8 +8159,8 @@
         <li><a href="/content/pce/S/Sadb/">Sadb</a></li>
         <li><a href="/content/pce/F/Fulup_Marcharid/">Fulup, Marc&#39;harid</a></li>
         <li><a href="/content/pce/F/fairy_time/">fairy time</a></li>
-        <li><a href="/content/pce/F/Flidais/">Flidais</a></li>
         <li><a href="/content/pce/F/fitzgerald_gearoid_iarla/">fitzgerald gearoid iarla</a></li>
+        <li><a href="/content/pce/F/Flidais/">Flidais</a></li>
         <li><a href="/content/pce/F/Fergus_mac_Léti/">Fergus mac Léti</a></li>
         <li><a href="/content/pce/F/fionan_cam/">fionan cam</a></li>
         <li><a href="/content/pce/F/Fleuriot_Léon/">Fleuriot, Léon</a></li>
@@ -8172,23 +8170,23 @@
         <li><a href="/content/pce/F/Finnbheara/">Finnbheara</a></li>
         <li><a href="/content/pce/F/fili/">fili</a></li>
         <li><a href="/content/pce/F/Findchóem/">Findchóem</a></li>
-        <li><a href="/content/pce/F/Fiachna_mac_Dáire/">Fiachna mac Dáire</a></li>
         <li><a href="/content/pce/F/four-footed_neighbours/">four-footed neighbours</a></li>
+        <li><a href="/content/pce/F/Fiachna_mac_Dáire/">Fiachna mac Dáire</a></li>
         <li><a href="/content/pce/F/Fir_Bolg/">Fir Bolg</a></li>
         <li><a href="/content/pce/F/Fiannaíocht/">Fiannaíocht</a></li>
         <li><a href="/content/pce/F/Fráech/">Fráech</a></li>
-        <li><a href="/content/pce/W/wild_man_in_Celtic_legend/">wild man in Celtic legend</a></li>
         <li><a href="/content/pce/W/wandering_people/">wandering people</a></li>
+        <li><a href="/content/pce/W/wild_man_in_Celtic_legend/">wild man in Celtic legend</a></li>
         <li><a href="/content/pce/W/william_of_orange/">william of orange</a></li>
         <li><a href="/content/pce/U/ulster_cycle/">Ulster Cycle</a></li>
 </ul>
 
 
 
-  
+
   <div>
   
-  <i class="fa-solid fa-home"></i><a href="/" class="text-decoration-none"> Home</a>
+  <i class="fa-solid fa-home"></i><a href="/" class="no-underline"> Home</a>
     
     
       
@@ -8305,17 +8303,13 @@
     
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-sitemap"></i><a href="/category/" class="text-decoration-none">Category List</a>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-sitemap"></i><a href="/category/" class="no-underline">Category List</a>
       
           
       
       
-        
-          
-      
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-file"></i><span class="font-bold text-mist">Person</span>
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-file"></i><span class="fw-bold text-muted">Person</span>
-      
           
       
       
@@ -8336,11 +8330,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -8364,11 +8358,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -8492,11 +8486,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -8512,11 +8506,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -8532,11 +8526,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -8580,11 +8574,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -8604,10 +8598,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -9320,10 +9314,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -9732,10 +9726,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -9944,10 +9938,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -10788,10 +10782,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -11040,6 +11034,10 @@
           
       
       
+          
+      
+      
+        
         
           
       
@@ -15468,22 +15466,20 @@
       </div>
     </main>
 
-    <footer class="text-center text-lg-start bg-light text-muted pt-1">
-      <button id="back-to-top" class="btn btn-primary px-1 py-1" style="display: none; position: fixed; bottom: 20px; right: 20px;" data-toggle="tooltip" data-placement="left" title="Back to the top"><i class="fa-solid fa-circle-up" style="color: white;"></i></button>
+    <footer class="text-center lg:text-left bg-peat/60 text-mist pt-1">
+      <button id="back-to-top" class="inline-flex items-center justify-center rounded bg-moss px-1 py-1 font-semibold text-bone hover:bg-peat" style="display: none; position: fixed; bottom: 20px; right: 20px;" data-toggle="tooltip" data-placement="left" title="Back to the top"><i class="fa-solid fa-circle-up" style="color: white;"></i></button>
 
-<!-- Bootstrap and jQuery JS -->
+<!-- Custom JS (vanilla interaction shim) -->
 <script src="/js/back-to-top.js" integrity="sha384-8kgCB6HPdPPbW6F14pulqulPbhSUEbJzrm4fbq6BHSQV2hwUSs0mzrVfKLTw43rw"></script>
-<script src="/assets/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"></script>
-<script src="/assets/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"></script>
 
   <section class="">
-    <div class="container text-center text-md-start mt-5">
+    <div class="mx-auto w-full max-w-6xl px-4 text-center lg:text-left mt-5">
       <!-- Grid row -->
-      <div class="row mt-3">
+      <div class="grid grid-cols-12 mt-3">
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <div class="md:col-span-3 lg:col-span-4 xl:col-span-3 mx-auto mb-4">
           <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             OpenOrdú
           </h6>
           <p>
@@ -15492,57 +15488,57 @@
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="md:col-span-2 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Quick Links
           </h6>
           <p>
-            <a href="/about" class="text-reset">About Project</a>
+            <a href="/about" class="text-bone hover:opacity-80">About Project</a>
           </p>
           <p>
-            <a href="/support" class="text-reset">Support Us</a>
+            <a href="/support" class="text-bone hover:opacity-80">Support Us</a>
           </p>
           <p>
-            <a href="/docs" class="text-reset">Documentation</a>
+            <a href="/docs" class="text-bone hover:opacity-80">Documentation</a>
           </p>
           <p>
-            <a href="/docs/contributing/conduct" class="text-reset">Code of Conduct</a>
+            <a href="/docs/contributing/conduct" class="text-bone hover:opacity-80">Code of Conduct</a>
           </p>
           <p>
-            <a href="/license" class="text-reset">Open Source Licenses</a>
+            <a href="/license" class="text-bone hover:opacity-80">Open Source Licenses</a>
           </p>
           <p>
-            <a href="/FAQs" class="text-reset">Frequently Asked Questions</a>
+            <a href="/FAQs" class="text-bone hover:opacity-80">Frequently Asked Questions</a>
           </p>
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="md:col-span-3 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Social Media
           </h6>
           <p>
-            <a href="http://github.com/openordu" target="_blank" class="text-reset">GitHub</a>
+            <a href="http://github.com/openordu" target="_blank" class="text-bone hover:opacity-80">GitHub</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Twitter</a>
+            <a href="#!" class="text-bone hover:opacity-80">Twitter</a>
           </p>
           <p>
-            <a href="https://mastodon.celticpaganism.org" target="_blank" class="text-reset">Mastodon</a>
+            <a href="https://mastodon.celticpaganism.org" target="_blank" class="text-bone hover:opacity-80">Mastodon</a>
           </p>
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div class="md:col-span-4 lg:col-span-3 xl:col-span-3 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Contact
           </h6>
-          <p><i class="fas fa-envelope me-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
+          <p><i class="fas fa-envelope mr-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
 
-          <h6 class="text-uppercase fw-bold mb-4 mt-4">
+          <h6 class="uppercase font-bold mb-4 mt-4">
             Disclaimer
           </h6>
           <p>
@@ -15552,10 +15548,10 @@
       </div>
     </div>
   </section>
-  <div class="text-center p-4 bg-primary text-dark">
+  <div class="text-center p-4 bg-moss text-peat">
     Made with ❤️ by contributors around the world
   </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="/js/tailwind-interactions.js"></script>
     
 
 <script src="/js/elasticlunr.min.js"></script>

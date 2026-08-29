@@ -813,7 +813,7 @@ everyone on the same footing and labels everyone an emulator.&lt;/p&gt;&lt;hr cl
 devote time to this. I basically rebuilt all the features in vuepress but
 manually within &lt;a href=&quot;https://www.11ty.dev/&quot; class=&quot;external-link&quot; target=&quot;_external&quot;&gt;11ty&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;11ty creates a fully rendered site upon build. It is highly manually templated
 and the result of using it is a very plain site.
-&lt;a href=&quot;https://11straps.com/&quot; class=&quot;external-link&quot; target=&quot;_external&quot;&gt;11straps&lt;/a&gt; will at least get you a bootstrapped eleventy
+&lt;a href=&quot;https://11straps.com/&quot; class=&quot;external-link&quot; target=&quot;_external&quot;&gt;11straps&lt;/a&gt; will at least get you an 11ty starter
 site.&lt;/p&gt;&lt;p&gt;However, what you end up with compared to vuepress or vuepress-theme-hope2, is
 rather simple and still disappointing for a documentation or encyclopedic site.&lt;/p&gt;&lt;p&gt;Over the past 12 months I&#39;ve been rebuilding the features I appreciate from
 vuepress-theme-hope2 and vuepress into my 11straps project. The result is a

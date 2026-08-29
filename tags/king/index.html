@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="h-100" lang="en">
+<html class="h-full" lang="en">
 
   <head>
       <meta charset="utf-8">
@@ -29,54 +29,54 @@
   <!-- feed consumer (renders latest posts, GAF-277 T19) -->
   <script src="/js/feed-consumer.js" async></script>
   <!-- build:css -->
-  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/theme.min.css">
   <!-- endbuild -->
   <script src="https://kit.fontawesome.com/88f31a8dcd.js" crossorigin="anonymous"></script>
   </head>
 
-  <body class="h-100">
+  <body class="h-full">
     <div id="splash-screen">
       <img id="splashlogo" src="/assets/green_logo.png" />
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light pt-0">
-  <div class="container d-flex justify-content-between">
+    <nav class="border-b border-mist p-0">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4">
     <!-- Hamburger Menu -->
-    <div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="lg:hidden">
+        <button class="inline-flex items-center border rounded p-2 text-bone" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fas fa-caret-down"></i></span>
         </button>
-        <button class="navbar-toggler bg-primary text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-            <span class="text-primary bg-white"><i class="fas fa-bars"></i></span>
+        <button class="inline-flex items-center border rounded p-2 bg-moss text-bone" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <span class="text-moss bg-bone"><i class="fas fa-bars"></i></span>
         </button>
     </div>
 
     <!-- Logo -->
-    <a class="navbar-brand mb-0 py-2 px-2 pt-2 pe-3 text-center text-white bg-primary" href="/">
-        <svg class="me-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
-        <span class="logotitle d-none d-sm-block">CelticPaganism.org</span>
+    <a class="mb-0 inline-flex items-center gap-2 rounded bg-moss px-2 py-2 pt-2 pr-3 text-center text-bone" href="/">
+        <svg class="mr-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
+        <span class="logotitle hidden sm:block">CelticPaganism.org</span>
     </a>
 
     <!-- Navigation Links and Search Bar -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-house pt-2"></i><a class="nav-link" aria-current="page" href="/">Home</a>
+    <div class="hidden lg:block" id="navbarSupportedContent">
+        <ul class="flex flex-wrap items-center gap-1 ml-2 mb-2 lg:mb-0">
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-house pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-book pt-2"></i><a class="nav-link" href="/pce">PCE</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-book pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/pce">PCE</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="nav-link" href="/about">About</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/about">About</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-blog pt-2"></i><a class="nav-link" href="/blog">Blog</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-blog pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/blog">Blog</a>
             </li>    
             <!-- Search Form -->
-            <li class="nav-item d-flex">
-                <form class="search-container d-flex">
-                    <input type="search" id="search-input" class="form-control" autocomplete="off" placeholder="Search">
-                    <ul class="dropdown-menu d-none" id="search-suggestions"></ul>
+            <li class="flex items-center">
+                <form class="search-container flex">
+                    <input type="search" id="search-input" class="rounded border border-mist bg-peat-2 px-3 py-1 text-bone placeholder:text-mist/60 focus:border-gold focus:outline-none" autocomplete="off" placeholder="Search">
+                    <ul id="search-suggestions" class="hidden absolute"></ul>
                 </form>
             </li>
         </ul>
@@ -85,38 +85,38 @@
 </nav>
 
 
-    <main class="container">
-      <div class="row d-flex align-items-start">
-        <div class="row d-flex justify-content-center">
-            <div class="aside col col-12 col-sm-3 flex-shrink-0 p-2 bg-white">
+    <main class="mx-auto w-full max-w-6xl px-4">
+      <div>
+        <div class="grid grid-cols-12 justify-center">
+            <div class="aside col-span-12 sm:col-span-3 shrink-0 p-2 bg-peat-2">
               
 
 
 
-<div class="offcanvas offcanvas-start flex-shrink-0" id="sidebar" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1">
-    <div class="offcanvas-header d-lg-none">
-      <h5 class="offcanvas-title">Navigation</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div class="offcanvas" data-offcanvas id="sidebar" tabindex="-1">
+    <div class="flex items-center justify-between lg:hidden">
+      <h5 class="font-semibold">Navigation</h5>
+      <button type="button" class="inline-flex items-center justify-center rounded text-bone hover:bg-peat-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-      <ul class="navbar-nav justify-content-end flex-grow-1">
+    <div class="py-3">
+      <ul class="flex flex-col justify-end grow">
           
     
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-house ">
-            </i><a href="/" class="text-decoration-none">
+            </i><a href="/" class="no-underline">
             Home
             </a>
           </button>
@@ -127,9 +127,9 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <a href="/pce/" class="dropdown-item overflow-hidden text-start mb-0 ps-1 w-100 py-2 top  parentsubject rounded text-decoration-none">
+        <a href="/pce/" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1 top  parentsubject no-underline">
           <i class="fa-solid fa-book "></i>
           PCE
         </a>
@@ -140,18 +140,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/merch/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/merch/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-dollar-sign ">
-            </i><a href="/merch/" class="text-decoration-none">
+            </i><a href="/merch/" class="no-underline">
             Merch
             </a>
           </button>
@@ -162,9 +162,9 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <a href="/docs/" class="dropdown-item overflow-hidden text-start mb-0 ps-1 w-100 py-2 top  parentsubject rounded text-decoration-none">
+        <a href="/docs/" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1 top  parentsubject no-underline">
           <i class="fa-solid fa-book "></i>
           Documentation Home
         </a>
@@ -178,18 +178,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/support/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/support/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-life-ring ">
-            </i><a href="/support/" class="text-decoration-none">
+            </i><a href="/support/" class="no-underline">
             Support Us
             </a>
           </button>
@@ -200,18 +200,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/FAQs/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/FAQs/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-file ">
-            </i><a href="/FAQs/" class="text-decoration-none">
+            </i><a href="/FAQs/" class="no-underline">
             Project FAQs
             </a>
           </button>
@@ -222,18 +222,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/about/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/about/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-circle-info ">
-            </i><a href="/about/" class="text-decoration-none">
+            </i><a href="/about/" class="no-underline">
             About
             </a>
           </button>
@@ -243,14 +243,12 @@
           </ul>
     </div>
   </div>
-
             </div>
-            <div id="main" class="main col col-12 col-sm-9 pb-5">
+            <div id="main" class="main col-span-12 sm:col-span-9 pb-5">
               
-  
   <div>
   
-  <i class="fa-solid fa-home"></i><a href="/" class="text-decoration-none"> Home</a>
+  <i class="fa-solid fa-home"></i><a href="/" class="no-underline"> Home</a>
     
     
       
@@ -370,15 +368,15 @@
           
       
       
-        
           
       
       
+        
+        
           
       
       
         
-        
           
       
       
@@ -394,11 +392,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -418,11 +416,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -550,10 +548,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -566,10 +564,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -586,10 +584,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -634,11 +632,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -662,11 +660,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -1378,11 +1376,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -1790,11 +1788,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -1998,10 +1996,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -2846,10 +2844,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -3094,10 +3092,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -7494,7 +7492,7 @@
     
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-tag"></i><a href="/tags/" class="text-decoration-none">Tags List</a>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-tag"></i><a href="/tags/" class="no-underline">Tags List</a>
       
           
       
@@ -7538,7 +7536,7 @@
 </div>
 <script src="/js/tags.js"></script>
 
-<hr class="border border-primary border-1 opacity-75">
+<hr class="border border-moss opacity-75">
 
 
 
@@ -7547,65 +7545,65 @@
 
 
   
-  <div class="row">
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/A/agricultural_rituals/" class="link-fancy"><h2 class="display-4">agricultural rituals</h2></a>
+  <div class="grid grid-cols-12">
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/agricultural_rituals/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">agricultural rituals</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Irish-myths-and-rituals/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Irish-myths-and-rituals/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Irish myths and rituals
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/goddess/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/goddess/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           goddess
         </a>
       
         
-        <a href="/tags/Fertility/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Fertility/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Fertility
         </a>
       
         
-        <a href="/tags/Wales/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Wales/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Wales
         </a>
       
         
-        <a href="/tags/god-Amaethon/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/god-Amaethon/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           god Amaethon
         </a>
       
         
-        <a href="/tags/epic-poem-Kulhwch-And-Olwen/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/epic-poem-Kulhwch-And-Olwen/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           epic poem Kulhwch And Olwen
         </a>
       
         
-        <a href="/tags/agricultural-fertility/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/agricultural-fertility/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           agricultural fertility
         </a>
       
         
-        <a href="/tags/rituals/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/rituals/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           rituals
         </a>
       
@@ -7615,100 +7613,100 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/H/horse_sacrifice/" class="link-fancy"><h2 class="display-4">horse sacrifice</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/H/horse_sacrifice/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">horse sacrifice</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/horse-sacrifice/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/horse-sacrifice/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           horse sacrifice
         </a>
       
         
-        <a href="/tags/Giraldus-Cambrensis/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Giraldus-Cambrensis/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Giraldus Cambrensis
         </a>
       
         
-        <a href="/tags/sixth-century-CE/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/sixth-century-CE/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           sixth century C.E.
         </a>
       
         
-        <a href="/tags/Inauguration/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Inauguration/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Inauguration
         </a>
       
         
-        <a href="/tags/Irish-High-King/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Irish-High-King/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Irish High King
         </a>
       
         
-        <a href="/tags/Tara/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Tara/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Tara
         </a>
       
         
-        <a href="/tags/banais-ríghe/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/banais-ríghe/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           banais ríghe
         </a>
       
         
-        <a href="/tags/candidate/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/candidate/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           candidate
         </a>
       
         
-        <a href="/tags/white-mare/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/white-mare/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           white mare
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/barbaric-rite/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/barbaric-rite/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           barbaric rite
         </a>
       
         
-        <a href="/tags/IndoEuropean-inauguration/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/IndoEuropean-inauguration/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           IndoEuropean inauguration
         </a>
       
         
-        <a href="/tags/queen/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/queen/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           queen
         </a>
       
         
-        <a href="/tags/hide/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/hide/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           hide
         </a>
       
         
-        <a href="/tags/newly-slaughtered-mare/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/newly-slaughtered-mare/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           newly slaughtered mare
         </a>
       
@@ -7718,61 +7716,61 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/N/Nuada/" class="link-fancy"><h2 class="display-4">Nuada</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/Nuada/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Nuada</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Almu/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Almu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Almu
         </a>
       
         
-        <a href="/tags/Nuada/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Nuada/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Nuada
         </a>
       
         
-        <a href="/tags/sword/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/sword/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           sword
         </a>
       
         
-        <a href="/tags/race/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/race/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           race
         </a>
       
         
-        <a href="/tags/figure/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/figure/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           figure
         </a>
       
         
-        <a href="/tags/Druid/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Druid/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Druid
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/Cathaír-Mór/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Cathaír-Mór/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Cathaír Mór
         </a>
       
@@ -7782,52 +7780,52 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/N/Nuala/" class="link-fancy"><h2 class="display-4">Nuala</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/Nuala/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Nuala</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Nuala/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Nuala/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Nuala
         </a>
       
         
-        <a href="/tags/Fionnuala/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Fionnuala/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Fionnuala
         </a>
       
         
-        <a href="/tags/Fairy-Queen/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Fairy-Queen/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Fairy Queen
         </a>
       
         
-        <a href="/tags/Una/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Una/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Úna
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/Fairies/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Fairies/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Fairies
         </a>
       
         
-        <a href="/tags/Finnbheara/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Finnbheara/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Finnbheara
         </a>
       
@@ -7837,55 +7835,55 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/ceremony/" class="link-fancy"><h2 class="display-4">ceremony</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/ceremony/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">ceremony</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/divinities/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/divinities/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           divinities
         </a>
       
         
-        <a href="/tags/society/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/society/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           society
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/nobles/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/nobles/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           nobles
         </a>
       
         
-        <a href="/tags/commoners/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/commoners/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           commoners
         </a>
       
         
-        <a href="/tags/religion/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/religion/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           religion
         </a>
       
         
-        <a href="/tags/panCeltic-ritual-or-ceremony/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/panCeltic-ritual-or-ceremony/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           panCeltic ritual or ceremony
         </a>
       
@@ -7895,58 +7893,58 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/Cathaír_Mór/" class="link-fancy"><h2 class="display-4">Cathaír Mór</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/Cathaír_Mór/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Cathaír Mór</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Cathaír/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Cathaír/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Cathaír
         </a>
       
         
-        <a href="/tags/woman/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/woman/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           woman
         </a>
       
         
-        <a href="/tags/River-Slaney/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/River-Slaney/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           River Slaney
         </a>
       
         
-        <a href="/tags/harbor/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/harbor/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           harbor
         </a>
       
         
-        <a href="/tags/singing-fruit-tree/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/singing-fruit-tree/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           singing fruit tree
         </a>
       
         
-        <a href="/tags/son/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/son/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           son
         </a>
       
         
-        <a href="/tags/Druid/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Druid/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Druid
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
@@ -7956,67 +7954,67 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Morgause/" class="link-fancy"><h2 class="display-4">Morgause</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Morgause/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Morgause</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Arthur/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Arthur/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Arthur
         </a>
       
         
-        <a href="/tags/half-sister/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/half-sister/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           half sister
         </a>
       
         
-        <a href="/tags/Mordred/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Mordred/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Mordred
         </a>
       
         
-        <a href="/tags/Morgause/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Morgause/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Morgause
         </a>
       
         
-        <a href="/tags/Orkney/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Orkney/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Orkney
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/Lot/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Lot/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Lot
         </a>
       
         
-        <a href="/tags/CAMELot/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/CAMELot/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           CAMELot
         </a>
       
         
-        <a href="/tags/Morgan/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Morgan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Morgan
         </a>
       
@@ -8026,58 +8024,58 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Mac_Conglinne/" class="link-fancy"><h2 class="display-4">Mac Conglinne</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mac_Conglinne/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Mac Conglinne</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/demon/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/demon/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           demon
         </a>
       
         
-        <a href="/tags/food/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/food/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           food
         </a>
       
         
-        <a href="/tags/Celtic-beliefs/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Celtic-beliefs/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Celtic beliefs
         </a>
       
         
-        <a href="/tags/Hospitality/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Hospitality/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Hospitality
         </a>
       
         
-        <a href="/tags/poet/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/poet/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           poet
         </a>
       
         
-        <a href="/tags/monstrous-beings/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/monstrous-beings/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           monstrous beings
         </a>
       
         
-        <a href="/tags/human-bodies/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/human-bodies/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           human bodies
         </a>
       
@@ -8087,49 +8085,49 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Marcassa/" class="link-fancy"><h2 class="display-4">Marcassa</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Marcassa/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Marcassa</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/palace/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/palace/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           palace
         </a>
       
         
-        <a href="/tags/magical-bird/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/magical-bird/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           magical bird
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/Marcassa/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Marcassa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Marcassa
         </a>
       
         
-        <a href="/tags/Luduenn/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Luduenn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Luduenn
         </a>
       
         
-        <a href="/tags/Scottish-folktale-of-Brian-and-Dér-Gréine/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Scottish-folktale-of-Brian-and-Dér-Gréine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Scottish folktale of Brian and Dér Gréine
         </a>
       
@@ -8139,58 +8137,58 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/marriage/" class="link-fancy"><h2 class="display-4">marriage</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/marriage/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">marriage</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/marriage/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/marriage/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           marriage
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/goddess/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/goddess/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           goddess
         </a>
       
         
-        <a href="/tags/land/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/land/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           land
         </a>
       
         
-        <a href="/tags/Sovereignty/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Sovereignty/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Sovereignty
         </a>
       
         
-        <a href="/tags/Buada/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Buada/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Buada
         </a>
       
         
-        <a href="/tags/Geis/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Geis/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Geis
         </a>
       
         
-        <a href="/tags/people/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/people/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           people
         </a>
       
@@ -8200,79 +8198,79 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Mór/" class="link-fancy"><h2 class="display-4">Mór</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mór/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Mór</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Mór/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Mór/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Mór
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/Munster/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Munster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Munster
         </a>
       
         
-        <a href="/tags/Cashel/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Cashel/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Cashel
         </a>
       
         
-        <a href="/tags/Mis/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Mis/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Mis
         </a>
       
         
-        <a href="/tags/Slieve-Mish-mountains/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Slieve-Mish-mountains/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Slieve Mish mountains
         </a>
       
         
-        <a href="/tags/peninsula/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/peninsula/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           peninsula
         </a>
       
         
-        <a href="/tags/Giant-woman/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Giant-woman/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Giant woman
         </a>
       
         
-        <a href="/tags/Highlands-of-Scotland/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Highlands-of-Scotland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Highlands of Scotland
         </a>
       
         
-        <a href="/tags/Smûid/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Smûid/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Smûid
         </a>
       
         
-        <a href="/tags/travelers/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/travelers/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           travelers
         </a>
       
@@ -8282,52 +8280,52 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Labhraigh/" class="link-fancy"><h2 class="display-4">Labhraigh</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Labhraigh/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Labhraigh</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Labhraigh/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Labhraigh/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Labhraigh
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/ass/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/ass/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           ass
         </a>
       
         
-        <a href="/tags/barber/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/barber/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           barber
         </a>
       
         
-        <a href="/tags/Tree/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Tree/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Tree
         </a>
       
         
-        <a href="/tags/Harp/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Harp/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Harp
         </a>
       
         
-        <a href="/tags/Craiphtine/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Craiphtine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Craiphtine
         </a>
       
@@ -8337,43 +8335,43 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Leborcham/" class="link-fancy"><h2 class="display-4">Leborcham</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Leborcham/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Leborcham</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/girl/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/girl/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           girl
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/Leborcham/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Leborcham/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Leborcham
         </a>
       
         
-        <a href="/tags/lover/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/lover/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           lover
         </a>
       
         
-        <a href="/tags/Deirdre/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Deirdre/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Deirdre
         </a>
       
@@ -8383,58 +8381,58 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Lancelot/" class="link-fancy"><h2 class="display-4">Lancelot</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Lancelot/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Lancelot</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Celtic-cultures/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Celtic-cultures/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Celtic cultures
         </a>
       
         
-        <a href="/tags/Lancelot/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Lancelot/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Lancelot
         </a>
       
         
-        <a href="/tags/Lady-of-the-Lake/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Lady-of-the-Lake/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Lady of the Lake
         </a>
       
         
-        <a href="/tags/Galahad/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Galahad/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Galahad
         </a>
       
         
-        <a href="/tags/Elaine-of-Corbenic/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Elaine-of-Corbenic/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Elaine of Corbenic
         </a>
       
         
-        <a href="/tags/Guinevere/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Guinevere/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Guinevere
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/love-triangle/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/love-triangle/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           love triangle
         </a>
       
@@ -8444,61 +8442,61 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Llefelys/" class="link-fancy"><h2 class="display-4">Llefelys</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Llefelys/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Llefelys</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Llefelys/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Llefelys/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Llefelys
         </a>
       
         
-        <a href="/tags/Welsh-myth/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Welsh-myth/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Welsh myth
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/Continent/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Continent/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Continent
         </a>
       
         
-        <a href="/tags/brother/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/brother/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           brother
         </a>
       
         
-        <a href="/tags/Lludd/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Lludd/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Lludd
         </a>
       
         
-        <a href="/tags/Britain/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Britain/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Britain
         </a>
       
         
-        <a href="/tags/three-plagues/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/three-plagues/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           three plagues
         </a>
       
@@ -8508,58 +8506,58 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/Blodeuwedd/" class="link-fancy"><h2 class="display-4">Blodeuwedd</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/Blodeuwedd/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Blodeuwedd</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/murder/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/murder/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           murder
         </a>
       
         
-        <a href="/tags/Owl/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Owl/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Owl
         </a>
       
         
-        <a href="/tags/woman/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/woman/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           woman
         </a>
       
         
-        <a href="/tags/ancient-goddess-of-death/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/ancient-goddess-of-death/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           ancient goddess of death
         </a>
       
         
-        <a href="/tags/Robert-Graves/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Robert-Graves/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Robert Graves
         </a>
       
         
-        <a href="/tags/queen/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/queen/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           queen
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/sacrifice/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/sacrifice/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           sacrifice
         </a>
       
@@ -8569,79 +8567,79 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/blemished_king/" class="link-fancy"><h2 class="display-4">blemished king</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/blemished_king/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">blemished king</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Celts/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Celts/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Celts
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/goddess/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/goddess/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           goddess
         </a>
       
         
-        <a href="/tags/land/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/land/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           land
         </a>
       
         
-        <a href="/tags/Sovereignty/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Sovereignty/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Sovereignty
         </a>
       
         
-        <a href="/tags/Nuada/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Nuada/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Nuada
         </a>
       
         
-        <a href="/tags/Battle-of-Mag-Tuired/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Battle-of-Mag-Tuired/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Battle of Mag Tuired
         </a>
       
         
-        <a href="/tags/Tuatha-Dé-Danann/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Tuatha-Dé-Danann/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Tuatha Dé Danann
         </a>
       
         
-        <a href="/tags/magical-prosthesis/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/magical-prosthesis/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           magical prosthesis
         </a>
       
         
-        <a href="/tags/Fisher-King/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Fisher-King/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Fisher King
         </a>
       
         
-        <a href="/tags/Arthurian-cycle/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Arthurian-cycle/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Arthurian cycle
         </a>
       
@@ -8651,22 +8649,22 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/Bébinn/" class="link-fancy"><h2 class="display-4">Bébinn</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/Bébinn/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Bébinn</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/wife/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/wife/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           wife
         </a>
       
@@ -8676,109 +8674,109 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/P/Paris/" class="link-fancy"><h2 class="display-4">Paris</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/P/Paris/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Paris</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Paris/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Paris/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Paris
         </a>
       
         
-        <a href="/tags/Welsh/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Welsh/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Welsh
         </a>
       
         
-        <a href="/tags/Kulhwch-And-Olwen/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Kulhwch-And-Olwen/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Kulhwch And Olwen
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/region/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/region/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           region
         </a>
       
         
-        <a href="/tags/French-capital/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/French-capital/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           French capital
         </a>
       
         
-        <a href="/tags/scholars/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/scholars/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           scholars
         </a>
       
         
-        <a href="/tags/historical-Celtic-king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/historical-Celtic-king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           historical Celtic king
         </a>
       
         
-        <a href="/tags/city/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/city/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           city
         </a>
       
         
-        <a href="/tags/local-Celtic-tribe/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/local-Celtic-tribe/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           local Celtic tribe
         </a>
       
         
-        <a href="/tags/Parisi/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Parisi/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Parisi
         </a>
       
         
-        <a href="/tags/Britain/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Britain/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Britain
         </a>
       
         
-        <a href="/tags/Yorkshire-region/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Yorkshire-region/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Yorkshire region
         </a>
       
         
-        <a href="/tags/legend/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/legend/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           legend
         </a>
       
         
-        <a href="/tags/magical-city/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/magical-city/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           magical city
         </a>
       
         
-        <a href="/tags/Brittany/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Brittany/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Brittany
         </a>
       
@@ -8788,34 +8786,34 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/I/inauguration/" class="link-fancy"><h2 class="display-4">inauguration</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/I/inauguration/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">inauguration</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/geasa/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/geasa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           geasa
         </a>
       
         
-        <a href="/tags/Medb/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Medb
         </a>
       
         
-        <a href="/tags/Kingship/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Kingship/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Kingship
         </a>
       
@@ -8825,91 +8823,91 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/I/Iseult/" class="link-fancy"><h2 class="display-4">Iseult</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/I/Iseult/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Iseult</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Celtic-motif/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Celtic-motif/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Celtic motif
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/goddess-of-Sovereignty/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/goddess-of-Sovereignty/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           goddess of Sovereignty
         </a>
       
         
-        <a href="/tags/man/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/man/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           man
         </a>
       
         
-        <a href="/tags/Arthurian-echo/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Arthurian-echo/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Arthurian echo
         </a>
       
         
-        <a href="/tags/love-triangle/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/love-triangle/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           love triangle
         </a>
       
         
-        <a href="/tags/Ireland/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Ireland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Ireland
         </a>
       
         
-        <a href="/tags/Fionn-Mac-Cumhaill/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Fionn-Mac-Cumhaill/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Fionn Mac Cumhaill
         </a>
       
         
-        <a href="/tags/bride/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/bride/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           bride
         </a>
       
         
-        <a href="/tags/Gráinne/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Gráinne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Gráinne
         </a>
       
         
-        <a href="/tags/Diarmait/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Diarmait/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Diarmait
         </a>
       
         
-        <a href="/tags/heroine/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/heroine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           heroine
         </a>
       
         
-        <a href="/tags/romance/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/romance/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           romance
         </a>
       
@@ -8919,58 +8917,58 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/R/Ragallach/" class="link-fancy"><h2 class="display-4">Ragallach</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/R/Ragallach/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Ragallach</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/meat/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/meat/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           meat
         </a>
       
         
-        <a href="/tags/men/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/men/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           men
         </a>
       
         
-        <a href="/tags/daughter/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/daughter/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           daughter
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/queen-Murieann/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/queen-Murieann/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           queen Murieann
         </a>
       
         
-        <a href="/tags/prophecy/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/prophecy/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           prophecy
         </a>
       
         
-        <a href="/tags/peasants/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/peasants/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           peasants
         </a>
       
         
-        <a href="/tags/children/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/children/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           children
         </a>
       
@@ -8980,49 +8978,49 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/R/Roisin_Dubh/" class="link-fancy"><h2 class="display-4">Roisin Dubh</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/R/Roisin_Dubh/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Roisin Dubh</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Roisin-Dubh/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Roisin-Dubh/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Roisin Dubh
         </a>
       
         
-        <a href="/tags/Aisling-poetry/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Aisling-poetry/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Aisling poetry
         </a>
       
         
-        <a href="/tags/maiden/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/maiden/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           maiden
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/ancient-goddess/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/ancient-goddess/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           ancient goddess
         </a>
       
         
-        <a href="/tags/Sovereignty/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Sovereignty/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Sovereignty
         </a>
       
@@ -9032,64 +9030,64 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/Grail/" class="link-fancy"><h2 class="display-4">Grail</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Grail/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Grail</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Christian-hero-Galahad/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Christian-hero-Galahad/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Christian hero Galahad
         </a>
       
         
-        <a href="/tags/Grail/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Grail/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Grail
         </a>
       
         
-        <a href="/tags/Lancelot/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Lancelot/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Lancelot
         </a>
       
         
-        <a href="/tags/Grail-Castle/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Grail-Castle/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Grail Castle
         </a>
       
         
-        <a href="/tags/Percival/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Percival/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Percival
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/land/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/land/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           land
         </a>
       
         
-        <a href="/tags/quest-for-the-Grail/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/quest-for-the-Grail/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           quest for the Grail
         </a>
       
         
-        <a href="/tags/Celtic-motifs/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Celtic-motifs/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Celtic motifs
         </a>
       
@@ -9099,55 +9097,55 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/Gráinne/" class="link-fancy"><h2 class="display-4">Gráinne</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Gráinne/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Gráinne</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Gráinne/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Gráinne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Gráinne
         </a>
       
         
-        <a href="/tags/Sun/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Sun/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Sun
         </a>
       
         
-        <a href="/tags/Sovereignty/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Sovereignty/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Sovereignty
         </a>
       
         
-        <a href="/tags/Diarmait/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Diarmait/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Diarmait
         </a>
       
         
-        <a href="/tags/Fionn/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Fionn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Fionn
         </a>
       
         
-        <a href="/tags/Ireland/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Ireland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Ireland
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
@@ -9157,64 +9155,64 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/D/destruction/" class="link-fancy"><h2 class="display-4">destruction</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/D/destruction/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">destruction</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Irish/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Irish/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Irish
         </a>
       
         
-        <a href="/tags/Aisling/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Aisling/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Aisling
         </a>
       
         
-        <a href="/tags/Voyages/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Voyages/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Voyages
         </a>
       
         
-        <a href="/tags/Cattle-Raids/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Cattle-Raids/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Cattle Raids
         </a>
       
         
-        <a href="/tags/Wooings/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Wooings/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Wooings
         </a>
       
         
-        <a href="/tags/destructions/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/destructions/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           destructions
         </a>
       
         
-        <a href="/tags/Da-Dergas-Hostel/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Da-Dergas-Hostel/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Da Derga’s Hostel
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/Geis/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Geis/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Geis
         </a>
       
@@ -9224,85 +9222,85 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/S/satire/" class="link-fancy"><h2 class="display-4">satire</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/S/satire/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">satire</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/satire/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/satire/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           satire
         </a>
       
         
-        <a href="/tags/bard/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/bard/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           bard
         </a>
       
         
-        <a href="/tags/poet/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/poet/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           poet
         </a>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/Ireland/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Ireland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Ireland
         </a>
       
         
-        <a href="/tags/filid/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/filid/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           filid
         </a>
       
         
-        <a href="/tags/cáinti/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/cáinti/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           cáinti
         </a>
       
         
-        <a href="/tags/trefhocal/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/trefhocal/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           trefhocal
         </a>
       
         
-        <a href="/tags/geis/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/geis/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           geis
         </a>
       
         
-        <a href="/tags/Bretha-Nemed/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Bretha-Nemed/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Bretha Nemed
         </a>
       
         
-        <a href="/tags/Cairpre-mac-Etoíne/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Cairpre-mac-Etoíne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Cairpre mac Étoíne
         </a>
       
         
-        <a href="/tags/Bres/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Bres/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Bres
         </a>
       
@@ -9312,40 +9310,40 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/W/wasteland/" class="link-fancy"><h2 class="display-4">wasteland</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/W/wasteland/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">wasteland</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/king/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/king/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           king
         </a>
       
         
-        <a href="/tags/Lakes/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Lakes/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Lakes
         </a>
       
         
-        <a href="/tags/Bard/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Bard/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Bard
         </a>
       
         
-        <a href="/tags/Arthurian/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Arthurian/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Arthurian
         </a>
       
         
-        <a href="/tags/Grail/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/Grail/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           Grail
         </a>
       
@@ -9355,31 +9353,31 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
 </div>
 
-<div class="row d-flex justify-content-center">
-  <div class="mt-4 col-12">
-    <div class="row d-flex justify-content-between">
-      <div class="col">
+<div class="grid grid-cols-12 justify-center">
+  <div class="mt-4 col-span-12">
+    <div class="grid grid-cols-12 justify-between">
+      <div class="col-span-6">
         
-          <a href="/tags/Lancelot/" class="btn btn-outline-primary"> <i class="fa-solid fa-arrow-left"></i> Previous Topic</a>  </div> <div class="col text-end">  <a href="/tags/Milesians/" class="btn btn-outline-primary">Next Topic <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="/tags/Lancelot/" class="inline-flex items-center justify-center rounded border border-moss px-4 py-2 font-semibold text-bone hover:bg-moss hover:text-bone"> <i class="fa-solid fa-arrow-left"></i> Previous Topic</a>  </div> <div class="col-span-6 text-right">  <a href="/tags/Dagda/" class="inline-flex items-center justify-center rounded border border-moss px-4 py-2 font-semibold text-bone hover:bg-moss hover:text-bone">Next Topic <i class="fa-solid fa-arrow-right"></i></a>
         
       </div>
     </div>
   </div>
 </div>
 
-  <p>See <a href="/tags/" class="badge badge-primary">all tags</a>.</p>
+  <p>See <a href="/tags/" class="inline-flex items-center rounded-full bg-moss px-2 py-0.5 text-xs text-bone">all tags</a>.</p>
 
 
 
-  
+
   <div>
   
-  <i class="fa-solid fa-home"></i><a href="/" class="text-decoration-none"> Home</a>
+  <i class="fa-solid fa-home"></i><a href="/" class="no-underline"> Home</a>
     
     
       
@@ -9499,15 +9497,15 @@
           
       
       
-        
           
       
       
+        
+        
           
       
       
         
-        
           
       
       
@@ -9523,11 +9521,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -9547,11 +9545,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -9679,10 +9677,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -9695,10 +9693,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -9715,10 +9713,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -9763,11 +9761,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -9791,11 +9789,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -10507,11 +10505,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -10919,11 +10917,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -11127,10 +11125,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -11975,10 +11973,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -12223,10 +12221,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -16623,7 +16621,7 @@
     
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-tag"></i><a href="/tags/" class="text-decoration-none">Tags List</a>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-tag"></i><a href="/tags/" class="no-underline">Tags List</a>
       
           
       
@@ -16657,22 +16655,20 @@
       </div>
     </main>
 
-    <footer class="text-center text-lg-start bg-light text-muted pt-1">
-      <button id="back-to-top" class="btn btn-primary px-1 py-1" style="display: none; position: fixed; bottom: 20px; right: 20px;" data-toggle="tooltip" data-placement="left" title="Back to the top"><i class="fa-solid fa-circle-up" style="color: white;"></i></button>
+    <footer class="text-center lg:text-left bg-peat/60 text-mist pt-1">
+      <button id="back-to-top" class="inline-flex items-center justify-center rounded bg-moss px-1 py-1 font-semibold text-bone hover:bg-peat" style="display: none; position: fixed; bottom: 20px; right: 20px;" data-toggle="tooltip" data-placement="left" title="Back to the top"><i class="fa-solid fa-circle-up" style="color: white;"></i></button>
 
-<!-- Bootstrap and jQuery JS -->
+<!-- Custom JS (vanilla interaction shim) -->
 <script src="/js/back-to-top.js" integrity="sha384-8kgCB6HPdPPbW6F14pulqulPbhSUEbJzrm4fbq6BHSQV2hwUSs0mzrVfKLTw43rw"></script>
-<script src="/assets/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"></script>
-<script src="/assets/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"></script>
 
   <section class="">
-    <div class="container text-center text-md-start mt-5">
+    <div class="mx-auto w-full max-w-6xl px-4 text-center lg:text-left mt-5">
       <!-- Grid row -->
-      <div class="row mt-3">
+      <div class="grid grid-cols-12 mt-3">
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <div class="md:col-span-3 lg:col-span-4 xl:col-span-3 mx-auto mb-4">
           <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             OpenOrdú
           </h6>
           <p>
@@ -16681,57 +16677,57 @@
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="md:col-span-2 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Quick Links
           </h6>
           <p>
-            <a href="/about" class="text-reset">About Project</a>
+            <a href="/about" class="text-bone hover:opacity-80">About Project</a>
           </p>
           <p>
-            <a href="/support" class="text-reset">Support Us</a>
+            <a href="/support" class="text-bone hover:opacity-80">Support Us</a>
           </p>
           <p>
-            <a href="/docs" class="text-reset">Documentation</a>
+            <a href="/docs" class="text-bone hover:opacity-80">Documentation</a>
           </p>
           <p>
-            <a href="/docs/contributing/conduct" class="text-reset">Code of Conduct</a>
+            <a href="/docs/contributing/conduct" class="text-bone hover:opacity-80">Code of Conduct</a>
           </p>
           <p>
-            <a href="/license" class="text-reset">Open Source Licenses</a>
+            <a href="/license" class="text-bone hover:opacity-80">Open Source Licenses</a>
           </p>
           <p>
-            <a href="/FAQs" class="text-reset">Frequently Asked Questions</a>
+            <a href="/FAQs" class="text-bone hover:opacity-80">Frequently Asked Questions</a>
           </p>
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="md:col-span-3 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Social Media
           </h6>
           <p>
-            <a href="http://github.com/openordu" target="_blank" class="text-reset">GitHub</a>
+            <a href="http://github.com/openordu" target="_blank" class="text-bone hover:opacity-80">GitHub</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Twitter</a>
+            <a href="#!" class="text-bone hover:opacity-80">Twitter</a>
           </p>
           <p>
-            <a href="https://mastodon.celticpaganism.org" target="_blank" class="text-reset">Mastodon</a>
+            <a href="https://mastodon.celticpaganism.org" target="_blank" class="text-bone hover:opacity-80">Mastodon</a>
           </p>
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div class="md:col-span-4 lg:col-span-3 xl:col-span-3 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Contact
           </h6>
-          <p><i class="fas fa-envelope me-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
+          <p><i class="fas fa-envelope mr-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
 
-          <h6 class="text-uppercase fw-bold mb-4 mt-4">
+          <h6 class="uppercase font-bold mb-4 mt-4">
             Disclaimer
           </h6>
           <p>
@@ -16741,10 +16737,10 @@
       </div>
     </div>
   </section>
-  <div class="text-center p-4 bg-primary text-dark">
+  <div class="text-center p-4 bg-moss text-peat">
     Made with ❤️ by contributors around the world
   </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="/js/tailwind-interactions.js"></script>
     
 
 <script src="/js/elasticlunr.min.js"></script>

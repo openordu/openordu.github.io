@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="h-100" lang="en">
+<html class="h-full" lang="en">
 
   <head>
       <meta charset="utf-8">
@@ -29,54 +29,54 @@
   <!-- feed consumer (renders latest posts, GAF-277 T19) -->
   <script src="/js/feed-consumer.js" async></script>
   <!-- build:css -->
-  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/theme.min.css">
   <!-- endbuild -->
   <script src="https://kit.fontawesome.com/88f31a8dcd.js" crossorigin="anonymous"></script>
   </head>
 
-  <body class="h-100">
+  <body class="h-full">
     <div id="splash-screen">
       <img id="splashlogo" src="/assets/green_logo.png" />
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light pt-0">
-  <div class="container d-flex justify-content-between">
+    <nav class="border-b border-mist p-0">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4">
     <!-- Hamburger Menu -->
-    <div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="lg:hidden">
+        <button class="inline-flex items-center border rounded p-2 text-bone" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fas fa-caret-down"></i></span>
         </button>
-        <button class="navbar-toggler bg-primary text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-            <span class="text-primary bg-white"><i class="fas fa-bars"></i></span>
+        <button class="inline-flex items-center border rounded p-2 bg-moss text-bone" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <span class="text-moss bg-bone"><i class="fas fa-bars"></i></span>
         </button>
     </div>
 
     <!-- Logo -->
-    <a class="navbar-brand mb-0 py-2 px-2 pt-2 pe-3 text-center text-white bg-primary" href="/">
-        <svg class="me-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
-        <span class="logotitle d-none d-sm-block">CelticPaganism.org</span>
+    <a class="mb-0 inline-flex items-center gap-2 rounded bg-moss px-2 py-2 pt-2 pr-3 text-center text-bone" href="/">
+        <svg class="mr-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
+        <span class="logotitle hidden sm:block">CelticPaganism.org</span>
     </a>
 
     <!-- Navigation Links and Search Bar -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-house pt-2"></i><a class="nav-link" aria-current="page" href="/">Home</a>
+    <div class="hidden lg:block" id="navbarSupportedContent">
+        <ul class="flex flex-wrap items-center gap-1 ml-2 mb-2 lg:mb-0">
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-house pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-book pt-2"></i><a class="nav-link" href="/pce">PCE</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-book pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/pce">PCE</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="nav-link" href="/about">About</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/about">About</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-blog pt-2"></i><a class="nav-link" href="/blog">Blog</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-blog pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/blog">Blog</a>
             </li>    
             <!-- Search Form -->
-            <li class="nav-item d-flex">
-                <form class="search-container d-flex">
-                    <input type="search" id="search-input" class="form-control" autocomplete="off" placeholder="Search">
-                    <ul class="dropdown-menu d-none" id="search-suggestions"></ul>
+            <li class="flex items-center">
+                <form class="search-container flex">
+                    <input type="search" id="search-input" class="rounded border border-mist bg-peat-2 px-3 py-1 text-bone placeholder:text-mist/60 focus:border-gold focus:outline-none" autocomplete="off" placeholder="Search">
+                    <ul id="search-suggestions" class="hidden absolute"></ul>
                 </form>
             </li>
         </ul>
@@ -85,38 +85,38 @@
 </nav>
 
 
-    <main class="container">
-      <div class="row d-flex align-items-start">
-        <div class="row d-flex justify-content-center">
-            <div class="aside col col-12 col-sm-3 flex-shrink-0 p-2 bg-white">
+    <main class="mx-auto w-full max-w-6xl px-4">
+      <div>
+        <div class="grid grid-cols-12 justify-center">
+            <div class="aside col-span-12 sm:col-span-3 shrink-0 p-2 bg-peat-2">
               
 
 
 
-<div class="offcanvas offcanvas-start flex-shrink-0" id="sidebar" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1">
-    <div class="offcanvas-header d-lg-none">
-      <h5 class="offcanvas-title">Navigation</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div class="offcanvas" data-offcanvas id="sidebar" tabindex="-1">
+    <div class="flex items-center justify-between lg:hidden">
+      <h5 class="font-semibold">Navigation</h5>
+      <button type="button" class="inline-flex items-center justify-center rounded text-bone hover:bg-peat-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-      <ul class="navbar-nav justify-content-end flex-grow-1">
+    <div class="py-3">
+      <ul class="flex flex-col justify-end grow">
           
     
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-house ">
-            </i><a href="/" class="text-decoration-none">
+            </i><a href="/" class="no-underline">
             Home
             </a>
           </button>
@@ -127,9 +127,9 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <a href="/pce/" class="dropdown-item overflow-hidden text-start mb-0 ps-1 w-100 py-2 top  parentsubject rounded text-decoration-none">
+        <a href="/pce/" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1 top  parentsubject no-underline">
           <i class="fa-solid fa-book "></i>
           PCE
         </a>
@@ -140,18 +140,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/merch/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/merch/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-dollar-sign ">
-            </i><a href="/merch/" class="text-decoration-none">
+            </i><a href="/merch/" class="no-underline">
             Merch
             </a>
           </button>
@@ -162,9 +162,9 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <a href="/docs/" class="dropdown-item overflow-hidden text-start mb-0 ps-1 w-100 py-2 top  parentsubject rounded text-decoration-none">
+        <a href="/docs/" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1 top  parentsubject no-underline">
           <i class="fa-solid fa-book "></i>
           Documentation Home
         </a>
@@ -178,18 +178,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/support/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/support/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-life-ring ">
-            </i><a href="/support/" class="text-decoration-none">
+            </i><a href="/support/" class="no-underline">
             Support Us
             </a>
           </button>
@@ -200,18 +200,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/FAQs/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/FAQs/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-file ">
-            </i><a href="/FAQs/" class="text-decoration-none">
+            </i><a href="/FAQs/" class="no-underline">
             Project FAQs
             </a>
           </button>
@@ -222,18 +222,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/about/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/about/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-circle-info ">
-            </i><a href="/about/" class="text-decoration-none">
+            </i><a href="/about/" class="no-underline">
             About
             </a>
           </button>
@@ -243,14 +243,12 @@
           </ul>
     </div>
   </div>
-
             </div>
-            <div id="main" class="main col col-12 col-sm-9 pb-5">
+            <div id="main" class="main col-span-12 sm:col-span-9 pb-5">
               
-  
   <div>
   
-  <i class="fa-solid fa-home"></i><a href="/" class="text-decoration-none"> Home</a>
+  <i class="fa-solid fa-home"></i><a href="/" class="no-underline"> Home</a>
     
     
       
@@ -370,15 +368,15 @@
           
       
       
-        
           
       
       
+        
+        
           
       
       
         
-        
           
       
       
@@ -394,11 +392,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -418,11 +416,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -550,10 +548,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -566,10 +564,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -586,10 +584,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -634,11 +632,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -662,11 +660,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -1378,11 +1376,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -1790,11 +1788,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -1998,10 +1996,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -2846,10 +2844,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -3094,10 +3092,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -7494,7 +7492,7 @@
     
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-tag"></i><a href="/tags/" class="text-decoration-none">Tags List</a>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-tag"></i><a href="/tags/" class="no-underline">Tags List</a>
       
           
       
@@ -7538,7 +7536,7 @@
 </div>
 <script src="/js/tags.js"></script>
 
-<hr class="border border-primary border-1 opacity-75">
+<hr class="border border-moss opacity-75">
 
 
 
@@ -7547,17 +7545,17 @@
 
 
   
-  <div class="row">
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/A/Agallamh_na_Seanóarch/" class="link-fancy"><h2 class="display-4">Agallamh na Seanóarch</h2></a>
+  <div class="grid grid-cols-12">
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Agallamh_na_Seanóarch/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Agallamh na Seanóarch</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7567,16 +7565,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/A/Aill_na_Mireann/" class="link-fancy"><h2 class="display-4">Aill na Mireann</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Aill_na_Mireann/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Aill na Mireann</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7586,19 +7584,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/A/Anfortas/" class="link-fancy"><h2 class="display-4">Anfortas</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Anfortas/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Anfortas</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7608,16 +7606,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/A/Assembly/" class="link-fancy"><h2 class="display-4">Assembly</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Assembly/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Assembly</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7627,19 +7625,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/H/Hermes/" class="link-fancy"><h2 class="display-4">Hermes</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/H/Hermes/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Hermes</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7649,16 +7647,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/H/Hill_of_Allen/" class="link-fancy"><h2 class="display-4">Hill of Allen</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/H/Hill_of_Allen/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Hill of Allen</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7668,19 +7666,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/H/hawthorn/" class="link-fancy"><h2 class="display-4">hawthorn</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/H/hawthorn/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">hawthorn</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7690,16 +7688,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/H/Hallowe_en/" class="link-fancy"><h2 class="display-4">Hallowe’en</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/H/Hallowe_en/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Hallowe’en</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7709,19 +7707,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/N/Noínden_Ulad/" class="link-fancy"><h2 class="display-4">Noínden Ulad</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/Noínden_Ulad/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Noínden Ulad</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7731,16 +7729,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/N/na_buchtogai/" class="link-fancy"><h2 class="display-4">na buchtogai</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/na_buchtogai/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">na buchtogai</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7750,19 +7748,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/N/Nevydd/" class="link-fancy"><h2 class="display-4">Nevydd</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/Nevydd/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Nevydd</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7772,16 +7770,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/N/Navel_Stone/" class="link-fancy"><h2 class="display-4">Navel Stone</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/Navel_Stone/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Navel Stone</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7791,19 +7789,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/N/Nemedians/" class="link-fancy"><h2 class="display-4">Nemedians</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/Nemedians/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Nemedians</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7813,16 +7811,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/N/Navan_Fort/" class="link-fancy"><h2 class="display-4">Navan Fort</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/Navan_Fort/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Navan Fort</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7832,19 +7830,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/Connla_Cóel/" class="link-fancy"><h2 class="display-4">Connla Cóel</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/Connla_Cóel/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Connla Cóel</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7854,16 +7852,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/caepion/" class="link-fancy"><h2 class="display-4">caepion</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/caepion/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">caepion</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7873,19 +7871,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/Cnú_Deiréil/" class="link-fancy"><h2 class="display-4">Cnú Deiréil</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/Cnú_Deiréil/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Cnú Deiréil</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7895,16 +7893,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/Cunomaglus/" class="link-fancy"><h2 class="display-4">Cunomaglus</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/Cunomaglus/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Cunomaglus</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7914,19 +7912,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/curad-mír/" class="link-fancy"><h2 class="display-4">curad-mír</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/curad-mír/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">curad-mír</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7936,16 +7934,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/Cooley/" class="link-fancy"><h2 class="display-4">Cooley</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/Cooley/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Cooley</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7955,19 +7953,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/Ceisnoidhe_Uladh/" class="link-fancy"><h2 class="display-4">Ceisnoidhe Uladh</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/Ceisnoidhe_Uladh/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Ceisnoidhe Uladh</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7977,16 +7975,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/ceó_druídecta/" class="link-fancy"><h2 class="display-4">ceó druídecta</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/ceó_druídecta/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">ceó druídecta</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -7996,19 +7994,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/cup/" class="link-fancy"><h2 class="display-4">cup</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/cup/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">cup</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8018,16 +8016,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/Cnoc_Áine/" class="link-fancy"><h2 class="display-4">Cnoc Áine</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/Cnoc_Áine/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Cnoc Áine</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8037,19 +8035,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/Cromlech/" class="link-fancy"><h2 class="display-4">Cromlech</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/Cromlech/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Cromlech</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8059,16 +8057,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/C/Cill_Dara/" class="link-fancy"><h2 class="display-4">Cill Dara</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/C/Cill_Dara/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Cill Dara</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8078,19 +8076,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/K/Kundry/" class="link-fancy"><h2 class="display-4">Kundry</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/K/Kundry/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Kundry</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8100,16 +8098,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Míl/" class="link-fancy"><h2 class="display-4">Míl</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Míl/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Míl</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8119,19 +8117,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Mary_Candle/" class="link-fancy"><h2 class="display-4">Mary Candle</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mary_Candle/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Mary Candle</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8141,16 +8139,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Mumu/" class="link-fancy"><h2 class="display-4">Mumu</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mumu/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Mumu</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8160,19 +8158,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Mag_Mon/" class="link-fancy"><h2 class="display-4">Mag Mon</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mag_Mon/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Mag Mon</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8182,16 +8180,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Madrun/" class="link-fancy"><h2 class="display-4">Madrun</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Madrun/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Madrun</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8201,19 +8199,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Maga/" class="link-fancy"><h2 class="display-4">Maga</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Maga/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Maga</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8223,16 +8221,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Mug_Nuadat/" class="link-fancy"><h2 class="display-4">Mug Nuadat</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mug_Nuadat/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Mug Nuadat</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8242,19 +8240,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Moyturra/" class="link-fancy"><h2 class="display-4">Moyturra</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Moyturra/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Moyturra</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8264,16 +8262,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Mag_Réin/" class="link-fancy"><h2 class="display-4">Mag Réin</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mag_Réin/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Mag Réin</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8283,19 +8281,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Mauthe_Doog/" class="link-fancy"><h2 class="display-4">Mauthe Doog</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mauthe_Doog/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Mauthe Doog</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8305,16 +8303,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/MacInelly/" class="link-fancy"><h2 class="display-4">MacInelly</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/MacInelly/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">MacInelly</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8324,19 +8322,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/M/Mesca_Ulad/" class="link-fancy"><h2 class="display-4">Mesca Ulad</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mesca_Ulad/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Mesca Ulad</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8346,16 +8344,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Lammas/" class="link-fancy"><h2 class="display-4">Lammas</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Lammas/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Lammas</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8365,19 +8363,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/lubber/" class="link-fancy"><h2 class="display-4">lubber</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/lubber/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">lubber</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8387,16 +8385,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Linton_Worm/" class="link-fancy"><h2 class="display-4">Linton Worm</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Linton_Worm/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Linton Worm</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8406,19 +8404,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Lianan_Sidhe/" class="link-fancy"><h2 class="display-4">Lianan Sidhe</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Lianan_Sidhe/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Lianan Sidhe</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8428,16 +8426,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Laudine/" class="link-fancy"><h2 class="display-4">Laudine</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Laudine/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Laudine</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8447,19 +8445,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/lurikeen/" class="link-fancy"><h2 class="display-4">lurikeen</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/lurikeen/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">lurikeen</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8469,16 +8467,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Llyn_Tegid/" class="link-fancy"><h2 class="display-4">Llyn Tegid</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Llyn_Tegid/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Llyn Tegid</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8488,19 +8486,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/lone_sod/" class="link-fancy"><h2 class="display-4">lone sod</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/lone_sod/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">lone sod</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8510,16 +8508,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Land_of_Women/" class="link-fancy"><h2 class="display-4">Land of Women</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Land_of_Women/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Land of Women</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8529,19 +8527,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Land_Under_Wave/" class="link-fancy"><h2 class="display-4">Land Under Wave</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Land_Under_Wave/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Land Under Wave</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8551,16 +8549,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Land_of_Youth/" class="link-fancy"><h2 class="display-4">Land of Youth</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Land_of_Youth/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Land of Youth</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8570,19 +8568,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/L/Lugaidh/" class="link-fancy"><h2 class="display-4">Lugaidh</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/L/Lugaidh/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Lugaidh</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8592,16 +8590,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/J/Jack-o-Lantern/" class="link-fancy"><h2 class="display-4">Jack-o-Lantern</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/J/Jack-o-Lantern/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Jack-o-Lantern</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8611,19 +8609,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/Ben-Varrey/" class="link-fancy"><h2 class="display-4">Ben-Varrey</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/Ben-Varrey/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Ben-Varrey</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8633,16 +8631,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/brollachan/" class="link-fancy"><h2 class="display-4">brollachan</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/brollachan/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">brollachan</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8652,19 +8650,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/Biddy_Mannion/" class="link-fancy"><h2 class="display-4">Biddy Mannion</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/Biddy_Mannion/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Biddy Mannion</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8674,16 +8672,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/Bron/" class="link-fancy"><h2 class="display-4">Bron</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/Bron/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Bron</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8693,19 +8691,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/bangaisgedaig/" class="link-fancy"><h2 class="display-4">bangaisgedaig</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/bangaisgedaig/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">bangaisgedaig</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8715,16 +8713,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/boggart/" class="link-fancy"><h2 class="display-4">boggart</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/boggart/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">boggart</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8734,19 +8732,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/Balan/" class="link-fancy"><h2 class="display-4">Balan</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/Balan/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Balan</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8756,16 +8754,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/Bolg/" class="link-fancy"><h2 class="display-4">Bolg</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/Bolg/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Bolg</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8775,19 +8773,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/Berba/" class="link-fancy"><h2 class="display-4">Berba</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/Berba/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Berba</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8797,16 +8795,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/Brâzil/" class="link-fancy"><h2 class="display-4">Brâzil</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/Brâzil/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Brâzil</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8816,19 +8814,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/Bercilak/" class="link-fancy"><h2 class="display-4">Bercilak</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/Bercilak/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Bercilak</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8838,16 +8836,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/bandrui/" class="link-fancy"><h2 class="display-4">bandrui</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/bandrui/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">bandrui</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8857,19 +8855,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/B/bean_nighe/" class="link-fancy"><h2 class="display-4">bean nighe</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/B/bean_nighe/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">bean nighe</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8879,16 +8877,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/E/Elgnad/" class="link-fancy"><h2 class="display-4">Elgnad</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/E/Elgnad/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Elgnad</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8898,19 +8896,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/E/echtra/" class="link-fancy"><h2 class="display-4">echtra</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/E/echtra/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">echtra</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8920,16 +8918,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/E/Eochaid_Ollathair/" class="link-fancy"><h2 class="display-4">Eochaid Ollathair</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/E/Eochaid_Ollathair/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Eochaid Ollathair</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8939,19 +8937,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/E/eó_fis/" class="link-fancy"><h2 class="display-4">eó fis</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/E/eó_fis/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">eó fis</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8961,16 +8959,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/P/poet/" class="link-fancy"><h2 class="display-4">poet</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/P/poet/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">poet</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -8980,19 +8978,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/P/power_of_the_word/" class="link-fancy"><h2 class="display-4">power of the word</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/P/power_of_the_word/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">power of the word</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9002,16 +9000,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/P/portent/" class="link-fancy"><h2 class="display-4">portent</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/P/portent/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">portent</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9021,19 +9019,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/P/Pelleas/" class="link-fancy"><h2 class="display-4">Pelleas</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/P/Pelleas/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Pelleas</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9043,16 +9041,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/I/imram/" class="link-fancy"><h2 class="display-4">imram</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/I/imram/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">imram</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9062,19 +9060,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/I/Igerna/" class="link-fancy"><h2 class="display-4">Igerna</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/I/Igerna/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Igerna</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9084,16 +9082,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/I/Iupiter/" class="link-fancy"><h2 class="display-4">Iupiter</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/I/Iupiter/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Iupiter</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9103,19 +9101,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/I/incantations/" class="link-fancy"><h2 class="display-4">incantations</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/I/incantations/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">incantations</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9125,16 +9123,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/R/Rathcrogan/" class="link-fancy"><h2 class="display-4">Rathcrogan</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/R/Rathcrogan/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Rathcrogan</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9144,19 +9142,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/R/Roan/" class="link-fancy"><h2 class="display-4">Roan</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/R/Roan/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Roan</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9166,16 +9164,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/R/Rigatona/" class="link-fancy"><h2 class="display-4">Rigatona</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/R/Rigatona/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Rigatona</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9185,19 +9183,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/R/rí/" class="link-fancy"><h2 class="display-4">rí</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/R/rí/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">rí</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9207,16 +9205,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/Grannos/" class="link-fancy"><h2 class="display-4">Grannos</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Grannos/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Grannos</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9226,19 +9224,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/Gyre-Carling/" class="link-fancy"><h2 class="display-4">Gyre-Carling</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Gyre-Carling/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Gyre-Carling</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9248,16 +9246,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/Gaiblín/" class="link-fancy"><h2 class="display-4">Gaiblín</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Gaiblín/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Gaiblín</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9267,19 +9265,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/Garland_Sunday/" class="link-fancy"><h2 class="display-4">Garland Sunday</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Garland_Sunday/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Garland Sunday</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9289,16 +9287,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/Gáilióin/" class="link-fancy"><h2 class="display-4">Gáilióin</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Gáilióin/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Gáilióin</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9308,19 +9306,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/Grisandole/" class="link-fancy"><h2 class="display-4">Grisandole</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Grisandole/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Grisandole</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9330,16 +9328,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/gentry/" class="link-fancy"><h2 class="display-4">gentry</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/gentry/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">gentry</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9349,19 +9347,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/George/" class="link-fancy"><h2 class="display-4">George</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/George/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">George</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9371,16 +9369,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/Gialla_Deacair/" class="link-fancy"><h2 class="display-4">Gialla Deacair</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Gialla_Deacair/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Gialla Deacair</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9390,19 +9388,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/G/Ganore/" class="link-fancy"><h2 class="display-4">Ganore</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Ganore/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Ganore</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9412,16 +9410,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/O/Oona/" class="link-fancy"><h2 class="display-4">Oona</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/O/Oona/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Oona</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9431,19 +9429,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/T/Temair/" class="link-fancy"><h2 class="display-4">Temair</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/T/Temair/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Temair</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9453,16 +9451,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/D/Dìreach/" class="link-fancy"><h2 class="display-4">Dìreach</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/D/Dìreach/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Dìreach</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9472,19 +9470,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/D/Dinny-Mara/" class="link-fancy"><h2 class="display-4">Dinny-Mara</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/D/Dinny-Mara/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Dinny-Mara</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9494,16 +9492,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/D/Dame_du_Lac/" class="link-fancy"><h2 class="display-4">Dame du Lac</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/D/Dame_du_Lac/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Dame du Lac</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9513,19 +9511,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/D/Dé_Danann/" class="link-fancy"><h2 class="display-4">Dé Danann</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/D/Dé_Danann/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Dé Danann</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9535,16 +9533,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/D/Dana/" class="link-fancy"><h2 class="display-4">Dana</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/D/Dana/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Dana</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9554,19 +9552,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/S/Shan_Van_Vocht/" class="link-fancy"><h2 class="display-4">Shan Van Vocht</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/S/Shan_Van_Vocht/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Shan Van Vocht</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9576,16 +9574,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/S/solar_divinities/" class="link-fancy"><h2 class="display-4">solar divinities</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/S/solar_divinities/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">solar divinities</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9595,19 +9593,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/S/Sweeney/" class="link-fancy"><h2 class="display-4">Sweeney</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/S/Sweeney/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Sweeney</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9617,16 +9615,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/S/Slemuin/" class="link-fancy"><h2 class="display-4">Slemuin</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/S/Slemuin/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Slemuin</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9636,19 +9634,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/S/sow/" class="link-fancy"><h2 class="display-4">sow</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/S/sow/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">sow</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9658,16 +9656,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/F/fairy_hunger/" class="link-fancy"><h2 class="display-4">fairy hunger</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/fairy_hunger/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">fairy hunger</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9677,19 +9675,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/F/festival/" class="link-fancy"><h2 class="display-4">festival</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/festival/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">festival</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9699,16 +9697,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/F/Fuinche/" class="link-fancy"><h2 class="display-4">Fuinche</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/Fuinche/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Fuinche</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9718,19 +9716,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/F/féth_fiada/" class="link-fancy"><h2 class="display-4">féth fiada</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/féth_fiada/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">féth fiada</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9740,16 +9738,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/F/Fuwch_Laethwen_Lefrith/" class="link-fancy"><h2 class="display-4">Fuwch Laethwen Lefrith</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/Fuwch_Laethwen_Lefrith/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Fuwch Laethwen Lefrith</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9759,19 +9757,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/F/Fir_Domnann/" class="link-fancy"><h2 class="display-4">Fir Domnann</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/Fir_Domnann/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Fir Domnann</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9781,16 +9779,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/F/Fergus_Foga/" class="link-fancy"><h2 class="display-4">Fergus Foga</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/Fergus_Foga/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">Fergus Foga</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9800,19 +9798,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/F/fuath/" class="link-fancy"><h2 class="display-4">fuath</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/fuath/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">fuath</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9822,16 +9820,16 @@
     </div>
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/F/féis/" class="link-fancy"><h2 class="display-4">féis</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/féis/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">féis</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9841,19 +9839,19 @@
     </div>
   
     </div>
-    <div class="row">
+    <div class="grid grid-cols-12">
   
   
-    <div class="col-md-6 py-3 border-bottom">
-      <a href="/content/pce/W/weasel/" class="link-fancy"><h2 class="display-4">weasel</h2></a>
+    <div class="md:col-span-6 py-3 border-b">
+      <a href="/content/pce/W/weasel/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-tight">weasel</h2></a>
       <p>Published
         <time datetime="2026-08-29">29 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/null/" class="badge outlined-pill bg-white text-dark rounded-pill text-light me-1 my-1 text-truncate">
-          <i class="fas fa-tags text-primary"></i>
+        <a href="/tags/null/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
           null
         </a>
       
@@ -9865,26 +9863,26 @@
   
 </div>
 
-<div class="row d-flex justify-content-center">
-  <div class="mt-4 col-12">
-    <div class="row d-flex justify-content-between">
-      <div class="col">
+<div class="grid grid-cols-12 justify-center">
+  <div class="mt-4 col-span-12">
+    <div class="grid grid-cols-12 justify-between">
+      <div class="col-span-6">
         
-          <a href="/tags/Ireland/" class="btn btn-outline-primary"> <i class="fa-solid fa-arrow-left"></i> Previous Topic</a>  </div> <div class="col text-end">  <a href="/tags/Otherworld/" class="btn btn-outline-primary">Next Topic <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="/tags/Ireland/" class="inline-flex items-center justify-center rounded border border-moss px-4 py-2 font-semibold text-bone hover:bg-moss hover:text-bone"> <i class="fa-solid fa-arrow-left"></i> Previous Topic</a>  </div> <div class="col-span-6 text-right">  <a href="/tags/Otherworld/" class="inline-flex items-center justify-center rounded border border-moss px-4 py-2 font-semibold text-bone hover:bg-moss hover:text-bone">Next Topic <i class="fa-solid fa-arrow-right"></i></a>
         
       </div>
     </div>
   </div>
 </div>
 
-  <p>See <a href="/tags/" class="badge badge-primary">all tags</a>.</p>
+  <p>See <a href="/tags/" class="inline-flex items-center rounded-full bg-moss px-2 py-0.5 text-xs text-bone">all tags</a>.</p>
 
 
 
-  
+
   <div>
   
-  <i class="fa-solid fa-home"></i><a href="/" class="text-decoration-none"> Home</a>
+  <i class="fa-solid fa-home"></i><a href="/" class="no-underline"> Home</a>
     
     
       
@@ -10004,15 +10002,15 @@
           
       
       
-        
           
       
       
+        
+        
           
       
       
         
-        
           
       
       
@@ -10028,11 +10026,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -10052,11 +10050,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -10184,10 +10182,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -10200,10 +10198,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -10220,10 +10218,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -10268,11 +10266,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -10296,11 +10294,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -11012,11 +11010,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -11424,11 +11422,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -11632,10 +11630,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -12480,10 +12478,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -12728,10 +12726,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -17128,7 +17126,7 @@
     
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-tag"></i><a href="/tags/" class="text-decoration-none">Tags List</a>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-tag"></i><a href="/tags/" class="no-underline">Tags List</a>
       
           
       
@@ -17162,22 +17160,20 @@
       </div>
     </main>
 
-    <footer class="text-center text-lg-start bg-light text-muted pt-1">
-      <button id="back-to-top" class="btn btn-primary px-1 py-1" style="display: none; position: fixed; bottom: 20px; right: 20px;" data-toggle="tooltip" data-placement="left" title="Back to the top"><i class="fa-solid fa-circle-up" style="color: white;"></i></button>
+    <footer class="text-center lg:text-left bg-peat/60 text-mist pt-1">
+      <button id="back-to-top" class="inline-flex items-center justify-center rounded bg-moss px-1 py-1 font-semibold text-bone hover:bg-peat" style="display: none; position: fixed; bottom: 20px; right: 20px;" data-toggle="tooltip" data-placement="left" title="Back to the top"><i class="fa-solid fa-circle-up" style="color: white;"></i></button>
 
-<!-- Bootstrap and jQuery JS -->
+<!-- Custom JS (vanilla interaction shim) -->
 <script src="/js/back-to-top.js" integrity="sha384-8kgCB6HPdPPbW6F14pulqulPbhSUEbJzrm4fbq6BHSQV2hwUSs0mzrVfKLTw43rw"></script>
-<script src="/assets/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"></script>
-<script src="/assets/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"></script>
 
   <section class="">
-    <div class="container text-center text-md-start mt-5">
+    <div class="mx-auto w-full max-w-6xl px-4 text-center lg:text-left mt-5">
       <!-- Grid row -->
-      <div class="row mt-3">
+      <div class="grid grid-cols-12 mt-3">
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <div class="md:col-span-3 lg:col-span-4 xl:col-span-3 mx-auto mb-4">
           <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             OpenOrdú
           </h6>
           <p>
@@ -17186,57 +17182,57 @@
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="md:col-span-2 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Quick Links
           </h6>
           <p>
-            <a href="/about" class="text-reset">About Project</a>
+            <a href="/about" class="text-bone hover:opacity-80">About Project</a>
           </p>
           <p>
-            <a href="/support" class="text-reset">Support Us</a>
+            <a href="/support" class="text-bone hover:opacity-80">Support Us</a>
           </p>
           <p>
-            <a href="/docs" class="text-reset">Documentation</a>
+            <a href="/docs" class="text-bone hover:opacity-80">Documentation</a>
           </p>
           <p>
-            <a href="/docs/contributing/conduct" class="text-reset">Code of Conduct</a>
+            <a href="/docs/contributing/conduct" class="text-bone hover:opacity-80">Code of Conduct</a>
           </p>
           <p>
-            <a href="/license" class="text-reset">Open Source Licenses</a>
+            <a href="/license" class="text-bone hover:opacity-80">Open Source Licenses</a>
           </p>
           <p>
-            <a href="/FAQs" class="text-reset">Frequently Asked Questions</a>
+            <a href="/FAQs" class="text-bone hover:opacity-80">Frequently Asked Questions</a>
           </p>
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="md:col-span-3 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Social Media
           </h6>
           <p>
-            <a href="http://github.com/openordu" target="_blank" class="text-reset">GitHub</a>
+            <a href="http://github.com/openordu" target="_blank" class="text-bone hover:opacity-80">GitHub</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Twitter</a>
+            <a href="#!" class="text-bone hover:opacity-80">Twitter</a>
           </p>
           <p>
-            <a href="https://mastodon.celticpaganism.org" target="_blank" class="text-reset">Mastodon</a>
+            <a href="https://mastodon.celticpaganism.org" target="_blank" class="text-bone hover:opacity-80">Mastodon</a>
           </p>
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div class="md:col-span-4 lg:col-span-3 xl:col-span-3 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Contact
           </h6>
-          <p><i class="fas fa-envelope me-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
+          <p><i class="fas fa-envelope mr-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
 
-          <h6 class="text-uppercase fw-bold mb-4 mt-4">
+          <h6 class="uppercase font-bold mb-4 mt-4">
             Disclaimer
           </h6>
           <p>
@@ -17246,10 +17242,10 @@
       </div>
     </div>
   </section>
-  <div class="text-center p-4 bg-primary text-dark">
+  <div class="text-center p-4 bg-moss text-peat">
     Made with ❤️ by contributors around the world
   </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="/js/tailwind-interactions.js"></script>
     
 
 <script src="/js/elasticlunr.min.js"></script>

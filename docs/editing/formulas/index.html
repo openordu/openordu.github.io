@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="h-100" lang="en">
+<html class="h-full" lang="en">
 
   <head>
       <meta charset="utf-8">
@@ -29,54 +29,55 @@
   <!-- feed consumer (renders latest posts, GAF-277 T19) -->
   <script src="/js/feed-consumer.js" async></script>
   <!-- build:css -->
-  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/theme.min.css">
   <!-- endbuild -->
   <script src="https://kit.fontawesome.com/88f31a8dcd.js" crossorigin="anonymous"></script>
   </head>
 
-  <body class="h-100">
+  <body class="h-full">
+    <div id="progress"></div>
     <div id="splash-screen">
       <img id="splashlogo" src="/assets/green_logo.png" />
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light pt-0">
-  <div class="container d-flex justify-content-between">
+    <nav class="border-b border-mist p-0">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4">
     <!-- Hamburger Menu -->
-    <div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="lg:hidden">
+        <button class="inline-flex items-center border rounded p-2 text-bone" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fas fa-caret-down"></i></span>
         </button>
-        <button class="navbar-toggler bg-primary text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-            <span class="text-primary bg-white"><i class="fas fa-bars"></i></span>
+        <button class="inline-flex items-center border rounded p-2 bg-moss text-bone" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <span class="text-moss bg-bone"><i class="fas fa-bars"></i></span>
         </button>
     </div>
 
     <!-- Logo -->
-    <a class="navbar-brand mb-0 py-2 px-2 pt-2 pe-3 text-center text-white bg-primary" href="/">
-        <svg class="me-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
-        <span class="logotitle d-none d-sm-block">CelticPaganism.org</span>
+    <a class="mb-0 inline-flex items-center gap-2 rounded bg-moss px-2 py-2 pt-2 pr-3 text-center text-bone" href="/">
+        <svg class="mr-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
+        <span class="logotitle hidden sm:block">CelticPaganism.org</span>
     </a>
 
     <!-- Navigation Links and Search Bar -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-house pt-2"></i><a class="nav-link" aria-current="page" href="/">Home</a>
+    <div class="hidden lg:block" id="navbarSupportedContent">
+        <ul class="flex flex-wrap items-center gap-1 ml-2 mb-2 lg:mb-0">
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-house pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-book pt-2"></i><a class="nav-link" href="/pce">PCE</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-book pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/pce">PCE</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="nav-link" href="/about">About</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/about">About</a>
             </li>
-            <li class="nav-item d-flex me-1">
-                <i class="icon fa-solid fa-blog pt-2"></i><a class="nav-link" href="/blog">Blog</a>
+            <li class="flex items-center mr-1">
+                <i class="icon fa-solid fa-blog pt-2"></i><a class="px-2 py-1 text-bone hover:text-gold rounded" href="/blog">Blog</a>
             </li>    
             <!-- Search Form -->
-            <li class="nav-item d-flex">
-                <form class="search-container d-flex">
-                    <input type="search" id="search-input" class="form-control" autocomplete="off" placeholder="Search">
-                    <ul class="dropdown-menu d-none" id="search-suggestions"></ul>
+            <li class="flex items-center">
+                <form class="search-container flex">
+                    <input type="search" id="search-input" class="rounded border border-mist bg-peat-2 px-3 py-1 text-bone placeholder:text-mist/60 focus:border-gold focus:outline-none" autocomplete="off" placeholder="Search">
+                    <ul id="search-suggestions" class="hidden absolute"></ul>
                 </form>
             </li>
         </ul>
@@ -85,38 +86,38 @@
 </nav>
 
 
-    <main class="container">
-      <div class="row d-flex align-items-start">
-        <div class="row d-flex justify-content-center">
-            <div class="aside col col-12 col-md-3 d-flex flex-shrink-0 bg-white">
+    <main class="mx-auto w-full max-w-6xl px-4">
+      <div>
+        <div class="grid grid-cols-12 justify-center">
+            <div class="aside col-span-12 md:col-span-3 flex shrink-0 bg-peat-2">
               
 
 
 
-<div class="offcanvas offcanvas-start flex-shrink-0" id="sidebar" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1">
-    <div class="offcanvas-header d-lg-none">
-      <h5 class="offcanvas-title">Navigation</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div class="offcanvas" data-offcanvas id="sidebar" tabindex="-1">
+    <div class="flex items-center justify-between lg:hidden">
+      <h5 class="font-semibold">Navigation</h5>
+      <button type="button" class="inline-flex items-center justify-center rounded text-bone hover:bg-peat-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-      <ul class="navbar-nav justify-content-end flex-grow-1">
+    <div class="py-3">
+      <ul class="flex flex-col justify-end grow">
           
     
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-house ">
-            </i><a href="/" class="text-decoration-none">
+            </i><a href="/" class="no-underline">
             Home
             </a>
           </button>
@@ -127,9 +128,9 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <a href="/pce/" class="dropdown-item overflow-hidden text-start mb-0 ps-1 w-100 py-2 top  parentsubject rounded text-decoration-none">
+        <a href="/pce/" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1 top  parentsubject no-underline">
           <i class="fa-solid fa-book "></i>
           PCE
         </a>
@@ -140,18 +141,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/merch/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/merch/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-dollar-sign ">
-            </i><a href="/merch/" class="text-decoration-none">
+            </i><a href="/merch/" class="no-underline">
             Merch
             </a>
           </button>
@@ -162,31 +163,31 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button data-bs-toggle="collapse" data-bs-target="#documentation-home-collapse" class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button data-bs-toggle="collapse" data-bs-target="#documentation-home-collapse" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         parent btn-toggle
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i type="button" data-bs-toggle="collapse" data-bs-target="#documentation-home-collapse" class="fa-solid fa-angle-down ">
-            </i><a href="/docs/" class="text-decoration-none">
+            </i><a href="/docs/" class="no-underline">
             Documentation Home
             </a>
           </button>
-      <div class="m-0 p-0 collapse show" id="documentation-home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+      <div class="m-0 p-0 block" id="documentation-home-collapse">
+          <ul class="btn-toggle-nav flex flex-col pl-2 list-none font-normal pb-1 small">
     
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <a href="/docs/quickstart/" class="dropdown-item overflow-hidden text-start mb-0 ps-1 w-100 py-2 sub  parentsubject rounded text-decoration-none">
-          <i class="fa-solid fa-rocket ps-1"></i>
+        <a href="/docs/quickstart/" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1 sub  parentsubject no-underline">
+          <i class="fa-solid fa-rocket pl-1"></i>
           Quickstart Guide
         </a>
       </li>
@@ -196,10 +197,10 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <a href="/docs/contributing/" class="dropdown-item overflow-hidden text-start mb-0 ps-1 w-100 py-2 sub  parentsubject rounded text-decoration-none">
-          <i class="fa-solid fa-user-plus ps-1"></i>
+        <a href="/docs/contributing/" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1 sub  parentsubject no-underline">
+          <i class="fa-solid fa-user-plus pl-1"></i>
           Contributing
         </a>
       </li>
@@ -209,18 +210,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/todo/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/todo/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         
         subject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-list-check ps-1">
-            </i><a href="/docs/todo/" class="text-decoration-none">
+          <i  class="fa-solid fa-list-check pl-1">
+            </i><a href="/docs/todo/" class="no-underline">
             Todos
             </a>
           </button>
@@ -231,39 +232,39 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button data-bs-toggle="collapse" data-bs-target="#editing-collapse" class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button data-bs-toggle="collapse" data-bs-target="#editing-collapse" class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         parent btn-toggle
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i type="button" data-bs-toggle="collapse" data-bs-target="#editing-collapse" class="fa-solid fa-angle-down ps-1">
-            </i><a href="/docs/editing/" class="text-decoration-none">
+          <i type="button" data-bs-toggle="collapse" data-bs-target="#editing-collapse" class="fa-solid fa-angle-down pl-1">
+            </i><a href="/docs/editing/" class="no-underline">
             Editing
             </a>
           </button>
-      <div class="m-0 p-0 collapse show" id="editing-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+      <div class="m-0 p-0 block" id="editing-collapse">
+          <ul class="btn-toggle-nav flex flex-col pl-2 list-none font-normal pb-1 small">
     
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/editing/charts-and-graphs/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/editing/charts-and-graphs/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         
         subject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-chart-bar ps-2">
-            </i><a href="/docs/editing/charts-and-graphs/" class="text-decoration-none">
+          <i  class="fa-solid fa-chart-bar pl-2">
+            </i><a href="/docs/editing/charts-and-graphs/" class="no-underline">
             Charts &amp; Graphs
             </a>
           </button>
@@ -274,20 +275,20 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/editing/formulas/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/editing/formulas/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         active
         
         subject
-        rounded"
+        no-underline"
         
         aria-current="page"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-superscript ps-2">
-            </i><a href="/docs/editing/formulas/" class="text-decoration-none">
+          <i  class="fa-solid fa-superscript pl-2">
+            </i><a href="/docs/editing/formulas/" class="no-underline">
             Formulas
             </a>
           </button>
@@ -298,18 +299,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/editing/frontmatter/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/editing/frontmatter/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         
         subject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-file-code ps-2">
-            </i><a href="/docs/editing/frontmatter/" class="text-decoration-none">
+          <i  class="fa-solid fa-file-code pl-2">
+            </i><a href="/docs/editing/frontmatter/" class="no-underline">
             Frontmatter
             </a>
           </button>
@@ -320,40 +321,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/editing/images-emojis/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/editing/headings/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         
         subject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-smile ps-2">
-            </i><a href="/docs/editing/images-emojis/" class="text-decoration-none">
-            Images &amp; Emoji&#39;s
-            </a>
-          </button>
-      </li>
-  
-            
-    
-    
-    
-    
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
-      
-        <button onclick="location.href='/docs/editing/headings/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
-        sub
-        
-        
-        subject
-        rounded"
-        
-        aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-heading ps-2">
-            </i><a href="/docs/editing/headings/" class="text-decoration-none">
+          <i  class="fa-solid fa-heading pl-2">
+            </i><a href="/docs/editing/headings/" class="no-underline">
             Headings
             </a>
           </button>
@@ -364,18 +343,40 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/editing/links/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/editing/images-emojis/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         
         subject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-link ps-2">
-            </i><a href="/docs/editing/links/" class="text-decoration-none">
+          <i  class="fa-solid fa-smile pl-2">
+            </i><a href="/docs/editing/images-emojis/" class="no-underline">
+            Images &amp; Emoji&#39;s
+            </a>
+          </button>
+      </li>
+  
+            
+    
+    
+    
+    
+    <li class="mb-0 grid gap-0 py-0 pl-0">
+      
+        <button onclick="location.href='/docs/editing/links/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
+        sub
+        
+        
+        subject
+        no-underline"
+        
+        aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
+          <i  class="fa-solid fa-link pl-2">
+            </i><a href="/docs/editing/links/" class="no-underline">
             Links
             </a>
           </button>
@@ -386,40 +387,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/editing/quizzes/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/editing/lists/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         
         subject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-feather-pointed ps-2">
-            </i><a href="/docs/editing/quizzes/" class="text-decoration-none">
-            Quizzes
-            </a>
-          </button>
-      </li>
-  
-            
-    
-    
-    
-    
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
-      
-        <button onclick="location.href='/docs/editing/lists/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
-        sub
-        
-        
-        subject
-        rounded"
-        
-        aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-list ps-2">
-            </i><a href="/docs/editing/lists/" class="text-decoration-none">
+          <i  class="fa-solid fa-list pl-2">
+            </i><a href="/docs/editing/lists/" class="no-underline">
             Lists
             </a>
           </button>
@@ -430,18 +409,40 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/editing/slides-and-tabs/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/editing/quizzes/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         
         subject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-file-powerpoint ps-2">
-            </i><a href="/docs/editing/slides-and-tabs/" class="text-decoration-none">
+          <i  class="fa-solid fa-feather-pointed pl-2">
+            </i><a href="/docs/editing/quizzes/" class="no-underline">
+            Quizzes
+            </a>
+          </button>
+      </li>
+  
+            
+    
+    
+    
+    
+    <li class="mb-0 grid gap-0 py-0 pl-0">
+      
+        <button onclick="location.href='/docs/editing/slides-and-tabs/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
+        sub
+        
+        
+        subject
+        no-underline"
+        
+        aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
+          <i  class="fa-solid fa-file-powerpoint pl-2">
+            </i><a href="/docs/editing/slides-and-tabs/" class="no-underline">
             Slides and Tabs
             </a>
           </button>
@@ -452,18 +453,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/editing/tables/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/editing/tables/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         
         subject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-table ps-2">
-            </i><a href="/docs/editing/tables/" class="text-decoration-none">
+          <i  class="fa-solid fa-table pl-2">
+            </i><a href="/docs/editing/tables/" class="no-underline">
             Tables
             </a>
           </button>
@@ -474,18 +475,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/editing/text/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/editing/text/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         
         subject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-font ps-2">
-            </i><a href="/docs/editing/text/" class="text-decoration-none">
+          <i  class="fa-solid fa-font pl-2">
+            </i><a href="/docs/editing/text/" class="no-underline">
             Text
             </a>
           </button>
@@ -496,18 +497,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/docs/editing/tips-warnings/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/docs/editing/tips-warnings/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         sub
         
         
         subject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
-          <i  class="fa-solid fa-lightbulb ps-2">
-            </i><a href="/docs/editing/tips-warnings/" class="text-decoration-none">
+          <i  class="fa-solid fa-lightbulb pl-2">
+            </i><a href="/docs/editing/tips-warnings/" class="no-underline">
             Tips &amp; Warnings
             </a>
           </button>
@@ -527,18 +528,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/support/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/support/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-life-ring ">
-            </i><a href="/support/" class="text-decoration-none">
+            </i><a href="/support/" class="no-underline">
             Support Us
             </a>
           </button>
@@ -549,18 +550,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/FAQs/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/FAQs/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-file ">
-            </i><a href="/FAQs/" class="text-decoration-none">
+            </i><a href="/FAQs/" class="no-underline">
             Project FAQs
             </a>
           </button>
@@ -571,18 +572,18 @@
     
     
     
-    <li class="mb-0 d-grid gap-0 py-0 ps-0">
+    <li class="mb-0 grid gap-0 py-0 pl-0">
       
-        <button onclick="location.href='/about/';" type="button"  class="dropdown-item overflow-hidden btn text-start mb-0 ps-1 w-100 py-2
+        <button onclick="location.href='/about/';" type="button"  class="dropdown-item block w-full px-3 py-2 text-left rounded hover:bg-mist overflow-hidden mb-0 pl-1
         top
         
         
         parentsubject
-        rounded"
+        no-underline"
         
         aria-expanded="" style="text-overflow: ellipsis; margin: -2px 0px">
           <i  class="fa-solid fa-circle-info ">
-            </i><a href="/about/" class="text-decoration-none">
+            </i><a href="/about/" class="no-underline">
             About
             </a>
           </button>
@@ -592,14 +593,12 @@
           </ul>
     </div>
   </div>
-
             </div>
-            <div id="main" class="main col col-12 col-md-9 pb-5">
+            <div id="main" class="main col-span-12 md:col-span-9 pb-5">
               
-  
   <div>
   
-  <i class="fa-solid fa-home"></i><a href="/" class="text-decoration-none"> Home</a>
+  <i class="fa-solid fa-home"></i><a href="/" class="no-underline"> Home</a>
     
     
       
@@ -617,7 +616,7 @@
     
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-book"></i><a href="/docs/" class="text-decoration-none">Documentation Home</a>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-book"></i><a href="/docs/" class="no-underline">Documentation Home</a>
       
           
       
@@ -666,7 +665,7 @@
           
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-edit"></i><a href="/docs/editing/" class="text-decoration-none">Editing</a>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-edit"></i><a href="/docs/editing/" class="no-underline">Editing</a>
       
           
       
@@ -675,7 +674,7 @@
           
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-superscript"></i><span class="fw-bold text-muted">Formulas</span>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-superscript"></i><span class="font-bold text-mist">Formulas</span>
       
         
           
@@ -725,15 +724,15 @@
           
       
       
-        
           
       
       
+        
+        
           
       
       
         
-        
           
       
       
@@ -749,11 +748,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -773,11 +772,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -905,10 +904,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -921,10 +920,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -941,10 +940,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -989,11 +988,11 @@
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -1017,11 +1016,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -1733,11 +1732,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -2145,11 +2144,11 @@
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -2353,10 +2352,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -3201,10 +3200,10 @@
           
       
       
+        
           
       
       
-        
         
           
       
@@ -3449,10 +3448,10 @@
           
       
       
-        
           
       
       
+        
         
           
       
@@ -7880,7 +7879,7 @@
 <header class="mt-4">
       
       
-      <i class="display-1 fa-solid fa-superscript float-start ps-0 ms-0"></i>
+      <i class="text-5xl font-semibold tracking-tight fa-solid fa-superscript float-left pl-0 ml-0"></i>
       
       <a name="formulas"><h1 class="pagetitle">Formulas</h1></a>
 </header>
@@ -7892,8 +7891,8 @@
 
   
     
-      <a class="badge outlined-pill bg-white rounded-pill text-dark me-1 my-1" href="/tags/docs">
-          <i class="fas fa-tags text-primary"></i>
+      <a class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-bone text-peat mr-1 my-1" href="/tags/docs">
+          <i class="fas fa-tags text-moss"></i>
           docs
       </a>
     
@@ -7902,14 +7901,14 @@
 </div>
 <script src="/js/tags.js"></script>
 
-<hr class="border border-primary border-1 opacity-75">
+<hr class="border border-moss opacity-75">
 
 
 
 
-  <aside id="headings" class="mx-2 mb-1 px-3 py-1 bg-light float-end col-12 col-md-6 col-lg-4 overflow-auto">
+  <aside id="headings" class="mx-2 mb-1 px-3 py-1 bg-mist/50 float-right w-72 overflow-auto">
     <h3>Contents</h3>
-    <div id="toc" class="ps-1 text-truncate">
+    <div id="toc" class="pl-1 truncate">
       <ul class="ms-2 px-2 text-truncate"><li class="text-truncate"><a href="#tex-lang" title="Tex lang" class="text-primary">Tex lang</a></li></ul>
     </div>
   </aside>
@@ -7927,10 +7926,10 @@ $$
 </code></pre>
 <script src="/js/quiz.js"></script>
 
-  
+
   <div>
   
-  <i class="fa-solid fa-home"></i><a href="/" class="text-decoration-none"> Home</a>
+  <i class="fa-solid fa-home"></i><a href="/" class="no-underline"> Home</a>
     
     
       
@@ -7948,7 +7947,7 @@ $$
     
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-book"></i><a href="/docs/" class="text-decoration-none">Documentation Home</a>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-book"></i><a href="/docs/" class="no-underline">Documentation Home</a>
       
           
       
@@ -7997,7 +7996,7 @@ $$
           
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-edit"></i><a href="/docs/editing/" class="text-decoration-none">Editing</a>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-edit"></i><a href="/docs/editing/" class="no-underline">Editing</a>
       
           
       
@@ -8006,7 +8005,7 @@ $$
           
       
       
-        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-superscript"></i><span class="fw-bold text-muted">Formulas</span>
+        &nbsp;&frasl;&nbsp;<i class="fa-solid fa-superscript"></i><span class="font-bold text-mist">Formulas</span>
       
         
           
@@ -8056,15 +8055,15 @@ $$
           
       
       
-        
           
       
       
+        
+        
           
       
       
         
-        
           
       
       
@@ -8080,11 +8079,11 @@ $$
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -8104,11 +8103,11 @@ $$
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -8236,10 +8235,10 @@ $$
           
       
       
+        
           
       
       
-        
         
           
       
@@ -8252,10 +8251,10 @@ $$
           
       
       
-        
           
       
       
+        
         
           
       
@@ -8272,10 +8271,10 @@ $$
           
       
       
-        
           
       
       
+        
         
           
       
@@ -8320,11 +8319,11 @@ $$
           
       
       
-        
           
       
       
         
+        
           
       
       
@@ -8348,11 +8347,11 @@ $$
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -9064,11 +9063,11 @@ $$
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -9476,11 +9475,11 @@ $$
           
       
       
+        
           
       
       
         
-        
           
       
       
@@ -9684,10 +9683,10 @@ $$
           
       
       
-        
           
       
       
+        
         
           
       
@@ -10532,10 +10531,10 @@ $$
           
       
       
+        
           
       
       
-        
         
           
       
@@ -10780,10 +10779,10 @@ $$
           
       
       
-        
           
       
       
+        
         
           
       
@@ -15208,21 +15207,21 @@ $$
         </div>
 
 
-<a href="https://github.com/openordu/ordu-eleventy/edit/master/src/docs/editing/formulas.md" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i> Edit this page</a>
+<a href="https://github.com/openordu/ordu-eleventy/edit/master/src/docs/editing/formulas.md" class="inline-flex items-center justify-center rounded bg-moss px-3 py-1 text-sm font-semibold text-bone hover:bg-peat"><i class="fa fa-pencil"></i> Edit this page</a>
 
 
 
 
 
-<div class="container-fluid">
-    <div class="d-flex justify-content-between">
+<div class="mx-auto w-full max-w-6xl px-4">
+    <div class="flex justify-between">
       
         
           
         
       
       
-      <a href="/docs/editing/charts-and-graphs/" class="btn btn-outline-primary" role="button">
+      <a href="/docs/editing/charts-and-graphs/" class="inline-flex items-center justify-center rounded border border-moss px-4 py-2 font-semibold text-bone hover:bg-moss hover:text-bone" role="button">
         <i class="fas fa-arrow-left"></i> Prev: Charts &amp; Graphs
       </a>
       
@@ -15233,7 +15232,7 @@ $$
         
       
       
-      <a href="/docs/editing/frontmatter/" class="btn btn-outline-primary" role="button">
+      <a href="/docs/editing/frontmatter/" class="inline-flex items-center justify-center rounded border border-moss px-4 py-2 font-semibold text-bone hover:bg-moss hover:text-bone" role="button">
         Next: Frontmatter <i class="fas fa-arrow-right"></i>
       </a>
       
@@ -15245,22 +15244,20 @@ $$
       </div>
     </main>
 
-    <footer class="text-center text-lg-start bg-light text-muted pt-1">
-      <button id="back-to-top" class="btn btn-primary px-1 py-1" style="display: none; position: fixed; bottom: 20px; right: 20px;" data-toggle="tooltip" data-placement="left" title="Back to the top"><i class="fa-solid fa-circle-up" style="color: white;"></i></button>
+    <footer class="text-center lg:text-left bg-peat/60 text-mist pt-1">
+      <button id="back-to-top" class="inline-flex items-center justify-center rounded bg-moss px-1 py-1 font-semibold text-bone hover:bg-peat" style="display: none; position: fixed; bottom: 20px; right: 20px;" data-toggle="tooltip" data-placement="left" title="Back to the top"><i class="fa-solid fa-circle-up" style="color: white;"></i></button>
 
-<!-- Bootstrap and jQuery JS -->
+<!-- Custom JS (vanilla interaction shim) -->
 <script src="/js/back-to-top.js" integrity="sha384-8kgCB6HPdPPbW6F14pulqulPbhSUEbJzrm4fbq6BHSQV2hwUSs0mzrVfKLTw43rw"></script>
-<script src="/assets/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"></script>
-<script src="/assets/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"></script>
 
   <section class="">
-    <div class="container text-center text-md-start mt-5">
+    <div class="mx-auto w-full max-w-6xl px-4 text-center lg:text-left mt-5">
       <!-- Grid row -->
-      <div class="row mt-3">
+      <div class="grid grid-cols-12 mt-3">
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <div class="md:col-span-3 lg:col-span-4 xl:col-span-3 mx-auto mb-4">
           <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             OpenOrdú
           </h6>
           <p>
@@ -15269,57 +15266,57 @@ $$
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="md:col-span-2 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Quick Links
           </h6>
           <p>
-            <a href="/about" class="text-reset">About Project</a>
+            <a href="/about" class="text-bone hover:opacity-80">About Project</a>
           </p>
           <p>
-            <a href="/support" class="text-reset">Support Us</a>
+            <a href="/support" class="text-bone hover:opacity-80">Support Us</a>
           </p>
           <p>
-            <a href="/docs" class="text-reset">Documentation</a>
+            <a href="/docs" class="text-bone hover:opacity-80">Documentation</a>
           </p>
           <p>
-            <a href="/docs/contributing/conduct" class="text-reset">Code of Conduct</a>
+            <a href="/docs/contributing/conduct" class="text-bone hover:opacity-80">Code of Conduct</a>
           </p>
           <p>
-            <a href="/license" class="text-reset">Open Source Licenses</a>
+            <a href="/license" class="text-bone hover:opacity-80">Open Source Licenses</a>
           </p>
           <p>
-            <a href="/FAQs" class="text-reset">Frequently Asked Questions</a>
+            <a href="/FAQs" class="text-bone hover:opacity-80">Frequently Asked Questions</a>
           </p>
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="md:col-span-3 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Social Media
           </h6>
           <p>
-            <a href="http://github.com/openordu" target="_blank" class="text-reset">GitHub</a>
+            <a href="http://github.com/openordu" target="_blank" class="text-bone hover:opacity-80">GitHub</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Twitter</a>
+            <a href="#!" class="text-bone hover:opacity-80">Twitter</a>
           </p>
           <p>
-            <a href="https://mastodon.celticpaganism.org" target="_blank" class="text-reset">Mastodon</a>
+            <a href="https://mastodon.celticpaganism.org" target="_blank" class="text-bone hover:opacity-80">Mastodon</a>
           </p>
         </div>
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div class="md:col-span-4 lg:col-span-3 xl:col-span-3 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="uppercase font-bold mb-4">
             Contact
           </h6>
-          <p><i class="fas fa-envelope me-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
+          <p><i class="fas fa-envelope mr-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
 
-          <h6 class="text-uppercase fw-bold mb-4 mt-4">
+          <h6 class="uppercase font-bold mb-4 mt-4">
             Disclaimer
           </h6>
           <p>
@@ -15329,10 +15326,10 @@ $$
       </div>
     </div>
   </section>
-  <div class="text-center p-4 bg-primary text-dark">
+  <div class="text-center p-4 bg-moss text-peat">
     Made with ❤️ by contributors around the world
   </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="/js/tailwind-interactions.js"></script>
     
 
 <script src="/js/elasticlunr.min.js"></script>
@@ -15343,6 +15340,94 @@ $$
 
 
     </footer>
+
+    <script>
+  // GAF-276 T17: V5 "Animated Atlas" motion, ported from
+  // src/preview/variant-5/index.html. Progress bar is exact; the atlas /
+  // count-up blocks are inert no-ops on pages without those elements.
+
+  document.getElementById('menu-btn')?.addEventListener('click', () => {
+    document.getElementById('menu').classList.toggle('hidden');
+  });
+
+  // Scroll progress indicator
+  const progress = document.getElementById('progress');
+  const updateProgress = () => {
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const max = h.scrollHeight - h.clientHeight;
+    const pct = max > 0 ? (scrolled / max) * 100 : 0;
+    progress.style.width = pct + '%';
+  };
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  // Pinned atlas: bind panel index to scroll progress within the atlas track
+  const atlas = document.getElementById('atlas');
+  const rail = document.getElementById('rail');
+  if (atlas && rail) {
+    const panels = document.querySelectorAll('.atlas-panel');
+    const railItems = rail.querySelectorAll('li');
+    const countEl = document.getElementById('atlasCount');
+    const stops = panels.length;
+
+    const setIdx = (idx) => {
+      idx = Math.max(0, Math.min(stops - 1, idx));
+      panels.forEach((p, i) => p.classList.toggle('active', i === idx));
+      railItems.forEach((li, i) => li.classList.toggle('active', i === idx));
+      if (countEl) countEl.textContent = (idx + 1) + '/' + stops;
+    };
+    railItems.forEach(li => li.addEventListener('click', () => {
+      const idx = parseInt(li.dataset.idx, 10);
+      const rect = atlas.getBoundingClientRect();
+      const top = window.scrollY + rect.top;
+      const span = atlas.offsetHeight - window.innerHeight;
+      const y = top + (span * idx / (stops - 1));
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }));
+
+    const updateAtlas = () => {
+      const rect = atlas.getBoundingClientRect();
+      const top = -rect.top;
+      const span = atlas.offsetHeight - window.innerHeight;
+      if (span <= 0) return;
+      const t = Math.max(0, Math.min(1, top / span));
+      const idx = Math.round(t * (stops - 1));
+      setIdx(idx);
+    };
+    window.addEventListener('scroll', updateAtlas, { passive: true });
+    window.addEventListener('resize', updateAtlas);
+    updateAtlas();
+  }
+
+  // Count-up + reveal on view
+  const runCount = (el) => {
+    const target = parseInt(el.dataset.count, 10);
+    const dur = 1400, start = performance.now();
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.floor(eased * target).toString();
+      if (t < 1) requestAnimationFrame(step); else el.textContent = target.toString();
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        const c = e.target.querySelector('[data-count]');
+        if (c && !c.dataset.done) { c.dataset.done = '1'; runCount(c); }
+        if (e.target.matches('[data-count]') && !e.target.dataset.done) {
+          e.target.dataset.done = '1'; runCount(e.target);
+        }
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.reveal, [data-count]').forEach(el => io.observe(el));
+</script>
+
   </body>
 
 </html>
