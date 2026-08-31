@@ -28,6 +28,10 @@
   <link rel="alternate" type="application/atom+xml" title="OpenOrdú — Atom Feed" href="https://openordu.github.io/feed.xml">
   <!-- feed consumer (renders latest posts, GAF-277 T19) -->
   <script src="/js/feed-consumer.js" async></script>
+  <!-- V2b editorial fonts (GAF-313 T2a): Source Serif 4 / Source Sans 3 / JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <!-- build:css -->
   <link rel="stylesheet" href="/css/theme.min.css">
   <!-- endbuild -->
@@ -39,43 +43,47 @@
       <img id="splashlogo" src="/assets/green_logo.png" />
     </div>
 
-    <nav class="border-b border-mist p-0">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-4">
-    <!-- Hamburger Menu -->
+    <nav class="sticky top-0 z-40 border-b border-mist/15 bg-paper/90 backdrop-blur-md">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+
+    <!-- Hamburger Menu (mobile) -->
     <div class="lg:hidden">
-        <button class="inline-flex items-center border rounded p-2 text-moss" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="inline-flex items-center rounded border border-mist/40 p-2 text-earth" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fas fa-caret-down"></i></span>
         </button>
-        <button class="inline-flex items-center border rounded p-2 bg-moss text-bone" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-            <span class="text-moss bg-bone"><i class="fas fa-bars"></i></span>
+        <button class="inline-flex items-center rounded border border-mist/40 p-2 text-earth" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <span><i class="fas fa-bars"></i></span>
         </button>
     </div>
 
-    <!-- Logo -->
-    <a class="mb-0 inline-flex items-center gap-2 rounded bg-moss px-2 py-2 pt-2 pr-3 text-center text-bone" href="/">
-        <svg class="mr-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
-        <span class="logotitle hidden sm:block">CelticPaganism.org</span>
+    <!-- Brand: cross (REAL logo.svg, already teal) + deep wordmark -->
+    <a class="mb-0 inline-flex items-center gap-2 text-center font-semibold text-earth" href="/">
+      <svg class="small-logo" aria-hidden="true"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
+      <span class="logotitle hidden sm:block">OpenOrdú</span>
     </a>
 
-    <!-- Navigation Links and Search Bar -->
+    <!-- Navigation Links, Contribute pill, and Search Bar -->
     <div class="hidden lg:block" id="navbarSupportedContent">
         <ul class="flex flex-wrap items-center gap-1 ml-2 mb-2 lg:mb-0">
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-house pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" aria-current="page" href="/">Home</a>
+                <i class="icon fa-solid fa-house pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" aria-current="page" href="/">Home</a>
             </li>
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-book pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" href="/pce">PCE</a>
+                <i class="icon fa-solid fa-book pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" href="/pce">PCE</a>
             </li>
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" href="/about">About</a>
+                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" href="/about">About</a>
             </li>
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-blog pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" href="/blog">Blog</a>
-            </li>    
+                <i class="icon fa-solid fa-blog pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" href="/blog">Blog</a>
+            </li>
+            <li class="flex items-center">
+                <a class="btn-primary relative ml-1 inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold" href="https://gumroad.com/l/WPeVF" target="_blank" rel="noopener">Contribute<span class="ml-1.5 inline-flex items-center rounded-full bg-crimson px-1.5 py-0.5 font-mono text-[10px] font-bold text-white">v0.2<span class="sr-only">latest version</span></span></a>
+            </li>
             <!-- Search Form -->
             <li class="flex items-center">
                 <form class="search-container flex">
-                    <input type="search" id="search-input" class="rounded border border-mist bg-peat-2 px-3 py-1 text-ink placeholder:text-mist/60 focus:border-gold focus:outline-none" autocomplete="off" placeholder="Search">
+                    <input type="search" id="search-input" class="rounded border border-mist/40 bg-peat-2 px-3 py-1 text-ink placeholder:text-mist/60 focus:border-gold focus:outline-none" autocomplete="off" placeholder="Search">
                     <ul id="search-suggestions" class="hidden absolute"></ul>
                 </form>
             </li>
@@ -1376,10 +1384,6 @@
           
       
       
-          
-      
-      
-        
         
           
       
@@ -1416,6 +1420,10 @@
           
       
       
+          
+      
+      
+        
         
           
       
@@ -7549,7 +7557,7 @@
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/A/agricultural_rituals/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">agricultural rituals</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -7616,7 +7624,7 @@
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/C/Clota/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Clota</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -7660,22 +7668,34 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/M/Mogons/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Mogons</h2></a>
+      <a href="/content/pce/F/Fial/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Fial</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Mogons/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Fial/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Mogons
+          Fial
         </a>
       
         
-        <a href="/tags/Mogounos/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/River-Feale/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Mogounos
+          River Feale
+        </a>
+      
+        
+        <a href="/tags/Shannon/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Shannon
+        </a>
+      
+        
+        <a href="/tags/Celtic-River-goddess/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Celtic River goddess
         </a>
       
         
@@ -7684,16 +7704,110 @@
           Fertility
         </a>
       
+        
+        <a href="/tags/abundance/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          abundance
+        </a>
+      
+        
+        <a href="/tags/Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Macha
+        </a>
+      
+        
+        <a href="/tags/Fall/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fall
+        </a>
+      
     </p>
       <p></p>
-      <a href="/content/pce/M/Mogons/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/F/Fial/" class="link-fancy">Read more...</a>
     </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/fertility/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">fertility</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Fertility/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fertility
+        </a>
+      
+        
+        <a href="/tags/feminine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          feminine
+        </a>
+      
+        
+        <a href="/tags/masculine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          masculine
+        </a>
+      
+        
+        <a href="/tags/balance/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          balance
+        </a>
+      
+        
+        <a href="/tags/continental-Celts/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          continental Celts
+        </a>
+      
+        
+        <a href="/tags/abundance/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          abundance
+        </a>
+      
+        
+        <a href="/tags/Cornucopia/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cornucopia
+        </a>
+      
+        
+        <a href="/tags/Egg/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Egg
+        </a>
+      
+        
+        <a href="/tags/gods/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          gods
+        </a>
+      
+        
+        <a href="/tags/goddesses/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          goddesses
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/F/fertility/" class="link-fancy">Read more...</a>
+    </div>
+  
+    </div>
+    <div class="grid grid-cols-12">
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/R/ram-headed_snake/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">ram-headed snake</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -7756,6 +7870,37 @@
       <a href="/content/pce/R/ram-headed_snake/" class="link-fancy">Read more...</a>
     </div>
   
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mogons/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Mogons</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Mogons/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Mogons
+        </a>
+      
+        
+        <a href="/tags/Mogounos/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Mogounos
+        </a>
+      
+        
+        <a href="/tags/Fertility/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fertility
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/M/Mogons/" class="link-fancy">Read more...</a>
+    </div>
+  
     </div>
     <div class="grid grid-cols-12">
   
@@ -7763,7 +7908,7 @@
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/G/green/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">green</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -7836,7 +7981,7 @@
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/S/Sirona/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Sirona</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -7903,143 +8048,6 @@
     </p>
       <p></p>
       <a href="/content/pce/S/Sirona/" class="link-fancy">Read more...</a>
-    </div>
-  
-    </div>
-    <div class="grid grid-cols-12">
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/F/Fial/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Fial</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Fial/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fial
-        </a>
-      
-        
-        <a href="/tags/River-Feale/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          River Feale
-        </a>
-      
-        
-        <a href="/tags/Shannon/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Shannon
-        </a>
-      
-        
-        <a href="/tags/Celtic-River-goddess/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Celtic River goddess
-        </a>
-      
-        
-        <a href="/tags/Fertility/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fertility
-        </a>
-      
-        
-        <a href="/tags/abundance/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          abundance
-        </a>
-      
-        
-        <a href="/tags/Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Macha
-        </a>
-      
-        
-        <a href="/tags/Fall/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fall
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/F/Fial/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/F/fertility/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">fertility</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Fertility/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fertility
-        </a>
-      
-        
-        <a href="/tags/feminine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          feminine
-        </a>
-      
-        
-        <a href="/tags/masculine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          masculine
-        </a>
-      
-        
-        <a href="/tags/balance/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          balance
-        </a>
-      
-        
-        <a href="/tags/continental-Celts/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          continental Celts
-        </a>
-      
-        
-        <a href="/tags/abundance/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          abundance
-        </a>
-      
-        
-        <a href="/tags/Cornucopia/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Cornucopia
-        </a>
-      
-        
-        <a href="/tags/Egg/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Egg
-        </a>
-      
-        
-        <a href="/tags/gods/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          gods
-        </a>
-      
-        
-        <a href="/tags/goddesses/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          goddesses
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/F/fertility/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -9195,10 +9203,6 @@
           
       
       
-          
-      
-      
-        
         
           
       
@@ -9235,6 +9239,10 @@
           
       
       
+          
+      
+      
+        
         
           
       
@@ -15358,7 +15366,7 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-3 lg:col-span-4 xl:col-span-3 mx-auto mb-4">
           <!-- Content -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             OpenOrdú
           </h6>
           <p>
@@ -15369,7 +15377,7 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-2 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             Quick Links
           </h6>
           <p>
@@ -15395,7 +15403,7 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-3 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             Social Media
           </h6>
           <p>
@@ -15412,12 +15420,12 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-4 lg:col-span-3 xl:col-span-3 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             Contact
           </h6>
           <p><i class="fas fa-envelope mr-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
 
-          <h6 class="uppercase font-bold mb-4 mt-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4 mt-4">
             Disclaimer
           </h6>
           <p>
@@ -15427,7 +15435,7 @@
       </div>
     </div>
   </section>
-  <div class="text-center p-4 bg-moss text-bone">
+  <div class="text-center p-4 bg-[#0c3a27] text-bone">
     Made with ❤️ by contributors around the world
   </div>
 <script src="/js/tailwind-interactions.js"></script>

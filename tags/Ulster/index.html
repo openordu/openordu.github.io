@@ -28,6 +28,10 @@
   <link rel="alternate" type="application/atom+xml" title="OpenOrdú — Atom Feed" href="https://openordu.github.io/feed.xml">
   <!-- feed consumer (renders latest posts, GAF-277 T19) -->
   <script src="/js/feed-consumer.js" async></script>
+  <!-- V2b editorial fonts (GAF-313 T2a): Source Serif 4 / Source Sans 3 / JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <!-- build:css -->
   <link rel="stylesheet" href="/css/theme.min.css">
   <!-- endbuild -->
@@ -39,43 +43,47 @@
       <img id="splashlogo" src="/assets/green_logo.png" />
     </div>
 
-    <nav class="border-b border-mist p-0">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-4">
-    <!-- Hamburger Menu -->
+    <nav class="sticky top-0 z-40 border-b border-mist/15 bg-paper/90 backdrop-blur-md">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+
+    <!-- Hamburger Menu (mobile) -->
     <div class="lg:hidden">
-        <button class="inline-flex items-center border rounded p-2 text-moss" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="inline-flex items-center rounded border border-mist/40 p-2 text-earth" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fas fa-caret-down"></i></span>
         </button>
-        <button class="inline-flex items-center border rounded p-2 bg-moss text-bone" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-            <span class="text-moss bg-bone"><i class="fas fa-bars"></i></span>
+        <button class="inline-flex items-center rounded border border-mist/40 p-2 text-earth" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <span><i class="fas fa-bars"></i></span>
         </button>
     </div>
 
-    <!-- Logo -->
-    <a class="mb-0 inline-flex items-center gap-2 rounded bg-moss px-2 py-2 pt-2 pr-3 text-center text-bone" href="/">
-        <svg class="mr-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
-        <span class="logotitle hidden sm:block">CelticPaganism.org</span>
+    <!-- Brand: cross (REAL logo.svg, already teal) + deep wordmark -->
+    <a class="mb-0 inline-flex items-center gap-2 text-center font-semibold text-earth" href="/">
+      <svg class="small-logo" aria-hidden="true"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
+      <span class="logotitle hidden sm:block">OpenOrdú</span>
     </a>
 
-    <!-- Navigation Links and Search Bar -->
+    <!-- Navigation Links, Contribute pill, and Search Bar -->
     <div class="hidden lg:block" id="navbarSupportedContent">
         <ul class="flex flex-wrap items-center gap-1 ml-2 mb-2 lg:mb-0">
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-house pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" aria-current="page" href="/">Home</a>
+                <i class="icon fa-solid fa-house pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" aria-current="page" href="/">Home</a>
             </li>
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-book pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" href="/pce">PCE</a>
+                <i class="icon fa-solid fa-book pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" href="/pce">PCE</a>
             </li>
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" href="/about">About</a>
+                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" href="/about">About</a>
             </li>
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-blog pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" href="/blog">Blog</a>
-            </li>    
+                <i class="icon fa-solid fa-blog pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" href="/blog">Blog</a>
+            </li>
+            <li class="flex items-center">
+                <a class="btn-primary relative ml-1 inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold" href="https://gumroad.com/l/WPeVF" target="_blank" rel="noopener">Contribute<span class="ml-1.5 inline-flex items-center rounded-full bg-crimson px-1.5 py-0.5 font-mono text-[10px] font-bold text-white">v0.2<span class="sr-only">latest version</span></span></a>
+            </li>
             <!-- Search Form -->
             <li class="flex items-center">
                 <form class="search-container flex">
-                    <input type="search" id="search-input" class="rounded border border-mist bg-peat-2 px-3 py-1 text-ink placeholder:text-mist/60 focus:border-gold focus:outline-none" autocomplete="off" placeholder="Search">
+                    <input type="search" id="search-input" class="rounded border border-mist/40 bg-peat-2 px-3 py-1 text-ink placeholder:text-mist/60 focus:border-gold focus:outline-none" autocomplete="off" placeholder="Search">
                     <ul id="search-suggestions" class="hidden absolute"></ul>
                 </form>
             </li>
@@ -1376,10 +1384,6 @@
           
       
       
-          
-      
-      
-        
         
           
       
@@ -1416,6 +1420,10 @@
           
       
       
+          
+      
+      
+        
         
           
       
@@ -7547,9 +7555,356 @@
   
   <div class="grid grid-cols-12">
     <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/T/Tephi/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Tephi</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Macha
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Tephi/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Tephi
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/T/Tephi/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Aillén_Trechenn/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Aillén Trechenn</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Aillén-Trechenn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Aillén Trechenn
+        </a>
+      
+        
+        <a href="/tags/Tara/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Tara
+        </a>
+      
+        
+        <a href="/tags/Emain-Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Emain Macha
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Oweynagat/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Oweynagat
+        </a>
+      
+        
+        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Connacht
+        </a>
+      
+        
+        <a href="/tags/Cruachan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cruachan
+        </a>
+      
+        
+        <a href="/tags/Amairgin/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Amairgin
+        </a>
+      
+        
+        <a href="/tags/Mórrígan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Mórrígan
+        </a>
+      
+        
+        <a href="/tags/Cruachain/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cruachain
+        </a>
+      
+        
+        <a href="/tags/Samain/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Samain
+        </a>
+      
+        
+        <a href="/tags/Morrigan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Morrigan
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/A/Aillén_Trechenn/" class="link-fancy">Read more...</a>
+    </div>
+  
+    </div>
+    <div class="grid grid-cols-12">
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Aithirne/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Aithirne</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Aithirne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Aithirne
+        </a>
+      
+        
+        <a href="/tags/River-Liffey/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          River Liffey
+        </a>
+      
+        
+        <a href="/tags/Brí-Léith/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Brí Léith
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/A/Aithirne/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Amairgin/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Amairgin</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Amairgin/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Amairgin
+        </a>
+      
+        
+        <a href="/tags/Míl/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Míl
+        </a>
+      
+        
+        <a href="/tags/Tuatha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Tuatha
+        </a>
+      
+        
+        <a href="/tags/Cúchulainn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cúchulainn
+        </a>
+      
+        
+        <a href="/tags/Eriu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ériu
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Aithirne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Aithirne
+        </a>
+      
+        
+        <a href="/tags/Táin-Bó-Cuailnge/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Táin Bó Cuailnge
+        </a>
+      
+        
+        <a href="/tags/Eriu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Eriu
+        </a>
+      
+        
+        <a href="/tags/Banba/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Banba
+        </a>
+      
+        
+        <a href="/tags/Fodla/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fodla
+        </a>
+      
+        
+        <a href="/tags/Mil-Espaine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Mil Espaine
+        </a>
+      
+        
+        <a href="/tags/Eremon/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Eremon
+        </a>
+      
+        
+        <a href="/tags/Eber-Finn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Eber Finn
+        </a>
+      
+        
+        <a href="/tags/Milesians/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Milesians
+        </a>
+      
+        
+        <a href="/tags/Taliesin/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Taliesin
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/A/Amairgin/" class="link-fancy">Read more...</a>
+    </div>
+  
+    </div>
+    <div class="grid grid-cols-12">
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Ailbe/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Ailbe</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Ailbe/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ailbe
+        </a>
+      
+        
+        <a href="/tags/Ailbhe/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ailbhe
+        </a>
+      
+        
+        <a href="/tags/Albiorix/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Albiorix
+        </a>
+      
+        
+        <a href="/tags/Midir/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Midir
+        </a>
+      
+        
+        <a href="/tags/Fianna/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fianna
+        </a>
+      
+        
+        <a href="/tags/Fenian-Cycle/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fenian Cycle
+        </a>
+      
+        
+        <a href="/tags/Mac-Dathó/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Mac Dathó
+        </a>
+      
+        
+        <a href="/tags/Concobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Concobar Mac Nessa
+        </a>
+      
+        
+        <a href="/tags/Ailill-Mac-Mata/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ailill Mac Mata
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Connacht
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/A/Ailbe/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/A/Ablach/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Ablach</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -7576,11 +7931,216 @@
       <a href="/content/pce/A/Ablach/" class="link-fancy">Read more...</a>
     </div>
   
+    </div>
+    <div class="grid grid-cols-12">
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Ailinn__Aillinn__Aillin_/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Ailinn (Aillinn, Aillin)</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Ailinn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ailinn
+        </a>
+      
+        
+        <a href="/tags/Ailine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ailine
+        </a>
+      
+        
+        <a href="/tags/Aine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Aine
+        </a>
+      
+        
+        <a href="/tags/Dún-Ailinne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Dún Ailinne
+        </a>
+      
+        
+        <a href="/tags/Leinster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Leinster
+        </a>
+      
+        
+        <a href="/tags/Baile-Binnbhéarlach/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Baile Binnbhéarlach
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Dundalk/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Dundalk
+        </a>
+      
+        
+        <a href="/tags/Cormac-Mac-Airt/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cormac Mac Airt
+        </a>
+      
+        
+        <a href="/tags/Tara/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Tara
+        </a>
+      
+        
+        <a href="/tags/fairy/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          fairy
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/A/Ailinn__Aillinn__Aillin_/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Ard_Macha/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Ard Macha</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Ard-Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ard Macha
+        </a>
+      
+        
+        <a href="/tags/Emain-Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Emain Macha
+        </a>
+      
+        
+        <a href="/tags/County-Armagh/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          County Armagh
+        </a>
+      
+        
+        <a href="/tags/Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Macha
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Navan-Fort/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Navan Fort
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/A/Ard_Macha/" class="link-fancy">Read more...</a>
+    </div>
+  
+    </div>
+    <div class="grid grid-cols-12">
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/A_fe_Foltfhind/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Aife Foltfhind</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Aife-Foltfhind/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Aife Foltfhind
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Mongfind/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Mongfind
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/A/A_fe_Foltfhind/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/A/Aeí/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Aeí</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Aeí/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Aeí
+        </a>
+      
+        
+        <a href="/tags/Táin-Bó-Cuailnge/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Táin Bó Cuailnge
+        </a>
+      
+        
+        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Connacht
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/A/Aeí/" class="link-fancy">Read more...</a>
+    </div>
+  
+    </div>
+    <div class="grid grid-cols-12">
+  
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/A/Ailill/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Ailill</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -7691,82 +8251,18 @@
       <a href="/content/pce/A/Ailill/" class="link-fancy">Read more...</a>
     </div>
   
-    </div>
-    <div class="grid grid-cols-12">
-  
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/A/Aithirne/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Aithirne</h2></a>
+      <a href="/content/pce/B/Bachlach/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Bachlach</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Aithirne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Bachlach/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Aithirne
-        </a>
-      
-        
-        <a href="/tags/River-Liffey/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          River Liffey
-        </a>
-      
-        
-        <a href="/tags/Brí-Léith/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Brí Léith
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/A/Aithirne/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/A/Amairgin/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Amairgin</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Amairgin/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Amairgin
-        </a>
-      
-        
-        <a href="/tags/Míl/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Míl
-        </a>
-      
-        
-        <a href="/tags/Tuatha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Tuatha
-        </a>
-      
-        
-        <a href="/tags/Cúchulainn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Cúchulainn
-        </a>
-      
-        
-        <a href="/tags/Eriu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ériu
+          Bachlach
         </a>
       
         
@@ -7776,68 +8272,14 @@
         </a>
       
         
-        <a href="/tags/Aithirne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Crabruad/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Aithirne
-        </a>
-      
-        
-        <a href="/tags/Táin-Bó-Cuailnge/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Táin Bó Cuailnge
-        </a>
-      
-        
-        <a href="/tags/Eriu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Eriu
-        </a>
-      
-        
-        <a href="/tags/Banba/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Banba
-        </a>
-      
-        
-        <a href="/tags/Fodla/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fodla
-        </a>
-      
-        
-        <a href="/tags/Mil-Espaine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Mil Espaine
-        </a>
-      
-        
-        <a href="/tags/Eremon/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Eremon
-        </a>
-      
-        
-        <a href="/tags/Eber-Finn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Eber Finn
-        </a>
-      
-        
-        <a href="/tags/Milesians/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Milesians
-        </a>
-      
-        
-        <a href="/tags/Taliesin/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Taliesin
+          Crabruad
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/A/Amairgin/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/B/Bachlach/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -7845,16 +8287,22 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/A/A_fe_Foltfhind/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Aife Foltfhind</h2></a>
+      <a href="/content/pce/B/Bendonner/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Bendonner</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Aife-Foltfhind/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Bendonner/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Aife Foltfhind
+          Bendonner
+        </a>
+      
+        
+        <a href="/tags/Scottish-Giant/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Scottish Giant
         </a>
       
         
@@ -7864,271 +8312,34 @@
         </a>
       
         
-        <a href="/tags/Mongfind/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Finn-Mccool/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Mongfind
+          Finn Mccool
+        </a>
+      
+        
+        <a href="/tags/Fionn-Mac-Cumhaill/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fionn Mac Cumhaill
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/A/A_fe_Foltfhind/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/B/Bendonner/" class="link-fancy">Read more...</a>
     </div>
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/A/Aeí/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Aeí</h2></a>
+      <a href="/content/pce/B/Baile_s_Strand/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Baile&#39;s Strand</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Aeí/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Bailes-Strand/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Aeí
-        </a>
-      
-        
-        <a href="/tags/Táin-Bó-Cuailnge/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Táin Bó Cuailnge
-        </a>
-      
-        
-        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Connacht
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/A/Aeí/" class="link-fancy">Read more...</a>
-    </div>
-  
-    </div>
-    <div class="grid grid-cols-12">
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/A/Ailbe/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Ailbe</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Ailbe/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ailbe
-        </a>
-      
-        
-        <a href="/tags/Ailbhe/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ailbhe
-        </a>
-      
-        
-        <a href="/tags/Albiorix/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Albiorix
-        </a>
-      
-        
-        <a href="/tags/Midir/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Midir
-        </a>
-      
-        
-        <a href="/tags/Fianna/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fianna
-        </a>
-      
-        
-        <a href="/tags/Fenian-Cycle/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fenian Cycle
-        </a>
-      
-        
-        <a href="/tags/Mac-Dathó/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Mac Dathó
-        </a>
-      
-        
-        <a href="/tags/Concobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Concobar Mac Nessa
-        </a>
-      
-        
-        <a href="/tags/Ailill-Mac-Mata/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ailill Mac Mata
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Connacht
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/A/Ailbe/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/A/Aillén_Trechenn/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Aillén Trechenn</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Aillén-Trechenn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Aillén Trechenn
-        </a>
-      
-        
-        <a href="/tags/Tara/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Tara
-        </a>
-      
-        
-        <a href="/tags/Emain-Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Emain Macha
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Oweynagat/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Oweynagat
-        </a>
-      
-        
-        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Connacht
-        </a>
-      
-        
-        <a href="/tags/Cruachan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Cruachan
-        </a>
-      
-        
-        <a href="/tags/Amairgin/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Amairgin
-        </a>
-      
-        
-        <a href="/tags/Mórrígan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Mórrígan
-        </a>
-      
-        
-        <a href="/tags/Cruachain/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Cruachain
-        </a>
-      
-        
-        <a href="/tags/Samain/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Samain
-        </a>
-      
-        
-        <a href="/tags/Morrigan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Morrigan
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/A/Aillén_Trechenn/" class="link-fancy">Read more...</a>
-    </div>
-  
-    </div>
-    <div class="grid grid-cols-12">
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/A/Ailinn__Aillinn__Aillin_/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Ailinn (Aillinn, Aillin)</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Ailinn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ailinn
-        </a>
-      
-        
-        <a href="/tags/Ailine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ailine
-        </a>
-      
-        
-        <a href="/tags/Aine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Aine
-        </a>
-      
-        
-        <a href="/tags/Dún-Ailinne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Dún Ailinne
-        </a>
-      
-        
-        <a href="/tags/Leinster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Leinster
-        </a>
-      
-        
-        <a href="/tags/Baile-Binnbhéarlach/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Baile Binnbhéarlach
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
+          Baile&#39;s Strand
         </a>
       
         
@@ -8138,75 +8349,26 @@
         </a>
       
         
-        <a href="/tags/Cormac-Mac-Airt/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Cormac Mac Airt
-        </a>
-      
-        
-        <a href="/tags/Tara/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Tara
-        </a>
-      
-        
-        <a href="/tags/fairy/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          fairy
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/A/Ailinn__Aillinn__Aillin_/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/A/Ard_Macha/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Ard Macha</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Ard-Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ard Macha
-        </a>
-      
-        
-        <a href="/tags/Emain-Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Emain Macha
-        </a>
-      
-        
-        <a href="/tags/County-Armagh/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          County Armagh
-        </a>
-      
-        
-        <a href="/tags/Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Macha
-        </a>
-      
-        
         <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
           Ulster
         </a>
       
         
-        <a href="/tags/Navan-Fort/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Baile/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Navan Fort
+          Baile
+        </a>
+      
+        
+        <a href="/tags/W-B-Yeats/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          W. B. Yeats
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/A/Ard_Macha/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/B/Baile_s_Strand/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -8214,16 +8376,22 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/N/north/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">north</h2></a>
+      <a href="/content/pce/B/Bebo/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Bebo</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/north/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Bebo/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          north
+          Bebo
+        </a>
+      
+        
+        <a href="/tags/Iubdan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Iubdan
         </a>
       
         
@@ -8233,34 +8401,64 @@
         </a>
       
         
-        <a href="/tags/war/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Fergus/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          war
+          Fergus
         </a>
       
         
-        <a href="/tags/ancient-epics/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/magical-shoes/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          ancient epics
+          magical shoes
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/N/north/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/B/Bebo/" class="link-fancy">Read more...</a>
     </div>
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/N/Nera/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Nera</h2></a>
+      <a href="/content/pce/B/Bith/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Bith</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Bith/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Medb
+          Bith
+        </a>
+      
+        
+        <a href="/tags/Noah/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Noah
+        </a>
+      
+        
+        <a href="/tags/Cesair/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cesair
+        </a>
+      
+        
+        <a href="/tags/Ireland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ireland
+        </a>
+      
+        
+        <a href="/tags/Book-Of-Invasions/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Book Of Invasions
+        </a>
+      
+        
+        <a href="/tags/Munster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Munster
         </a>
       
         
@@ -8270,103 +8468,26 @@
         </a>
       
         
-        <a href="/tags/Irish-epic/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Slieve-Beagh/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Irish epic
+          Slieve Beagh
         </a>
       
         
-        <a href="/tags/Táin-Bó-Cuailnge/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Great-Cairn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Táin Bó Cuailnge
+          Great Cairn
+        </a>
+      
+        
+        <a href="/tags/Carn-Mór/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Carn Mór
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/N/Nera/" class="link-fancy">Read more...</a>
-    </div>
-  
-    </div>
-    <div class="grid grid-cols-12">
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/N/Necthan_Scéne/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Necthan Scéne</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Necthan-Scéne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Necthan Scéne
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Cúchulainn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Cúchulainn
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/N/Necthan_Scéne/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/C/Culann/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Culann</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Culann/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Culann
-        </a>
-      
-        
-        <a href="/tags/Cú-Chulainn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Cú Chulainn
-        </a>
-      
-        
-        <a href="/tags/Concobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Concobar Mac Nessa
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Sétanta/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Sétanta
-        </a>
-      
-        
-        <a href="/tags/Cuilenn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Cuilenn
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/C/Culann/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/B/Bith/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -8376,7 +8497,7 @@
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/C/Cóiced/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Cóiced</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -8467,7 +8588,7 @@
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/C/Cathbad/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Cathbad</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -8529,16 +8650,28 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/M/Macha/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Macha</h2></a>
+      <a href="/content/pce/C/Culann/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Culann</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Culann/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Macha
+          Culann
+        </a>
+      
+        
+        <a href="/tags/Cú-Chulainn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cú Chulainn
+        </a>
+      
+        
+        <a href="/tags/Concobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Concobar Mac Nessa
         </a>
       
         
@@ -8548,27 +8681,116 @@
         </a>
       
         
-        <a href="/tags/Ulster-Cycle/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Sétanta/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Ulster Cycle
+          Sétanta
         </a>
       
         
-        <a href="/tags/Eriu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Cuilenn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Ériu
+          Cuilenn
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/C/Culann/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/Fiongalla/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Fiongalla</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Fiongalla/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fiongalla
         </a>
       
         
-        <a href="/tags/Ireland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Munster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Ireland
+          Munster
         </a>
       
         
-        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Amerach/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Medb
+          Amerach
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Yew-berries/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Yew berries
+        </a>
+      
+        
+        <a href="/tags/Holly-boughs/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Holly boughs
+        </a>
+      
+        
+        <a href="/tags/marigolds/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          marigolds
+        </a>
+      
+        
+        <a href="/tags/Feargal/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Feargal
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/F/Fiongalla/" class="link-fancy">Read more...</a>
+    </div>
+  
+    </div>
+    <div class="grid grid-cols-12">
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/Findchóem/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Findchóem</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Matriliny/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Matriliny
+        </a>
+      
+        
+        <a href="/tags/Irish-mythological-material/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Irish mythological material
+        </a>
+      
+        
+        <a href="/tags/kings/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          kings
+        </a>
+      
+        
+        <a href="/tags/Ailill-mac-Máta/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ailill mac Máta
         </a>
       
         
@@ -8578,28 +8800,21 @@
         </a>
       
         
-        <a href="/tags/Celts/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Máta/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Celts
+          Máta
         </a>
       
-    </p>
-      <p></p>
-      <a href="/content/pce/M/Macha/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/M/Mag_Muirthemne/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Mag Muirthemne</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
+        
+        <a href="/tags/king-of-Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          king of Ulster
+        </a>
       
         
-        <a href="/tags/Mag-Muirthemne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Concobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Mag Muirthemne
+          Concobar Mac Nessa
         </a>
       
         
@@ -8609,26 +8824,141 @@
         </a>
       
         
-        <a href="/tags/Cúchulainn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Cúchulainn
+          Nessa
         </a>
       
         
-        <a href="/tags/Dundalk/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Findchóem/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Dundalk
+          Findchóem
         </a>
       
         
-        <a href="/tags/Dún-Delgan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Irish-mythology/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Dún Delgan
+          Irish mythology
+        </a>
+      
+        
+        <a href="/tags/Celtic-mythology/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Celtic mythology
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/M/Mag_Muirthemne/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/F/Findchóem/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/Fergus_mac_Róich/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Fergus mac Róich</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Fergus-mac-Róich/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fergus mac Róich
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Nessa
+        </a>
+      
+        
+        <a href="/tags/Conchobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Conchobar Mac Nessa
+        </a>
+      
+        
+        <a href="/tags/Tara/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Tara
+        </a>
+      
+        
+        <a href="/tags/Deirdre/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Deirdre
+        </a>
+      
+        
+        <a href="/tags/Noísiu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Noísiu
+        </a>
+      
+        
+        <a href="/tags/Emain-Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Emain Macha
+        </a>
+      
+        
+        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Medb
+        </a>
+      
+        
+        <a href="/tags/Cruachan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cruachan
+        </a>
+      
+        
+        <a href="/tags/Lia-Fáil/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Lia Fáil
+        </a>
+      
+        
+        <a href="/tags/Bricriu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Bricriu
+        </a>
+      
+        
+        <a href="/tags/Conchobar/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Conchobar
+        </a>
+      
+        
+        <a href="/tags/Derdriu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Derdriu
+        </a>
+      
+        
+        <a href="/tags/Ailill/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ailill
+        </a>
+      
+        
+        <a href="/tags/Fled-Bricrenn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fled Bricrenn
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/F/Fergus_mac_Róich/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -8636,9 +8966,177 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/féith_na_filíochta/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">féith na filíochta</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Celtic/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Celtic
+        </a>
+      
+        
+        <a href="/tags/Ireland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ireland
+        </a>
+      
+        
+        <a href="/tags/Leinster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Leinster
+        </a>
+      
+        
+        <a href="/tags/Munster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Munster
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Fianna/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fianna
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/F/féith_na_filíochta/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/Fachtna/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Fachtna</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Nessa
+        </a>
+      
+        
+        <a href="/tags/glass/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          glass
+        </a>
+      
+        
+        <a href="/tags/worms/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          worms
+        </a>
+      
+        
+        <a href="/tags/Concobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Concobar Mac Nessa
+        </a>
+      
+        
+        <a href="/tags/Fachtna/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fachtna
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/F/Fachtna/" class="link-fancy">Read more...</a>
+    </div>
+  
+    </div>
+    <div class="grid grid-cols-12">
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/F/Furbaide_Ferbend/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Furbaide Ferbend</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Furbaide-Ferbend/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Furbaide Ferbend
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Conchobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Conchobar Mac Nessa
+        </a>
+      
+        
+        <a href="/tags/sling/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          sling
+        </a>
+      
+        
+        <a href="/tags/queen-Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          queen Medb
+        </a>
+      
+        
+        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Connacht
+        </a>
+      
+        
+        <a href="/tags/Clothra/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Clothra
+        </a>
+      
+        
+        <a href="/tags/Lough-Ree/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Lough Ree
+        </a>
+      
+        
+        <a href="/tags/Shannon-River/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Shannon River
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/F/Furbaide_Ferbend/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/L/Láeg/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Láeg</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -8665,11 +9163,14 @@
       <a href="/content/pce/L/Láeg/" class="link-fancy">Read more...</a>
     </div>
   
+    </div>
+    <div class="grid grid-cols-12">
+  
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/L/Locha/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Locha</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -8702,14 +9203,11 @@
       <a href="/content/pce/L/Locha/" class="link-fancy">Read more...</a>
     </div>
   
-    </div>
-    <div class="grid grid-cols-12">
-  
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/L/Liath_Macha/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Liath Macha</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -8754,58 +9252,51 @@
       <a href="/content/pce/L/Liath_Macha/" class="link-fancy">Read more...</a>
     </div>
   
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/B/Bachlach/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Bachlach</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Bachlach/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Bachlach
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Crabruad/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Crabruad
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/B/Bachlach/" class="link-fancy">Read more...</a>
-    </div>
-  
     </div>
     <div class="grid grid-cols-12">
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/B/Baile_s_Strand/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Baile&#39;s Strand</h2></a>
+      <a href="/content/pce/E/Eisirt/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Eisirt</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Bailes-Strand/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Eisirt/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Baile&#39;s Strand
+          Eisirt
         </a>
       
         
-        <a href="/tags/Dundalk/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Fairy-Queens/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Dundalk
+          Fairy Queens
+        </a>
+      
+        
+        <a href="/tags/Bards/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Bards
+        </a>
+      
+        
+        <a href="/tags/human-poets/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          human poets
+        </a>
+      
+        
+        <a href="/tags/Otherworld/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Otherworld
+        </a>
+      
+        
+        <a href="/tags/king-Iubdan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          king Iubdan
         </a>
       
         
@@ -8815,64 +9306,58 @@
         </a>
       
         
-        <a href="/tags/Baile/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Giants/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Baile
+          Giants
         </a>
       
         
-        <a href="/tags/W-B-Yeats/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/court-Dwarf/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          W. B. Yeats
+          court Dwarf
+        </a>
+      
+        
+        <a href="/tags/fairy-folk/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          fairy folk
+        </a>
+      
+        
+        <a href="/tags/tiny-wife-Bebo/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          tiny wife Bebo
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/B/Baile_s_Strand/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/E/Eisirt/" class="link-fancy">Read more...</a>
     </div>
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/B/Bith/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Bith</h2></a>
+      <a href="/content/pce/E/Eithne_Aittencháithrech/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Eithne Aittencháithrech</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Bith/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Eithne-Aittencháithrech/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Bith
+          Eithne Aittencháithrech
         </a>
       
         
-        <a href="/tags/Noah/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Noah
+          Medb
         </a>
       
         
-        <a href="/tags/Cesair/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Concobar/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Cesair
-        </a>
-      
-        
-        <a href="/tags/Ireland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ireland
-        </a>
-      
-        
-        <a href="/tags/Book-Of-Invasions/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Book Of Invasions
-        </a>
-      
-        
-        <a href="/tags/Munster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Munster
+          Concobar
         </a>
       
         
@@ -8881,116 +9366,9 @@
           Ulster
         </a>
       
-        
-        <a href="/tags/Slieve-Beagh/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Slieve Beagh
-        </a>
-      
-        
-        <a href="/tags/Great-Cairn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Great Cairn
-        </a>
-      
-        
-        <a href="/tags/Carn-Mór/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Carn Mór
-        </a>
-      
     </p>
       <p></p>
-      <a href="/content/pce/B/Bith/" class="link-fancy">Read more...</a>
-    </div>
-  
-    </div>
-    <div class="grid grid-cols-12">
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/B/Bebo/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Bebo</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Bebo/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Bebo
-        </a>
-      
-        
-        <a href="/tags/Iubdan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Iubdan
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Fergus/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fergus
-        </a>
-      
-        
-        <a href="/tags/magical-shoes/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          magical shoes
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/B/Bebo/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/B/Bendonner/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Bendonner</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Bendonner/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Bendonner
-        </a>
-      
-        
-        <a href="/tags/Scottish-Giant/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Scottish Giant
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Finn-Mccool/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Finn Mccool
-        </a>
-      
-        
-        <a href="/tags/Fionn-Mac-Cumhaill/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fionn Mac Cumhaill
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/B/Bendonner/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/E/Eithne_Aittencháithrech/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -9000,7 +9378,7 @@
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/E/Emain_Macha/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Emain Macha</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -9083,46 +9461,16 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/E/Eisirt/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Eisirt</h2></a>
+      <a href="/content/pce/R/Ruad/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Ruad</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Eisirt/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Assaroe/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Eisirt
-        </a>
-      
-        
-        <a href="/tags/Fairy-Queens/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fairy Queens
-        </a>
-      
-        
-        <a href="/tags/Bards/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Bards
-        </a>
-      
-        
-        <a href="/tags/human-poets/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          human poets
-        </a>
-      
-        
-        <a href="/tags/Otherworld/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Otherworld
-        </a>
-      
-        
-        <a href="/tags/king-Iubdan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          king Iubdan
+          Assaroe
         </a>
       
         
@@ -9132,133 +9480,14 @@
         </a>
       
         
-        <a href="/tags/Giants/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Aed-Ruad/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Giants
-        </a>
-      
-        
-        <a href="/tags/court-Dwarf/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          court Dwarf
-        </a>
-      
-        
-        <a href="/tags/fairy-folk/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          fairy folk
-        </a>
-      
-        
-        <a href="/tags/tiny-wife-Bebo/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          tiny wife Bebo
+          Áed Ruad
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/E/Eisirt/" class="link-fancy">Read more...</a>
-    </div>
-  
-    </div>
-    <div class="grid grid-cols-12">
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/E/Eithne_Aittencháithrech/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Eithne Aittencháithrech</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Eithne-Aittencháithrech/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Eithne Aittencháithrech
-        </a>
-      
-        
-        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Medb
-        </a>
-      
-        
-        <a href="/tags/Concobar/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Concobar
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/E/Eithne_Aittencháithrech/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/R/Riada/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Riada</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Riada/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Riada
-        </a>
-      
-        
-        <a href="/tags/Munster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Munster
-        </a>
-      
-        
-        <a href="/tags/famine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          famine
-        </a>
-      
-        
-        <a href="/tags/Co-Antrim/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Co. Antrim
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Irish-Sea/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Irish Sea
-        </a>
-      
-        
-        <a href="/tags/Scotland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Scotland
-        </a>
-      
-        
-        <a href="/tags/Dál-Riada/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Dál Riada
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/R/Riada/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/R/Ruad/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -9268,7 +9497,7 @@
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/R/Red_Branch/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Red Branch</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -9345,16 +9574,34 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/R/Ruad/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Ruad</h2></a>
+      <a href="/content/pce/R/Riada/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Riada</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Assaroe/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Riada/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Assaroe
+          Riada
+        </a>
+      
+        
+        <a href="/tags/Munster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Munster
+        </a>
+      
+        
+        <a href="/tags/famine/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          famine
+        </a>
+      
+        
+        <a href="/tags/Co-Antrim/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Co. Antrim
         </a>
       
         
@@ -9364,14 +9611,26 @@
         </a>
       
         
-        <a href="/tags/Aed-Ruad/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Irish-Sea/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Áed Ruad
+          Irish Sea
+        </a>
+      
+        
+        <a href="/tags/Scotland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Scotland
+        </a>
+      
+        
+        <a href="/tags/Dál-Riada/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Dál Riada
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/R/Ruad/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/R/Riada/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -9379,46 +9638,28 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/G/Goll_mac_Morna/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Goll mac Morna</h2></a>
+      <a href="/content/pce/D/Deirdre/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Deirdre</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Goll/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Deirdre/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Goll
+          Deirdre
         </a>
       
         
-        <a href="/tags/Fionn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Concobar/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Fionn
+          Concobar
         </a>
       
         
-        <a href="/tags/Assaroe/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/kingdom/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Assaroe
-        </a>
-      
-        
-        <a href="/tags/Finnéces/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Finnéces
-        </a>
-      
-        
-        <a href="/tags/Goll-mac-Morna/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Goll mac Morna
-        </a>
-      
-        
-        <a href="/tags/Goll-mac-Carbada/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Goll mac Carbada
+          kingdom
         </a>
       
         
@@ -9428,23 +9669,41 @@
         </a>
       
         
-        <a href="/tags/Cúchulainn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Cúchulainn
+          Medb
+        </a>
+      
+        
+        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Connacht
+        </a>
+      
+        
+        <a href="/tags/Táin-Bó-Cuailnge/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Táin Bó Cuailnge
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/G/Goll_mac_Morna/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/D/Deirdre/" class="link-fancy">Read more...</a>
     </div>
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/T/Tephi/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Tephi</h2></a>
+      <a href="/content/pce/D/Díthorba/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Díthorba</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
+      
+        
+        <a href="/tags/Díthorba/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Díthorba
+        </a>
       
         
         <a href="/tags/Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
@@ -9453,20 +9712,56 @@
         </a>
       
         
+        <a href="/tags/father/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          father
+        </a>
+      
+        
+        <a href="/tags/sons/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          sons
+        </a>
+      
+        
+        <a href="/tags/Burren/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Burren
+        </a>
+      
+        
+        <a href="/tags/Co-Clare/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Co. Clare
+        </a>
+      
+        
+        <a href="/tags/Hag/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Hag
+        </a>
+      
+        
+        <a href="/tags/Emain-Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Emain Macha
+        </a>
+      
+        
         <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
           Ulster
         </a>
       
         
-        <a href="/tags/Tephi/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Hillfort/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Tephi
+          Hillfort
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/T/Tephi/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/D/Díthorba/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -9476,7 +9771,7 @@
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/D/Dún_Ailinne/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Dún Ailinne</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -9573,7 +9868,7 @@
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/D/Debility_of_the_Ulstermen/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Debility of the Ulstermen</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -9623,140 +9918,9 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/D/Díthorba/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Díthorba</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Díthorba/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Díthorba
-        </a>
-      
-        
-        <a href="/tags/Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Macha
-        </a>
-      
-        
-        <a href="/tags/father/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          father
-        </a>
-      
-        
-        <a href="/tags/sons/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          sons
-        </a>
-      
-        
-        <a href="/tags/Burren/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Burren
-        </a>
-      
-        
-        <a href="/tags/Co-Clare/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Co. Clare
-        </a>
-      
-        
-        <a href="/tags/Hag/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Hag
-        </a>
-      
-        
-        <a href="/tags/Emain-Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Emain Macha
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Hillfort/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Hillfort
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/D/Díthorba/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/D/Deirdre/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Deirdre</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Deirdre/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Deirdre
-        </a>
-      
-        
-        <a href="/tags/Concobar/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Concobar
-        </a>
-      
-        
-        <a href="/tags/kingdom/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          kingdom
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Medb
-        </a>
-      
-        
-        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Connacht
-        </a>
-      
-        
-        <a href="/tags/Táin-Bó-Cuailnge/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Táin Bó Cuailnge
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/D/Deirdre/" class="link-fancy">Read more...</a>
-    </div>
-  
-    </div>
-    <div class="grid grid-cols-12">
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/D/Dechtire/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Dechtire</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -9809,16 +9973,16 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/S/Sons_of_Uisneach/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Sons of Uisneach</h2></a>
+      <a href="/content/pce/M/Macha/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Macha</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
         
-        <a href="/tags/Deirdre/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Deirdre
+          Macha
         </a>
       
         
@@ -9828,9 +9992,15 @@
         </a>
       
         
-        <a href="/tags/Fergus-mac-Róich/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Ulster-Cycle/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Fergus mac Róich
+          Ulster Cycle
+        </a>
+      
+        
+        <a href="/tags/Eriu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ériu
         </a>
       
         
@@ -9840,14 +10010,26 @@
         </a>
       
         
-        <a href="/tags/Sons-of-Uisneach/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
           <i class="fas fa-tags text-moss"></i>
-          Sons of Uisneach
+          Medb
+        </a>
+      
+        
+        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Connacht
+        </a>
+      
+        
+        <a href="/tags/Celts/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Celts
         </a>
       
     </p>
       <p></p>
-      <a href="/content/pce/S/Sons_of_Uisneach/" class="link-fancy">Read more...</a>
+      <a href="/content/pce/M/Macha/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -9855,9 +10037,224 @@
   
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/M/Mag_Muirthemne/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Mag Muirthemne</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Mag-Muirthemne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Mag Muirthemne
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Cúchulainn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cúchulainn
+        </a>
+      
+        
+        <a href="/tags/Dundalk/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Dundalk
+        </a>
+      
+        
+        <a href="/tags/Dún-Delgan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Dún Delgan
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/M/Mag_Muirthemne/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/G/Goll_mac_Morna/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Goll mac Morna</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Goll/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Goll
+        </a>
+      
+        
+        <a href="/tags/Fionn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fionn
+        </a>
+      
+        
+        <a href="/tags/Assaroe/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Assaroe
+        </a>
+      
+        
+        <a href="/tags/Finnéces/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Finnéces
+        </a>
+      
+        
+        <a href="/tags/Goll-mac-Morna/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Goll mac Morna
+        </a>
+      
+        
+        <a href="/tags/Goll-mac-Carbada/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Goll mac Carbada
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Cúchulainn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cúchulainn
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/G/Goll_mac_Morna/" class="link-fancy">Read more...</a>
+    </div>
+  
+    </div>
+    <div class="grid grid-cols-12">
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/north/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">north</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/north/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          north
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/war/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          war
+        </a>
+      
+        
+        <a href="/tags/ancient-epics/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          ancient epics
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/N/north/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/Nera/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Nera</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Medb
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Irish-epic/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Irish epic
+        </a>
+      
+        
+        <a href="/tags/Táin-Bó-Cuailnge/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Táin Bó Cuailnge
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/N/Nera/" class="link-fancy">Read more...</a>
+    </div>
+  
+    </div>
+    <div class="grid grid-cols-12">
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/N/Necthan_Scéne/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Necthan Scéne</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Necthan-Scéne/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Necthan Scéne
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Cúchulainn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Cúchulainn
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/N/Necthan_Scéne/" class="link-fancy">Read more...</a>
+    </div>
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/S/Suibhne__Sweeney__Mad_Sweeney__Suibne__Suibne_mac_Colmain__Suibhne_geilt_/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Suibhne (Sweeney, Mad Sweeney, Suibne, Suibne mac Colmain, Suibhne geilt)</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -9968,11 +10365,57 @@
       <a href="/content/pce/S/Suibhne__Sweeney__Mad_Sweeney__Suibne__Suibne_mac_Colmain__Suibhne_geilt_/" class="link-fancy">Read more...</a>
     </div>
   
+    </div>
+    <div class="grid grid-cols-12">
+  
+  
+    <div class="col-span-12 md:col-span-6 py-3 border-b">
+      <a href="/content/pce/S/Sons_of_Uisneach/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Sons of Uisneach</h2></a>
+      <p>Published
+        <time datetime="2026-08-31">31 Aug 2026</time>
+      </p>
+      <p>
+      
+        
+        <a href="/tags/Deirdre/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Deirdre
+        </a>
+      
+        
+        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ulster
+        </a>
+      
+        
+        <a href="/tags/Fergus-mac-Róich/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Fergus mac Róich
+        </a>
+      
+        
+        <a href="/tags/Ireland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Ireland
+        </a>
+      
+        
+        <a href="/tags/Sons-of-Uisneach/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
+          <i class="fas fa-tags text-moss"></i>
+          Sons of Uisneach
+        </a>
+      
+    </p>
+      <p></p>
+      <a href="/content/pce/S/Sons_of_Uisneach/" class="link-fancy">Read more...</a>
+    </div>
+  
   
     <div class="col-span-12 md:col-span-6 py-3 border-b">
       <a href="/content/pce/S/struan/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">struan</h2></a>
       <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
+        <time datetime="2026-08-31">31 Aug 2026</time>
       </p>
       <p>
       
@@ -10033,441 +10476,6 @@
     </p>
       <p></p>
       <a href="/content/pce/S/struan/" class="link-fancy">Read more...</a>
-    </div>
-  
-    </div>
-    <div class="grid grid-cols-12">
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/F/Fachtna/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Fachtna</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Nessa
-        </a>
-      
-        
-        <a href="/tags/glass/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          glass
-        </a>
-      
-        
-        <a href="/tags/worms/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          worms
-        </a>
-      
-        
-        <a href="/tags/Concobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Concobar Mac Nessa
-        </a>
-      
-        
-        <a href="/tags/Fachtna/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fachtna
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/F/Fachtna/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/F/Fergus_mac_Róich/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Fergus mac Róich</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Fergus-mac-Róich/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fergus mac Róich
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Nessa
-        </a>
-      
-        
-        <a href="/tags/Conchobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Conchobar Mac Nessa
-        </a>
-      
-        
-        <a href="/tags/Tara/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Tara
-        </a>
-      
-        
-        <a href="/tags/Deirdre/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Deirdre
-        </a>
-      
-        
-        <a href="/tags/Noísiu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Noísiu
-        </a>
-      
-        
-        <a href="/tags/Emain-Macha/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Emain Macha
-        </a>
-      
-        
-        <a href="/tags/Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Medb
-        </a>
-      
-        
-        <a href="/tags/Cruachan/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Cruachan
-        </a>
-      
-        
-        <a href="/tags/Lia-Fáil/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Lia Fáil
-        </a>
-      
-        
-        <a href="/tags/Bricriu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Bricriu
-        </a>
-      
-        
-        <a href="/tags/Conchobar/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Conchobar
-        </a>
-      
-        
-        <a href="/tags/Derdriu/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Derdriu
-        </a>
-      
-        
-        <a href="/tags/Ailill/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ailill
-        </a>
-      
-        
-        <a href="/tags/Fled-Bricrenn/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fled Bricrenn
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/F/Fergus_mac_Róich/" class="link-fancy">Read more...</a>
-    </div>
-  
-    </div>
-    <div class="grid grid-cols-12">
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/F/Furbaide_Ferbend/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Furbaide Ferbend</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Furbaide-Ferbend/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Furbaide Ferbend
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Conchobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Conchobar Mac Nessa
-        </a>
-      
-        
-        <a href="/tags/sling/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          sling
-        </a>
-      
-        
-        <a href="/tags/queen-Medb/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          queen Medb
-        </a>
-      
-        
-        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Connacht
-        </a>
-      
-        
-        <a href="/tags/Clothra/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Clothra
-        </a>
-      
-        
-        <a href="/tags/Lough-Ree/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Lough Ree
-        </a>
-      
-        
-        <a href="/tags/Shannon-River/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Shannon River
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/F/Furbaide_Ferbend/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/F/Findchóem/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Findchóem</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Matriliny/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Matriliny
-        </a>
-      
-        
-        <a href="/tags/Irish-mythological-material/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Irish mythological material
-        </a>
-      
-        
-        <a href="/tags/kings/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          kings
-        </a>
-      
-        
-        <a href="/tags/Ailill-mac-Máta/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ailill mac Máta
-        </a>
-      
-        
-        <a href="/tags/Connacht/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Connacht
-        </a>
-      
-        
-        <a href="/tags/Máta/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Máta
-        </a>
-      
-        
-        <a href="/tags/king-of-Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          king of Ulster
-        </a>
-      
-        
-        <a href="/tags/Concobar-Mac-Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Concobar Mac Nessa
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Nessa/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Nessa
-        </a>
-      
-        
-        <a href="/tags/Findchóem/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Findchóem
-        </a>
-      
-        
-        <a href="/tags/Irish-mythology/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Irish mythology
-        </a>
-      
-        
-        <a href="/tags/Celtic-mythology/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Celtic mythology
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/F/Findchóem/" class="link-fancy">Read more...</a>
-    </div>
-  
-    </div>
-    <div class="grid grid-cols-12">
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/F/féith_na_filíochta/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">féith na filíochta</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Celtic/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Celtic
-        </a>
-      
-        
-        <a href="/tags/Ireland/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ireland
-        </a>
-      
-        
-        <a href="/tags/Leinster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Leinster
-        </a>
-      
-        
-        <a href="/tags/Munster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Munster
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Fianna/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fianna
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/F/féith_na_filíochta/" class="link-fancy">Read more...</a>
-    </div>
-  
-  
-    <div class="col-span-12 md:col-span-6 py-3 border-b">
-      <a href="/content/pce/F/Fiongalla/" class="link-fancy"><h2 class="text-5xl font-semibold tracking-normal">Fiongalla</h2></a>
-      <p>Published
-        <time datetime="2026-08-30">30 Aug 2026</time>
-      </p>
-      <p>
-      
-        
-        <a href="/tags/Fiongalla/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Fiongalla
-        </a>
-      
-        
-        <a href="/tags/Munster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Munster
-        </a>
-      
-        
-        <a href="/tags/Amerach/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Amerach
-        </a>
-      
-        
-        <a href="/tags/Ulster/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Ulster
-        </a>
-      
-        
-        <a href="/tags/Yew-berries/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Yew berries
-        </a>
-      
-        
-        <a href="/tags/Holly-boughs/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Holly boughs
-        </a>
-      
-        
-        <a href="/tags/marigolds/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          marigolds
-        </a>
-      
-        
-        <a href="/tags/Feargal/" class="inline-flex items-center rounded-full px-2 py-0.5 text-xs outlined-pill bg-peat text-ink mr-1 my-1 truncate">
-          <i class="fas fa-tags text-moss"></i>
-          Feargal
-        </a>
-      
-    </p>
-      <p></p>
-      <a href="/content/pce/F/Fiongalla/" class="link-fancy">Read more...</a>
     </div>
   
     </div>
@@ -11623,10 +11631,6 @@
           
       
       
-          
-      
-      
-        
         
           
       
@@ -11663,6 +11667,10 @@
           
       
       
+          
+      
+      
+        
         
           
       
@@ -17786,7 +17794,7 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-3 lg:col-span-4 xl:col-span-3 mx-auto mb-4">
           <!-- Content -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             OpenOrdú
           </h6>
           <p>
@@ -17797,7 +17805,7 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-2 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             Quick Links
           </h6>
           <p>
@@ -17823,7 +17831,7 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-3 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             Social Media
           </h6>
           <p>
@@ -17840,12 +17848,12 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-4 lg:col-span-3 xl:col-span-3 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             Contact
           </h6>
           <p><i class="fas fa-envelope mr-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
 
-          <h6 class="uppercase font-bold mb-4 mt-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4 mt-4">
             Disclaimer
           </h6>
           <p>
@@ -17855,7 +17863,7 @@
       </div>
     </div>
   </section>
-  <div class="text-center p-4 bg-moss text-bone">
+  <div class="text-center p-4 bg-[#0c3a27] text-bone">
     Made with ❤️ by contributors around the world
   </div>
 <script src="/js/tailwind-interactions.js"></script>

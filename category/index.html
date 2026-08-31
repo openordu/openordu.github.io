@@ -28,6 +28,10 @@
   <link rel="alternate" type="application/atom+xml" title="OpenOrdú — Atom Feed" href="https://openordu.github.io/feed.xml">
   <!-- feed consumer (renders latest posts, GAF-277 T19) -->
   <script src="/js/feed-consumer.js" async></script>
+  <!-- V2b editorial fonts (GAF-313 T2a): Source Serif 4 / Source Sans 3 / JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <!-- build:css -->
   <link rel="stylesheet" href="/css/theme.min.css">
   <!-- endbuild -->
@@ -40,43 +44,47 @@
       <img id="splashlogo" src="/assets/green_logo.png" />
     </div>
 
-    <nav class="border-b border-mist p-0">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-4">
-    <!-- Hamburger Menu -->
+    <nav class="sticky top-0 z-40 border-b border-mist/15 bg-paper/90 backdrop-blur-md">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+
+    <!-- Hamburger Menu (mobile) -->
     <div class="lg:hidden">
-        <button class="inline-flex items-center border rounded p-2 text-moss" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="inline-flex items-center rounded border border-mist/40 p-2 text-earth" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fas fa-caret-down"></i></span>
         </button>
-        <button class="inline-flex items-center border rounded p-2 bg-moss text-bone" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-            <span class="text-moss bg-bone"><i class="fas fa-bars"></i></span>
+        <button class="inline-flex items-center rounded border border-mist/40 p-2 text-earth" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <span><i class="fas fa-bars"></i></span>
         </button>
     </div>
 
-    <!-- Logo -->
-    <a class="mb-0 inline-flex items-center gap-2 rounded bg-moss px-2 py-2 pt-2 pr-3 text-center text-bone" href="/">
-        <svg class="mr-1 small-logo-white"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
-        <span class="logotitle hidden sm:block">CelticPaganism.org</span>
+    <!-- Brand: cross (REAL logo.svg, already teal) + deep wordmark -->
+    <a class="mb-0 inline-flex items-center gap-2 text-center font-semibold text-earth" href="/">
+      <svg class="small-logo" aria-hidden="true"><image xlink:href="/assets/logo.svg" width="96" height="96" /></svg>
+      <span class="logotitle hidden sm:block">OpenOrdú</span>
     </a>
 
-    <!-- Navigation Links and Search Bar -->
+    <!-- Navigation Links, Contribute pill, and Search Bar -->
     <div class="hidden lg:block" id="navbarSupportedContent">
         <ul class="flex flex-wrap items-center gap-1 ml-2 mb-2 lg:mb-0">
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-house pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" aria-current="page" href="/">Home</a>
+                <i class="icon fa-solid fa-house pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" aria-current="page" href="/">Home</a>
             </li>
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-book pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" href="/pce">PCE</a>
+                <i class="icon fa-solid fa-book pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" href="/pce">PCE</a>
             </li>
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" href="/about">About</a>
+                <i class="icon fa-solid fa-circle-info pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" href="/about">About</a>
             </li>
             <li class="flex items-center mr-1">
-                <i class="icon fa-solid fa-blog pt-2"></i><a class="px-2 py-1 text-moss hover:text-gold rounded" href="/blog">Blog</a>
-            </li>    
+                <i class="icon fa-solid fa-blog pt-2"></i><a class="px-2 py-1 rounded text-mist hover:text-earth" href="/blog">Blog</a>
+            </li>
+            <li class="flex items-center">
+                <a class="btn-primary relative ml-1 inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold" href="https://gumroad.com/l/WPeVF" target="_blank" rel="noopener">Contribute<span class="ml-1.5 inline-flex items-center rounded-full bg-crimson px-1.5 py-0.5 font-mono text-[10px] font-bold text-white">v0.2<span class="sr-only">latest version</span></span></a>
+            </li>
             <!-- Search Form -->
             <li class="flex items-center">
                 <form class="search-container flex">
-                    <input type="search" id="search-input" class="rounded border border-mist bg-peat-2 px-3 py-1 text-ink placeholder:text-mist/60 focus:border-gold focus:outline-none" autocomplete="off" placeholder="Search">
+                    <input type="search" id="search-input" class="rounded border border-mist/40 bg-peat-2 px-3 py-1 text-ink placeholder:text-mist/60 focus:border-gold focus:outline-none" autocomplete="off" placeholder="Search">
                     <ul id="search-suggestions" class="hidden absolute"></ul>
                 </form>
             </li>
@@ -1379,10 +1387,6 @@
           
       
       
-          
-      
-      
-        
         
           
       
@@ -1419,6 +1423,10 @@
           
       
       
+          
+      
+      
+        
         
           
       
@@ -7692,6 +7700,58 @@
   </a>
 
   
+  <a href="/category/wilderness-deity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">wilderness deity
+  </a>
+
+  
+  <a href="/category/forest" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">forest
+  </a>
+
+  
+  <a href="/category/nature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">nature
+  </a>
+
+  
+  <a href="/category/country" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">country
+  </a>
+
+  
+  <a href="/category/nationality" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">nationality
+  </a>
+
+  
+  <a href="/category/deity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">deity
+  </a>
+
+  
+  <a href="/category/Artifact" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Artifact
+  </a>
+
+  
+  <a href="/category/Invading-force" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Invading force
+  </a>
+
+  
+  <a href="/category/Roman-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Roman god
+  </a>
+
+  
+  <a href="/category/Social-role" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Social role
+  </a>
+
+  
+  <a href="/category/god-of-commerce" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">god of commerce
+  </a>
+
+  
+  <a href="/category/horned-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">horned god
+  </a>
+
+  
+  <a href="/category/Continental-Celtic-and-British-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Continental Celtic and British god
+  </a>
+
+  
   <a href="/category/person" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">person
   </a>
 
@@ -7701,10 +7761,6 @@
 
   
   <a href="/category/Arthurian-hero" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Arthurian hero
-  </a>
-
-  
-  <a href="/category/Artifact" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Artifact
   </a>
 
   
@@ -7728,54 +7784,6 @@
   </a>
 
   
-  <a href="/category/god-of-commerce" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">god of commerce
-  </a>
-
-  
-  <a href="/category/horned-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">horned god
-  </a>
-
-  
-  <a href="/category/Continental-Celtic-and-British-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Continental Celtic and British god
-  </a>
-
-  
-  <a href="/category/country" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">country
-  </a>
-
-  
-  <a href="/category/wilderness-deity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">wilderness deity
-  </a>
-
-  
-  <a href="/category/forest" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">forest
-  </a>
-
-  
-  <a href="/category/nature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">nature
-  </a>
-
-  
-  <a href="/category/nationality" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">nationality
-  </a>
-
-  
-  <a href="/category/deity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">deity
-  </a>
-
-  
-  <a href="/category/Invading-force" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Invading force
-  </a>
-
-  
-  <a href="/category/Roman-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Roman god
-  </a>
-
-  
-  <a href="/category/Social-role" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Social role
-  </a>
-
-  
   <a href="/category/object" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">object
   </a>
 
@@ -7789,6 +7797,14 @@
 
   
   <a href="/category/word" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">word
+  </a>
+
+  
+  <a href="/category/Element" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Element
+  </a>
+
+  
+  <a href="/category/Region" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Region
   </a>
 
   
@@ -7809,14 +7825,6 @@
 
   
   <a href="/category/animal" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">animal
-  </a>
-
-  
-  <a href="/category/Element" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Element
-  </a>
-
-  
-  <a href="/category/Region" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Region
   </a>
 
   
@@ -7864,6 +7872,10 @@
   </a>
 
   
+  <a href="/category/Plant" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Plant
+  </a>
+
+  
   <a href="/category/Roman-goddess" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Roman goddess
   </a>
 
@@ -7884,19 +7896,31 @@
   </a>
 
   
-  <a href="/category/Plant" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Plant
+  <a href="/category/Irish-hero" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish hero
   </a>
 
   
-  <a href="/category/God" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">God
+  <a href="/category/legendary-group-of-Irish-invaders" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">legendary group of Irish invaders
   </a>
 
   
-  <a href="/category/Character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Character
+  <a href="/category/palace" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">palace
   </a>
 
   
-  <a href="/category/CreativeWork" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">CreativeWork
+  <a href="/category/city-name" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">city name
+  </a>
+
+  
+  <a href="/category/mythological-race" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological race
+  </a>
+
+  
+  <a href="/category/fort" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">fort
+  </a>
+
+  
+  <a href="/category/chief" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">chief
   </a>
 
   
@@ -7917,10 +7941,6 @@
 
   
   <a href="/category/Irish-god-or-hero" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish god or hero
-  </a>
-
-  
-  <a href="/category/mythological-race" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological race
   </a>
 
   
@@ -7968,27 +7988,15 @@
   </a>
 
   
-  <a href="/category/Irish-hero" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish hero
+  <a href="/category/God" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">God
   </a>
 
   
-  <a href="/category/legendary-group-of-Irish-invaders" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">legendary group of Irish invaders
+  <a href="/category/Character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Character
   </a>
 
   
-  <a href="/category/palace" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">palace
-  </a>
-
-  
-  <a href="/category/city-name" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">city name
-  </a>
-
-  
-  <a href="/category/fort" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">fort
-  </a>
-
-  
-  <a href="/category/chief" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">chief
+  <a href="/category/CreativeWork" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">CreativeWork
   </a>
 
   
@@ -8048,6 +8056,14 @@
   </a>
 
   
+  <a href="/category/race-of-invaders" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">race of invaders
+  </a>
+
+  
+  <a href="/category/more-powerful-group" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">more powerful group
+  </a>
+
+  
   <a href="/category/group-of-invaders" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">group of invaders
   </a>
 
@@ -8057,14 +8073,6 @@
 
   
   <a href="/category/island" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">island
-  </a>
-
-  
-  <a href="/category/race-of-invaders" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">race of invaders
-  </a>
-
-  
-  <a href="/category/more-powerful-group" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">more powerful group
   </a>
 
   
@@ -8168,22 +8176,6 @@
   </a>
 
   
-  <a href="/category/Work" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Work
-  </a>
-
-  
-  <a href="/category/language-family" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">language family
-  </a>
-
-  
-  <a href="/category/linguistic-group" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">linguistic group
-  </a>
-
-  
-  <a href="/category/Organisation" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Organisation
-  </a>
-
-  
   <a href="/category/Ancient-Welsh" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Ancient Welsh
   </a>
 
@@ -8200,11 +8192,39 @@
   </a>
 
   
+  <a href="/category/Work" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Work
+  </a>
+
+  
+  <a href="/category/language-family" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">language family
+  </a>
+
+  
+  <a href="/category/linguistic-group" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">linguistic group
+  </a>
+
+  
+  <a href="/category/Organisation" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Organisation
+  </a>
+
+  
   <a href="/category/civilization" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">civilization
   </a>
 
   
+  <a href="/category/profession" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">profession
+  </a>
+
+  
   <a href="/category/book" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">book
+  </a>
+
+  
+  <a href="/category/type" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">type
+  </a>
+
+  
+  <a href="/category/mythological-object" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological object
   </a>
 
   
@@ -8252,15 +8272,7 @@
   </a>
 
   
-  <a href="/category/profession" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">profession
-  </a>
-
-  
-  <a href="/category/type" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">type
-  </a>
-
-  
-  <a href="/category/mythological-object" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological object
+  <a href="/category/Occupation" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Occupation
   </a>
 
   
@@ -8269,10 +8281,6 @@
 
   
   <a href="/category/vehicle" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">vehicle
-  </a>
-
-  
-  <a href="/category/Occupation" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Occupation
   </a>
 
   
@@ -8340,26 +8348,6 @@
   </a>
 
   
-  <a href="/category/Fairy-woman" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Fairy woman
-  </a>
-
-  
-  <a href="/category/Literary-form" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Literary form
-  </a>
-
-  
-  <a href="/category/Mythological-place" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythological place
-  </a>
-
-  
-  <a href="/category/Geological-Formation" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Geological Formation
-  </a>
-
-  
-  <a href="/category/Waterway" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Waterway
-  </a>
-
-  
   <a href="/category/Irish-Epic" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish Epic
   </a>
 
@@ -8393,6 +8381,46 @@
 
   
   <a href="/category/sacred-vow" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">sacred vow
+  </a>
+
+  
+  <a href="/category/Geological-Formation" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Geological Formation
+  </a>
+
+  
+  <a href="/category/Waterway" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Waterway
+  </a>
+
+  
+  <a href="/category/Fairy-woman" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Fairy woman
+  </a>
+
+  
+  <a href="/category/Literary-form" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Literary form
+  </a>
+
+  
+  <a href="/category/Mythological-place" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythological place
+  </a>
+
+  
+  <a href="/category/mythical-object" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical object
+  </a>
+
+  
+  <a href="/category/genre" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">genre
+  </a>
+
+  
+  <a href="/category/folkloric-figure" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">folkloric figure
+  </a>
+
+  
+  <a href="/category/war-goddess" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">war goddess
+  </a>
+
+  
+  <a href="/category/mythical-place" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical place
   </a>
 
   
@@ -8436,31 +8464,7 @@
   </a>
 
   
-  <a href="/category/mythical-object" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical object
-  </a>
-
-  
-  <a href="/category/genre" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">genre
-  </a>
-
-  
-  <a href="/category/folkloric-figure" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">folkloric figure
-  </a>
-
-  
-  <a href="/category/war-goddess" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">war goddess
-  </a>
-
-  
-  <a href="/category/mythical-place" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical place
-  </a>
-
-  
   <a href="/category/Literature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Literature
-  </a>
-
-  
-  <a href="/category/literary-genre" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">literary genre
   </a>
 
   
@@ -8481,6 +8485,10 @@
 
   
   <a href="/category/Ritual" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Ritual
+  </a>
+
+  
+  <a href="/category/literary-genre" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">literary genre
   </a>
 
   
@@ -8516,6 +8524,30 @@
   </a>
 
   
+  <a href="/category/family" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">family
+  </a>
+
+  
+  <a href="/category/disease" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">disease
+  </a>
+
+  
+  <a href="/category/condition" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">condition
+  </a>
+
+  
+  <a href="/category/fictional-creature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">fictional creature
+  </a>
+
+  
+  <a href="/category/book-title" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">book title
+  </a>
+
+  
+  <a href="/category/pen-name" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">pen name
+  </a>
+
+  
   <a href="/category/Archaeological-find" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Archaeological find
   </a>
 
@@ -8529,6 +8561,18 @@
 
   
   <a href="/category/entity-type" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">entity type
+  </a>
+
+  
+  <a href="/category/Mythical-event" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythical event
+  </a>
+
+  
+  <a href="/category/Mythical-creature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythical creature
+  </a>
+
+  
+  <a href="/category/Mythological-Place" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythological Place
   </a>
 
   
@@ -8557,42 +8601,6 @@
 
   
   <a href="/category/Mythological-Concept" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythological Concept
-  </a>
-
-  
-  <a href="/category/Mythical-event" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythical event
-  </a>
-
-  
-  <a href="/category/Mythical-creature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythical creature
-  </a>
-
-  
-  <a href="/category/Mythological-Place" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythological Place
-  </a>
-
-  
-  <a href="/category/family" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">family
-  </a>
-
-  
-  <a href="/category/disease" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">disease
-  </a>
-
-  
-  <a href="/category/condition" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">condition
-  </a>
-
-  
-  <a href="/category/fictional-creature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">fictional creature
-  </a>
-
-  
-  <a href="/category/book-title" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">book title
-  </a>
-
-  
-  <a href="/category/pen-name" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">pen name
   </a>
 
   
@@ -8752,19 +8760,23 @@
   </a>
 
   
-  <a href="/category/warrior-of-the-elite-Fianna" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">warrior of the elite Fianna
+  <a href="/category/sister" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">sister
   </a>
 
   
-  <a href="/category/elite-group-of-warriors-in-Irish-lore" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">elite group of warriors in Irish lore
+  <a href="/category/snare" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">snare
   </a>
 
   
-  <a href="/category/hill" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">hill
+  <a href="/category/prison" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">prison
   </a>
 
   
-  <a href="/category/Bard" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Bard
+  <a href="/category/Giant" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Giant
+  </a>
+
+  
+  <a href="/category/warrior-band" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">warrior band
   </a>
 
   
@@ -8792,23 +8804,19 @@
   </a>
 
   
-  <a href="/category/sister" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">sister
+  <a href="/category/warrior-of-the-elite-Fianna" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">warrior of the elite Fianna
   </a>
 
   
-  <a href="/category/snare" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">snare
+  <a href="/category/elite-group-of-warriors-in-Irish-lore" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">elite group of warriors in Irish lore
   </a>
 
   
-  <a href="/category/prison" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">prison
+  <a href="/category/hill" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">hill
   </a>
 
   
-  <a href="/category/Giant" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Giant
-  </a>
-
-  
-  <a href="/category/warrior-band" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">warrior band
+  <a href="/category/Bard" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Bard
   </a>
 
   
@@ -9188,66 +9196,6 @@
   </a>
 
   
-  <a href="/category/Arthurian-character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Arthurian character
-  </a>
-
-  
-  <a href="/category/Animal-divination" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Animal divination
-  </a>
-
-  
-  <a href="/category/Mythological-entity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythological entity
-  </a>
-
-  
-  <a href="/category/Artistic-entity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Artistic entity
-  </a>
-
-  
-  <a href="/category/mountains" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mountains
-  </a>
-
-  
-  <a href="/category/land" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">land
-  </a>
-
-  
-  <a href="/category/Mythical-Event" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythical Event
-  </a>
-
-  
-  <a href="/category/mythical-being" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical being
-  </a>
-
-  
-  <a href="/category/Food/Beverage" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Food/Beverage
-  </a>
-
-  
-  <a href="/category/mythological-text" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological text
-  </a>
-
-  
-  <a href="/category/woman" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">woman
-  </a>
-
-  
-  <a href="/category/companion" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">companion
-  </a>
-
-  
-  <a href="/category/shore" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">shore
-  </a>
-
-  
-  <a href="/category/Person/Group" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Person/Group
-  </a>
-
-  
-  <a href="/category/legendary-ancestor" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">legendary ancestor
-  </a>
-
-  
   <a href="/category/color" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">color
   </a>
 
@@ -9288,11 +9236,99 @@
   </a>
 
   
+  <a href="/category/land" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">land
+  </a>
+
+  
   <a href="/category/writing-system" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">writing system
   </a>
 
   
   <a href="/category/mysterious-figure" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mysterious figure
+  </a>
+
+  
+  <a href="/category/mythological-text" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological text
+  </a>
+
+  
+  <a href="/category/woman" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">woman
+  </a>
+
+  
+  <a href="/category/companion" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">companion
+  </a>
+
+  
+  <a href="/category/shore" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">shore
+  </a>
+
+  
+  <a href="/category/Person/Group" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Person/Group
+  </a>
+
+  
+  <a href="/category/Food/Beverage" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Food/Beverage
+  </a>
+
+  
+  <a href="/category/legendary-ancestor" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">legendary ancestor
+  </a>
+
+  
+  <a href="/category/Arthurian-character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Arthurian character
+  </a>
+
+  
+  <a href="/category/Animal-divination" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Animal divination
+  </a>
+
+  
+  <a href="/category/Mythological-entity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythological entity
+  </a>
+
+  
+  <a href="/category/Artistic-entity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Artistic entity
+  </a>
+
+  
+  <a href="/category/mountains" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mountains
+  </a>
+
+  
+  <a href="/category/Mythical-Event" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythical Event
+  </a>
+
+  
+  <a href="/category/mythical-being" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical being
+  </a>
+
+  
+  <a href="/category/mountain-range" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mountain range
+  </a>
+
+  
+  <a href="/category/taboos" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">taboos
+  </a>
+
+  
+  <a href="/category/high-king" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">high king
+  </a>
+
+  
+  <a href="/category/sacred-vows" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">sacred vows
+  </a>
+
+  
+  <a href="/category/ceremonial-and-religious-office" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">ceremonial and religious office
+  </a>
+
+  
+  <a href="/category/Brand" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Brand
+  </a>
+
+  
+  <a href="/category/Genus" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Genus
   </a>
 
   
@@ -9396,34 +9432,6 @@
   </a>
 
   
-  <a href="/category/mountain-range" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mountain range
-  </a>
-
-  
-  <a href="/category/taboos" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">taboos
-  </a>
-
-  
-  <a href="/category/high-king" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">high king
-  </a>
-
-  
-  <a href="/category/sacred-vows" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">sacred vows
-  </a>
-
-  
-  <a href="/category/ceremonial-and-religious-office" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">ceremonial and religious office
-  </a>
-
-  
-  <a href="/category/Brand" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Brand
-  </a>
-
-  
-  <a href="/category/Genus" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Genus
-  </a>
-
-  
   <a href="/category/Emotion" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Emotion
   </a>
 
@@ -9441,6 +9449,10 @@
 
   
   <a href="/category/Mythological-Object" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythological Object
+  </a>
+
+  
+  <a href="/category/date" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">date
   </a>
 
   
@@ -9484,10 +9496,6 @@
   </a>
 
   
-  <a href="/category/date" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">date
-  </a>
-
-  
   <a href="/category/goddess-of-Sovereignty" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">goddess of Sovereignty
   </a>
 
@@ -9521,6 +9529,38 @@
 
   
   <a href="/category/Historical-Site" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Historical Site
+  </a>
+
+  
+  <a href="/category/Irish-folkloric-concept" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish folkloric concept
+  </a>
+
+  
+  <a href="/category/field-of-study" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">field of study
+  </a>
+
+  
+  <a href="/category/story" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">story
+  </a>
+
+  
+  <a href="/category/mythological-beings" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological beings
+  </a>
+
+  
+  <a href="/category/mythological-being" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological being
+  </a>
+
+  
+  <a href="/category/ritual-activity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">ritual activity
+  </a>
+
+  
+  <a href="/category/rulers" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">rulers
+  </a>
+
+  
+  <a href="/category/Administrative-division" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Administrative division
   </a>
 
   
@@ -9560,7 +9600,15 @@
   </a>
 
   
-  <a href="/category/Administrative-division" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Administrative division
+  <a href="/category/settler" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">settler
+  </a>
+
+  
+  <a href="/category/cosmological-symbol" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">cosmological symbol
+  </a>
+
+  
+  <a href="/category/coin" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">coin
   </a>
 
   
@@ -9712,51 +9760,51 @@
   </a>
 
   
-  <a href="/category/settler" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">settler
-  </a>
-
-  
-  <a href="/category/cosmological-symbol" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">cosmological symbol
-  </a>
-
-  
-  <a href="/category/coin" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">coin
-  </a>
-
-  
-  <a href="/category/Irish-folkloric-concept" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish folkloric concept
-  </a>
-
-  
-  <a href="/category/field-of-study" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">field of study
-  </a>
-
-  
-  <a href="/category/story" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">story
-  </a>
-
-  
-  <a href="/category/mythological-beings" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological beings
-  </a>
-
-  
-  <a href="/category/mythological-being" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological being
-  </a>
-
-  
-  <a href="/category/ritual-activity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">ritual activity
-  </a>
-
-  
-  <a href="/category/rulers" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">rulers
-  </a>
-
-  
   <a href="/category/activity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">activity
   </a>
 
   
   <a href="/category/narrative" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">narrative
+  </a>
+
+  
+  <a href="/category/British-folkloric-motif" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">British folkloric motif
+  </a>
+
+  
+  <a href="/category/industry" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">industry
+  </a>
+
+  
+  <a href="/category/light" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">light
+  </a>
+
+  
+  <a href="/category/estuary" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">estuary
+  </a>
+
+  
+  <a href="/category/river-goddess" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">river goddess
+  </a>
+
+  
+  <a href="/category/great-royal-site" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">great royal site
+  </a>
+
+  
+  <a href="/category/Irish-goddess-or-heroine" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish goddess or heroine
+  </a>
+
+  
+  <a href="/category/number" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">number
+  </a>
+
+  
+  <a href="/category/hills" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">hills
+  </a>
+
+  
+  <a href="/category/British-mythological-site" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">British mythological site
   </a>
 
   
@@ -9808,46 +9856,6 @@
   </a>
 
   
-  <a href="/category/British-folkloric-motif" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">British folkloric motif
-  </a>
-
-  
-  <a href="/category/industry" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">industry
-  </a>
-
-  
-  <a href="/category/light" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">light
-  </a>
-
-  
-  <a href="/category/estuary" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">estuary
-  </a>
-
-  
-  <a href="/category/river-goddess" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">river goddess
-  </a>
-
-  
-  <a href="/category/great-royal-site" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">great royal site
-  </a>
-
-  
-  <a href="/category/Irish-goddess-or-heroine" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish goddess or heroine
-  </a>
-
-  
-  <a href="/category/number" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">number
-  </a>
-
-  
-  <a href="/category/hills" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">hills
-  </a>
-
-  
-  <a href="/category/British-mythological-site" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">British mythological site
-  </a>
-
-  
   <a href="/category/smith" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">smith
   </a>
 
@@ -9872,7 +9880,15 @@
   </a>
 
   
-  <a href="/category/Irish-epic" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish epic
+  <a href="/category/literary-work" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">literary work
+  </a>
+
+  
+  <a href="/category/FamilyRelation" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">FamilyRelation
+  </a>
+
+  
+  <a href="/category/Hillfort" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Hillfort
   </a>
 
   
@@ -9892,15 +9908,7 @@
   </a>
 
   
-  <a href="/category/literary-work" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">literary work
-  </a>
-
-  
-  <a href="/category/FamilyRelation" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">FamilyRelation
-  </a>
-
-  
-  <a href="/category/Hillfort" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Hillfort
+  <a href="/category/Irish-epic" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish epic
   </a>
 
   
@@ -9944,6 +9952,10 @@
   </a>
 
   
+  <a href="/category/Capital" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Capital
+  </a>
+
+  
   <a href="/category/myth" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">myth
   </a>
 
@@ -9965,10 +9977,6 @@
 
   
   <a href="/category/magical-creature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">magical creature
-  </a>
-
-  
-  <a href="/category/Capital" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Capital
   </a>
 
   
@@ -10052,10 +10060,6 @@
   </a>
 
   
-  <a href="/category/Scottish-folkloric-figure" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish folkloric figure
-  </a>
-
-  
   <a href="/category/great-sword" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">great sword
   </a>
 
@@ -10084,7 +10088,19 @@
   </a>
 
   
+  <a href="/category/foster-father" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">foster father
+  </a>
+
+  
+  <a href="/category/great-knight" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">great knight
+  </a>
+
+  
   <a href="/category/knight-of-the-Round-Table" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">knight of the Round Table
+  </a>
+
+  
+  <a href="/category/Arthurian-legend-character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Arthurian legend character
   </a>
 
   
@@ -10101,18 +10117,6 @@
 
   
   <a href="/category/brother" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">brother
-  </a>
-
-  
-  <a href="/category/foster-father" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">foster father
-  </a>
-
-  
-  <a href="/category/great-knight" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">great knight
-  </a>
-
-  
-  <a href="/category/Arthurian-legend-character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Arthurian legend character
   </a>
 
   
@@ -10192,11 +10196,11 @@
   </a>
 
   
-  <a href="/category/Mythical-Character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythical Character
+  <a href="/category/Scottish-folkloric-figure" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish folkloric figure
   </a>
 
   
-  <a href="/category/Fairy-Queen" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Fairy Queen
+  <a href="/category/Mythical-Character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythical Character
   </a>
 
   
@@ -10217,6 +10221,10 @@
 
   
   <a href="/category/enchanted-maiden" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">enchanted maiden
+  </a>
+
+  
+  <a href="/category/Fairy-Queen" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Fairy Queen
   </a>
 
   
@@ -10348,14 +10356,6 @@
   </a>
 
   
-  <a href="/category/amulet" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">amulet
-  </a>
-
-  
-  <a href="/category/belief" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">belief
-  </a>
-
-  
   <a href="/category/Religious-Group" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Religious Group
   </a>
 
@@ -10380,6 +10380,18 @@
   </a>
 
   
+  <a href="/category/amulet" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">amulet
+  </a>
+
+  
+  <a href="/category/belief" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">belief
+  </a>
+
+  
+  <a href="/category/folklore-creature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">folklore creature
+  </a>
+
+  
   <a href="/category/Supernatural" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Supernatural
   </a>
 
@@ -10392,7 +10404,11 @@
   </a>
 
   
-  <a href="/category/folklore-creature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">folklore creature
+  <a href="/category/Location-in-Scotland" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Location in Scotland
+  </a>
+
+  
+  <a href="/category/Scottish-folkloric-being" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish folkloric being
   </a>
 
   
@@ -10405,14 +10421,6 @@
 
   
   <a href="/category/symbolic" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">symbolic
-  </a>
-
-  
-  <a href="/category/Location-in-Scotland" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Location in Scotland
-  </a>
-
-  
-  <a href="/category/Scottish-folkloric-being" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish folkloric being
   </a>
 
   
@@ -10444,6 +10452,18 @@
   </a>
 
   
+  <a href="/category/mythic-object" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythic object
+  </a>
+
+  
+  <a href="/category/sacred-tree" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">sacred tree
+  </a>
+
+  
+  <a href="/category/Spirits" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Spirits
+  </a>
+
+  
   <a href="/category/niece" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">niece
   </a>
 
@@ -10468,18 +10488,6 @@
   </a>
 
   
-  <a href="/category/mythic-object" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythic object
-  </a>
-
-  
-  <a href="/category/sacred-tree" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">sacred tree
-  </a>
-
-  
-  <a href="/category/Spirits" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Spirits
-  </a>
-
-  
   <a href="/category/hillfort" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">hillfort
   </a>
 
@@ -10500,18 +10508,6 @@
   </a>
 
   
-  <a href="/category/bog" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">bog
-  </a>
-
-  
-  <a href="/category/county" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">county
-  </a>
-
-  
-  <a href="/category/Irish-province" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish province
-  </a>
-
-  
   <a href="/category/minor-king" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">minor king
   </a>
 
@@ -10521,6 +10517,18 @@
 
   
   <a href="/category/eastern-province" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">eastern province
+  </a>
+
+  
+  <a href="/category/bog" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">bog
+  </a>
+
+  
+  <a href="/category/county" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">county
+  </a>
+
+  
+  <a href="/category/Irish-province" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish province
   </a>
 
   
@@ -10700,7 +10708,19 @@
   </a>
 
   
-  <a href="/category/practice" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">practice
+  <a href="/category/Law" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Law
+  </a>
+
+  
+  <a href="/category/fictional-location" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">fictional location
+  </a>
+
+  
+  <a href="/category/religious-belief" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">religious belief
+  </a>
+
+  
+  <a href="/category/work" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">work
   </a>
 
   
@@ -10716,19 +10736,7 @@
   </a>
 
   
-  <a href="/category/Law" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Law
-  </a>
-
-  
-  <a href="/category/fictional-location" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">fictional location
-  </a>
-
-  
-  <a href="/category/religious-belief" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">religious belief
-  </a>
-
-  
-  <a href="/category/work" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">work
+  <a href="/category/practice" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">practice
   </a>
 
   
@@ -10748,18 +10756,6 @@
   </a>
 
   
-  <a href="/category/Spirit" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Spirit
-  </a>
-
-  
-  <a href="/category/Belief" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Belief
-  </a>
-
-  
-  <a href="/category/Sun-divinity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Sun divinity
-  </a>
-
-  
   <a href="/category/Literary-genre" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Literary genre
   </a>
 
@@ -10769,6 +10765,18 @@
 
   
   <a href="/category/Collection" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Collection
+  </a>
+
+  
+  <a href="/category/Spirit" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Spirit
+  </a>
+
+  
+  <a href="/category/Belief" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Belief
+  </a>
+
+  
+  <a href="/category/Sun-divinity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Sun divinity
   </a>
 
   
@@ -10893,6 +10901,10 @@
 
   
   <a href="/category/Entity-type" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Entity type
+  </a>
+
+  
+  <a href="/category/Landform" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Landform
   </a>
 
   
@@ -11032,7 +11044,11 @@
   </a>
 
   
-  <a href="/category/Landform" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Landform
+  <a href="/category/Action" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Action
+  </a>
+
+  
+  <a href="/category/Pattern" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Pattern
   </a>
 
   
@@ -11041,14 +11057,6 @@
 
   
   <a href="/category/noun" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">noun
-  </a>
-
-  
-  <a href="/category/Action" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Action
-  </a>
-
-  
-  <a href="/category/Pattern" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Pattern
   </a>
 
   
@@ -11200,6 +11208,10 @@
   </a>
 
   
+  <a href="/category/archaeological-site" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">archaeological site
+  </a>
+
+  
   <a href="/category/historical" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">historical
   </a>
 
@@ -11217,10 +11229,6 @@
 
   
   <a href="/category/Celtic-regional-king" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Celtic regional king
-  </a>
-
-  
-  <a href="/category/archaeological-site" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">archaeological site
   </a>
 
   
@@ -11368,14 +11376,6 @@
   </a>
 
   
-  <a href="/category/divine-boy" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">divine boy
-  </a>
-
-  
-  <a href="/category/mother" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mother
-  </a>
-
-  
   <a href="/category/game" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">game
   </a>
 
@@ -11400,6 +11400,14 @@
   </a>
 
   
+  <a href="/category/divine-boy" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">divine boy
+  </a>
+
+  
+  <a href="/category/mother" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mother
+  </a>
+
+  
   <a href="/category/family-member" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">family member
   </a>
 
@@ -11417,6 +11425,34 @@
 
   
   <a href="/category/epic" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">epic
+  </a>
+
+  
+  <a href="/category/warrior-woman" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">warrior woman
+  </a>
+
+  
+  <a href="/category/magical-realm" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">magical realm
+  </a>
+
+  
+  <a href="/category/fortress" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">fortress
+  </a>
+
+  
+  <a href="/category/mythical-world" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical world
+  </a>
+
+  
+  <a href="/category/feminine-spirit" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">feminine spirit
+  </a>
+
+  
+  <a href="/category/Species" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Species
+  </a>
+
+  
+  <a href="/category/fairy" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">fairy
   </a>
 
   
@@ -11444,42 +11480,6 @@
   </a>
 
   
-  <a href="/category/mythical-world" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical world
-  </a>
-
-  
-  <a href="/category/feminine-spirit" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">feminine spirit
-  </a>
-
-  
-  <a href="/category/Species" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Species
-  </a>
-
-  
-  <a href="/category/fairy" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">fairy
-  </a>
-
-  
-  <a href="/category/warrior-woman" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">warrior woman
-  </a>
-
-  
-  <a href="/category/magical-realm" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">magical realm
-  </a>
-
-  
-  <a href="/category/fortress" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">fortress
-  </a>
-
-  
-  <a href="/category/Palace" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Palace
-  </a>
-
-  
-  <a href="/category/Manx-folkloric-figure" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Manx folkloric figure
-  </a>
-
-  
   <a href="/category/Mythological-event" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mythological event
   </a>
 
@@ -11496,6 +11496,14 @@
   </a>
 
   
+  <a href="/category/Palace" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Palace
+  </a>
+
+  
+  <a href="/category/Manx-folkloric-figure" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Manx folkloric figure
+  </a>
+
+  
   <a href="/category/floating-Island" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">floating Island
   </a>
 
@@ -11505,6 +11513,10 @@
 
   
   <a href="/category/Thing" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Thing
+  </a>
+
+  
+  <a href="/category/symbol" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">symbol
   </a>
 
   
@@ -11532,7 +11544,11 @@
   </a>
 
   
-  <a href="/category/symbol" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">symbol
+  <a href="/category/mythical-beings" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical beings
+  </a>
+
+  
+  <a href="/category/mythic-symbol" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythic symbol
   </a>
 
   
@@ -11572,47 +11588,11 @@
   </a>
 
   
-  <a href="/category/mythical-beings" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical beings
-  </a>
-
-  
-  <a href="/category/mythic-symbol" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythic symbol
-  </a>
-
-  
   <a href="/category/destination" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">destination
   </a>
 
   
   <a href="/category/form" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">form
-  </a>
-
-  
-  <a href="/category/consort" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">consort
-  </a>
-
-  
-  <a href="/category/lawless-daughter" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">lawless daughter
-  </a>
-
-  
-  <a href="/category/marine-mammals" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">marine mammals
-  </a>
-
-  
-  <a href="/category/oral-tradition" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">oral tradition
-  </a>
-
-  
-  <a href="/category/mythical-realm" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical realm
-  </a>
-
-  
-  <a href="/category/Scottish-folkloric-figures" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish folkloric figures
-  </a>
-
-  
-  <a href="/category/Ghosts-or-souls" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Ghosts or souls
   </a>
 
   
@@ -11645,6 +11625,34 @@
 
   
   <a href="/category/repetition" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">repetition
+  </a>
+
+  
+  <a href="/category/consort" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">consort
+  </a>
+
+  
+  <a href="/category/lawless-daughter" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">lawless daughter
+  </a>
+
+  
+  <a href="/category/marine-mammals" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">marine mammals
+  </a>
+
+  
+  <a href="/category/oral-tradition" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">oral tradition
+  </a>
+
+  
+  <a href="/category/mythical-realm" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythical realm
+  </a>
+
+  
+  <a href="/category/Scottish-folkloric-figures" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish folkloric figures
+  </a>
+
+  
+  <a href="/category/Ghosts-or-souls" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Ghosts or souls
   </a>
 
   
@@ -11724,11 +11732,11 @@
   </a>
 
   
-  <a href="/category/war-deity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">war deity
+  <a href="/category/Romano-Celtic-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Romano Celtic god
   </a>
 
   
-  <a href="/category/Romano-Celtic-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Romano Celtic god
+  <a href="/category/war-deity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">war deity
   </a>
 
   
@@ -11760,15 +11768,15 @@
   </a>
 
   
-  <a href="/category/Roman-divinity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Roman divinity
-  </a>
-
-  
   <a href="/category/verbal-formulae" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">verbal formulae
   </a>
 
   
   <a href="/category/British-goddess" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">British goddess
+  </a>
+
+  
+  <a href="/category/Roman-divinity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Roman divinity
   </a>
 
   
@@ -11816,34 +11824,6 @@
   </a>
 
   
-  <a href="/category/Fictional-Characters" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Fictional Characters
-  </a>
-
-  
-  <a href="/category/Historical-Period" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Historical Period
-  </a>
-
-  
-  <a href="/category/Emperor" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Emperor
-  </a>
-
-  
-  <a href="/category/British-divinity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">British divinity
-  </a>
-
-  
-  <a href="/category/Persian-hero-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Persian hero god
-  </a>
-
-  
-  <a href="/category/Military-unit" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Military unit
-  </a>
-
-  
-  <a href="/category/Symbolism" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Symbolism
-  </a>
-
-  
   <a href="/category/belief-system" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">belief system
   </a>
 
@@ -11861,6 +11841,34 @@
 
   
   <a href="/category/lore" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">lore
+  </a>
+
+  
+  <a href="/category/Fictional-Characters" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Fictional Characters
+  </a>
+
+  
+  <a href="/category/Historical-Period" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Historical Period
+  </a>
+
+  
+  <a href="/category/Symbolism" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Symbolism
+  </a>
+
+  
+  <a href="/category/Emperor" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Emperor
+  </a>
+
+  
+  <a href="/category/British-divinity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">British divinity
+  </a>
+
+  
+  <a href="/category/Persian-hero-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Persian hero god
+  </a>
+
+  
+  <a href="/category/Military-unit" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Military unit
   </a>
 
   
@@ -12068,6 +12076,10 @@
   </a>
 
   
+  <a href="/category/body_part" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">body_part
+  </a>
+
+  
   <a href="/category/current-name-of-Dún-tri-lag" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">current name of Dún tri-lag
   </a>
 
@@ -12085,10 +12097,6 @@
 
   
   <a href="/category/escaping-lover" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">escaping lover
-  </a>
-
-  
-  <a href="/category/body_part" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">body_part
   </a>
 
   
@@ -12188,11 +12196,11 @@
   </a>
 
   
-  <a href="/category/earth-deities" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">earth deities
+  <a href="/category/uses" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">uses
   </a>
 
   
-  <a href="/category/uses" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">uses
+  <a href="/category/earth-deities" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">earth deities
   </a>
 
   
@@ -12248,15 +12256,15 @@
   </a>
 
   
+  <a href="/category/legendary-monster" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">legendary monster
+  </a>
+
+  
   <a href="/category/half-fish" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">half fish
   </a>
 
   
   <a href="/category/source" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">source
-  </a>
-
-  
-  <a href="/category/legendary-monster" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">legendary monster
   </a>
 
   
@@ -12276,15 +12284,15 @@
   </a>
 
   
-  <a href="/category/stories" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">stories
-  </a>
-
-  
   <a href="/category/architectural-feature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">architectural feature
   </a>
 
   
   <a href="/category/airport" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">airport
+  </a>
+
+  
+  <a href="/category/stories" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">stories
   </a>
 
   
@@ -12336,11 +12344,11 @@
   </a>
 
   
-  <a href="/category/extraordinary-beings" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">extraordinary beings
+  <a href="/category/Substance" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Substance
   </a>
 
   
-  <a href="/category/Substance" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Substance
+  <a href="/category/extraordinary-beings" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">extraordinary beings
   </a>
 
   
@@ -12440,6 +12448,14 @@
   </a>
 
   
+  <a href="/category/Divination" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Divination
+  </a>
+
+  
+  <a href="/category/Form" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Form
+  </a>
+
+  
   <a href="/category/Milesians" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Milesians
   </a>
 
@@ -12448,11 +12464,7 @@
   </a>
 
   
-  <a href="/category/Divination" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Divination
-  </a>
-
-  
-  <a href="/category/Form" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Form
+  <a href="/category/great-king-of-Tara" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">great king of Tara
   </a>
 
   
@@ -12465,10 +12477,6 @@
 
   
   <a href="/category/ancient-profession" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">ancient profession
-  </a>
-
-  
-  <a href="/category/great-king-of-Tara" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">great king of Tara
   </a>
 
   
@@ -12548,15 +12556,7 @@
   </a>
 
   
-  <a href="/category/Monument" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Monument
-  </a>
-
-  
-  <a href="/category/Ancient-civilization" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Ancient civilization
-  </a>
-
-  
-  <a href="/category/astrology" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">astrology
+  <a href="/category/Philosophy" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Philosophy
   </a>
 
   
@@ -12572,7 +12572,15 @@
   </a>
 
   
-  <a href="/category/Philosophy" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Philosophy
+  <a href="/category/Monument" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Monument
+  </a>
+
+  
+  <a href="/category/Ancient-civilization" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Ancient civilization
+  </a>
+
+  
+  <a href="/category/astrology" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">astrology
   </a>
 
   
@@ -12604,6 +12612,10 @@
   </a>
 
   
+  <a href="/category/archaeological-evidence" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">archaeological evidence
+  </a>
+
+  
   <a href="/category/British-folkloric-site" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">British folkloric site
   </a>
 
@@ -12621,10 +12633,6 @@
 
   
   <a href="/category/professionals" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">professionals
-  </a>
-
-  
-  <a href="/category/archaeological-evidence" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">archaeological evidence
   </a>
 
   
@@ -12748,11 +12756,11 @@
   </a>
 
   
-  <a href="/category/harvest" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">harvest
+  <a href="/category/Cult" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Cult
   </a>
 
   
-  <a href="/category/Cult" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Cult
+  <a href="/category/harvest" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">harvest
   </a>
 
   
@@ -13088,15 +13096,15 @@
   </a>
 
   
-  <a href="/category/Greek-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Greek god
-  </a>
-
-  
   <a href="/category/Other" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Other
   </a>
 
   
   <a href="/category/spring" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">spring
+  </a>
+
+  
+  <a href="/category/Greek-god" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Greek god
   </a>
 
   
@@ -13596,15 +13604,15 @@
   </a>
 
   
+  <a href="/category/Geographic-Location" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Geographic Location
+  </a>
+
+  
   <a href="/category/Symbolic-plant" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Symbolic plant
   </a>
 
   
   <a href="/category/Magic" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Magic
-  </a>
-
-  
-  <a href="/category/Geographic-Location" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Geographic Location
   </a>
 
   
@@ -13756,15 +13764,15 @@
   </a>
 
   
+  <a href="/category/household-spirits" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">household spirits
+  </a>
+
+  
   <a href="/category/Otherworldly-beings" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Otherworldly beings
   </a>
 
   
   <a href="/category/Legendary-character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Legendary character
-  </a>
-
-  
-  <a href="/category/household-spirits" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">household spirits
   </a>
 
   
@@ -13852,10 +13860,6 @@
   </a>
 
   
-  <a href="/category/Symbolic-image" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Symbolic image
-  </a>
-
-  
   <a href="/category/Christian-thought-and-iconography" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Christian thought and iconography
   </a>
 
@@ -13865,6 +13869,10 @@
 
   
   <a href="/category/northern-Connemara" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">northern Connemara
+  </a>
+
+  
+  <a href="/category/Symbolic-image" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Symbolic image
   </a>
 
   
@@ -14136,6 +14144,10 @@
   </a>
 
   
+  <a href="/category/law-text" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">law text
+  </a>
+
+  
   <a href="/category/god-of-arts" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">god of arts
   </a>
 
@@ -14145,10 +14157,6 @@
 
   
   <a href="/category/Fairy-kingdom" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Fairy kingdom
-  </a>
-
-  
-  <a href="/category/law-text" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">law text
   </a>
 
   
@@ -14232,15 +14240,15 @@
   </a>
 
   
-  <a href="/category/character-name" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">character name
-  </a>
-
-  
   <a href="/category/method-of-death" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">method of death
   </a>
 
   
   <a href="/category/natural-disaster" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">natural disaster
+  </a>
+
+  
+  <a href="/category/character-name" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">character name
   </a>
 
   
@@ -14300,11 +14308,27 @@
   </a>
 
   
-  <a href="/category/mythological" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological
+  <a href="/category/Elemental-Spirit" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Elemental Spirit
   </a>
 
   
-  <a href="/category/religious-institutions" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">religious institutions
+  <a href="/category/sea-spirit" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">sea spirit
+  </a>
+
+  
+  <a href="/category/Party" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Party
+  </a>
+
+  
+  <a href="/category/woman-giant" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">woman giant
+  </a>
+
+  
+  <a href="/category/Irishwoman" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irishwoman
+  </a>
+
+  
+  <a href="/category/Durgans-mother" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Durgan&#39;s mother
   </a>
 
   
@@ -14316,75 +14340,15 @@
   </a>
 
   
-  <a href="/category/grandfather" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">grandfather
+  <a href="/category/burial-place" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">burial place
   </a>
 
   
-  <a href="/category/Minor-Irish-heroes" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Minor Irish heroes
+  <a href="/category/weather-phenomenon" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">weather phenomenon
   </a>
 
   
-  <a href="/category/family-name" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">family name
-  </a>
-
-  
-  <a href="/category/Elemental-Spirit" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Elemental Spirit
-  </a>
-
-  
-  <a href="/category/form-of-literature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">form of literature
-  </a>
-
-  
-  <a href="/category/Mountain-Range" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mountain Range
-  </a>
-
-  
-  <a href="/category/Scottish-hero" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish hero
-  </a>
-
-  
-  <a href="/category/Irish-character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish character
-  </a>
-
-  
-  <a href="/category/Plain" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Plain
-  </a>
-
-  
-  <a href="/category/Type-of-structure" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Type of structure
-  </a>
-
-  
-  <a href="/category/Type-of-deity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Type of deity
-  </a>
-
-  
-  <a href="/category/magical-islands" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">magical islands
-  </a>
-
-  
-  <a href="/category/subject" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">subject
-  </a>
-
-  
-  <a href="/category/objective" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">objective
-  </a>
-
-  
-  <a href="/category/person-who-accidentally-swallowed-an-alp-luachra" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">person who accidentally swallowed an alp luachra
-  </a>
-
-  
-  <a href="/category/type-of-alp-luachra" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">type of alp luachra
-  </a>
-
-  
-  <a href="/category/small-amphibian" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">small amphibian
-  </a>
-
-  
-  <a href="/category/Scottish-Talisman" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish Talisman
+  <a href="/category/geographic" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">geographic
   </a>
 
   
@@ -14404,10 +14368,6 @@
   </a>
 
   
-  <a href="/category/Party" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Party
-  </a>
-
-  
   <a href="/category/mysterious-Islands" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mysterious Islands
   </a>
 
@@ -14417,6 +14377,14 @@
 
   
   <a href="/category/Scottish-folkloric-site" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish folkloric site
+  </a>
+
+  
+  <a href="/category/mythological" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">mythological
+  </a>
+
+  
+  <a href="/category/religious-institutions" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">religious institutions
   </a>
 
   
@@ -14476,31 +14444,71 @@
   </a>
 
   
-  <a href="/category/sea-spirit" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">sea spirit
+  <a href="/category/grandfather" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">grandfather
   </a>
 
   
-  <a href="/category/woman-giant" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">woman giant
+  <a href="/category/Minor-Irish-heroes" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Minor Irish heroes
   </a>
 
   
-  <a href="/category/Irishwoman" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irishwoman
+  <a href="/category/family-name" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">family name
   </a>
 
   
-  <a href="/category/Durgans-mother" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Durgan&#39;s mother
+  <a href="/category/form-of-literature" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">form of literature
   </a>
 
   
-  <a href="/category/burial-place" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">burial place
+  <a href="/category/Mountain-Range" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Mountain Range
   </a>
 
   
-  <a href="/category/weather-phenomenon" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">weather phenomenon
+  <a href="/category/Scottish-hero" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish hero
   </a>
 
   
-  <a href="/category/geographic" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">geographic
+  <a href="/category/Irish-character" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Irish character
+  </a>
+
+  
+  <a href="/category/Plain" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Plain
+  </a>
+
+  
+  <a href="/category/Type-of-structure" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Type of structure
+  </a>
+
+  
+  <a href="/category/Type-of-deity" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Type of deity
+  </a>
+
+  
+  <a href="/category/magical-islands" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">magical islands
+  </a>
+
+  
+  <a href="/category/subject" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">subject
+  </a>
+
+  
+  <a href="/category/objective" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">objective
+  </a>
+
+  
+  <a href="/category/person-who-accidentally-swallowed-an-alp-luachra" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">person who accidentally swallowed an alp luachra
+  </a>
+
+  
+  <a href="/category/type-of-alp-luachra" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">type of alp luachra
+  </a>
+
+  
+  <a href="/category/small-amphibian" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">small amphibian
+  </a>
+
+  
+  <a href="/category/Scottish-Talisman" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Scottish Talisman
   </a>
 
   
@@ -14628,6 +14636,10 @@
   </a>
 
   
+  <a href="/category/subspecies-of-fairy" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">subspecies of fairy
+  </a>
+
+  
   <a href="/category/British-Fairy-name" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">British Fairy name
   </a>
 
@@ -14644,10 +14656,6 @@
   </a>
 
   
-  <a href="/category/subspecies-of-fairy" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">subspecies of fairy
-  </a>
-
-  
   <a href="/category/Consort" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">Consort
   </a>
 
@@ -14660,10 +14668,6 @@
   </a>
 
   
-  <a href="/category/historical-influence" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">historical influence
-  </a>
-
-  
   <a href="/category/landform" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">landform
   </a>
 
@@ -14673,6 +14677,10 @@
 
   
   <a href="/category/magical-objects" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">magical objects
+  </a>
+
+  
+  <a href="/category/historical-influence" class="inline-flex items-center justify-center rounded border border-gold px-3 py-1 text-sm text-moss hover:bg-gold/10 mr-2 my-2">historical influence
   </a>
 
 <div class="clear-both"></div>
@@ -15811,10 +15819,6 @@
           
       
       
-          
-      
-      
-        
         
           
       
@@ -15851,6 +15855,10 @@
           
       
       
+          
+      
+      
+        
         
           
       
@@ -22005,7 +22013,7 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-3 lg:col-span-4 xl:col-span-3 mx-auto mb-4">
           <!-- Content -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             OpenOrdú
           </h6>
           <p>
@@ -22016,7 +22024,7 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-2 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             Quick Links
           </h6>
           <p>
@@ -22042,7 +22050,7 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-3 lg:col-span-2 xl:col-span-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             Social Media
           </h6>
           <p>
@@ -22059,12 +22067,12 @@
         <!-- Grid column -->
         <div class="col-span-12 md:col-span-4 lg:col-span-3 xl:col-span-3 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="uppercase font-bold mb-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4">
             Contact
           </h6>
           <p><i class="fas fa-envelope mr-3"></i><a class="email-encode" href="mailto:b3Blbm9yZHVAZ21haWwuY29tCg==">b3Blbm9yZHVAZ21haWwuY29tCg==</a></p>
 
-          <h6 class="uppercase font-bold mb-4 mt-4">
+          <h6 class="uppercase font-bold tracking-wide text-ochre mb-4 mt-4">
             Disclaimer
           </h6>
           <p>
@@ -22074,7 +22082,7 @@
       </div>
     </div>
   </section>
-  <div class="text-center p-4 bg-moss text-bone">
+  <div class="text-center p-4 bg-[#0c3a27] text-bone">
     Made with ❤️ by contributors around the world
   </div>
 <script src="/js/tailwind-interactions.js"></script>
